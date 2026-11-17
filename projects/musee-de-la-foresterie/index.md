@@ -48,6 +48,18 @@ cover: ./images/render-clearcut.jpg
 # src2x: drawings only, the same drawing at twice the size; both files are then
 #   served exactly as exported (never recompressed), so the lines stay crisp
 images:
+  - src: ../gare-de-routhierville/images/site-plan.jpg
+    src2x: ../gare-de-routhierville/images/site-plan@2x.jpg
+    size: full
+    caption: { fr: 'Plan de situation, 1:1000', en: 'Site plan, 1:1000', de: 'Lageplan, 1:1000' }
+  - src: ../gare-de-routhierville/images/site-section-a.jpg
+    src2x: ../gare-de-routhierville/images/site-section-a@2x.jpg
+    size: full
+    caption: { fr: 'Coupe du site A, 1:1000', en: 'Site section A, 1:1000', de: 'Geländeschnitt A, 1:1000' }
+  - src: ../gare-de-routhierville/images/site-section-b.jpg
+    src2x: ../gare-de-routhierville/images/site-section-b@2x.jpg
+    size: full
+    caption: { fr: 'Coupe du site B, 1:1000', en: 'Site section B, 1:1000', de: 'Geländeschnitt B, 1:1000' }
   - src: ./images/plan-lookout.jpg
     src2x: ./images/plan-lookout@2x.jpg
     size: full

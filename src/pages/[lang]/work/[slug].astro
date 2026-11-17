@@ -24,6 +24,11 @@ const items = [
   ...d.images.map((img) => ({ src: img.src, src2x: img.src2x, alt: img.caption?.[lang] ?? d.title })),
 ];
 
+// For now the project pages show only the images. The summary, the facts
+// (type, location, year, status, context) and the text stay in each
+// project's index.md; set SHOW_TEXT to true to show them again.
+const SHOW_TEXT = false;
+
 const facts = [
   [t('meta.type'), d.type[lang]],
   [t('meta.location'), d.location],
@@ -37,19 +42,21 @@ const facts = [
   <article class="project">
     <h1 class="visually-hidden">{d.title}</h1>
     <Slideshow lang={lang} items={items} />
-    <div class="text-column">
-      <p>{d.summary[lang]}</p>
-      <p>
-        {
-          facts.map(([label, value], i) => (
-            <>
-              {label}: {value}
-              {i < facts.length - 1 && <br />}
-            </>
-          ))
-        }
-      </p>
-      {paragraphs(d.text[lang]).map((p) => <p>{p}</p>)}
-    </div>
+    {
+      SHOW_TEXT && (
+        <div class="text-column">
+          <p>{d.summary[lang]}</p>
+          <p>
+            {facts.map(([label, value], i) => (
+              <>
+                {label}: {value}
+                {i < facts.length - 1 && <br />}
+              </>
+            ))}
+          </p>
+          {paragraphs(d.text[lang]).map((p) => <p>{p}</p>)}
+        </div>
+      )
+    }
   </article>
 </Base>
