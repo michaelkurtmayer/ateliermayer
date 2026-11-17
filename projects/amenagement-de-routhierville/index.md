@@ -50,6 +50,23 @@ text:
 # src2x: drawings only, the same drawing at twice the size; both files are then
 #   served exactly as exported (never recompressed), so the lines stay crisp
 images:
+  # The thesis abstract, as live text in the bio's type. Text: Mayer_Thesis_Fall2026/
+  # Writing/Abstract/abstract_round29.html (14 Nov), word for word, in English.
+  # abstract.png is only its Work page thumbnail (tools/abstract-sheet/render.mjs).
+  - src: ./images/abstract.png
+    size: full
+    caption: { fr: 'Résumé de thèse', en: 'Thesis abstract', de: 'Zusammenfassung der Abschlussarbeit' }
+    textSlide: |
+      Michael Kurt Mayer
+      Advised by Charles Waldheim
+
+      Designing the Ship of Theseus: Robustness through Redundancy along *Les Routes touristiques du Québec*
+
+      This thesis suggests designing buildings the same way as tourism economies, by providing robustness through redundancy of structural members and tourism infrastructure.
+
+      In 2009, the covered bridge of Routhierville was designated a historic monument and underwent restoration in the following years. A 1931 Québec Town truss, the bridge was designed to be built of local timber by local carpenters, pinned together into a lattice to span impressive distances. Because of the multiple load paths, no single piece is critical, and members could be easily removed and replaced under maintenance conditions. Within the framework of design for maintenance, this thesis applies the bridge’s construction logic to three new buildings as prototypes for the Ship of Theseus: redundant light timber assemblies designed so that members could be perpetually replaced as they decay, to prevent structural obsolescence. The replacements could be made by local workers, with local timber sized to what the nearby forest could reasonably supply.
+
+      This thesis looks at Routhierville as one of many stops that could be developed along *Les Routes touristiques du Québec* to promote regional economic development. Drawing on the success of Norway’s National Tourist Routes, this thesis proposes developing tourism infrastructure along existing passenger railways to simultaneously increase ridership and support regional economies. In Routhierville, a new train station, inn, and forestry museum are proposed to support comfortable tourism by rail within the Gaspésie touristic region, which already hosts over 700,000 car-dependent tourists each summer.
   - src: ./images/site-plan.jpg
     src2x: ./images/site-plan@2x.jpg
     size: full

@@ -31,6 +31,10 @@ const projects = defineCollection({
             // Drawings: a version at twice the size. With it, both files are
             // served exactly as exported (never recompressed), so lines stay crisp.
             src2x: image().optional(),
+            // A slide of text instead of the image (e.g. the thesis abstract), set like
+            // the bio. `src` is then only the Work page thumbnail. Paragraphs are
+            // separated by a blank line; *asterisks* for italics; English.
+            textSlide: z.string().optional(),
             size: z.enum(['full', 'half', 'half-right']).default('full'),
             caption: t.optional(),
           }),

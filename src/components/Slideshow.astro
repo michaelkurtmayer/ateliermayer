@@ -7,7 +7,7 @@ import { useTranslations, type Lang } from '../i18n/ui';
 
 interface Props {
   lang: Lang;
-  items: { src: ImageMetadata; src2x?: ImageMetadata; alt: string }[];
+  items: { src: ImageMetadata; src2x?: ImageMetadata; text?: string; alt: string }[];
 }
 
 const { lang, items } = Astro.props;
@@ -16,6 +16,17 @@ const t = useTranslations(lang);
 // Drawings (items with a 2x file) are served as exported, never recompressed:
 // the browser picks the 1x or the 2x file for the width the drawing is shown at.
 // Desktop: inside a 68vw × (68vw × 2/3) frame, so narrower drawings show narrower.
+// A slide of text: paragraphs on blank lines, line breaks kept, *italics*
+const textHtml = (text: string) =>
+  text
+    .trim()
+    .split(/\n\s*\n/)
+    .map((para) => {
+      const safe = para.trim().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      return `<p>${safe.replace(/\*([^*]+)\*/g, '<em>$1</em>').replace(/\n/g, '<br />')}</p>`;
+    })
+    .join('');
+
 const drawingSizes = (img: ImageMetadata) => {
   const vw = Math.min(68, (68 * (img.width / img.height)) / 1.5);
   return `(max-width: 720px) 100vw, ${vw.toFixed(1)}vw`;
@@ -27,7 +38,11 @@ const drawingSizes = (img: ImageMetadata) => {
     {
       items.map((item, i) => (
         <figure class="slide">
-          {item.src2x ? (
+          {item.text ? (
+            <div class="slide-text" lang="en">
+              <div class="slide-text-column" set:html={textHtml(item.text)} />
+            </div>
+          ) : item.src2x ? (
             <img
               src={item.src.src}
               srcset={`${item.src.src} ${item.src.width}w, ${item.src2x.src} ${item.src2x.width}w`}

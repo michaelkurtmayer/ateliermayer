@@ -13,10 +13,11 @@ export const site = {
     {
       email: 'emplois@ateliermayer.ca',
       title: { fr: 'Emplois', en: 'Jobs', de: 'Stellenangebote' },
-      // Optional line under the address (DeepL); delete `note` to hide it.
+      // Optional line under the address, after a blank line, set as a narrow column (DeepL); delete `note` to hide it.
       note: {
         fr: 'Nous recherchons actuellement des stagiaires pour des stages de trois mois.',
-        en: 'We are currently looking for interns for 3-month internships.',
+        // a no-break space after "for" keeps "for interns" together, so "for" starts line 2
+        en: 'We are currently looking for\u00a0interns for 3-month internships.',
         de: 'Wir suchen derzeit Praktikanten für ein dreimonatiges Praktikum.',
       },
     },

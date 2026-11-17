@@ -239,6 +239,19 @@ main {
   }
 }
 
+/* A slide of text (the thesis abstract): the bio's type and column width,
+   at the top of the image frame. A long text runs below the frame. */
+.slide-text {
+  width: var(--slide-w);
+  min-height: calc(var(--slide-w) * 2 / 3);
+  display: flex;
+  justify-content: center;
+}
+
+.slide-text-column {
+  width: min(100%, 44vw, 662px);
+}
+
 .slide-arrow {
   position: absolute;
   /* vertically centred on the image frame (3:2) */
@@ -344,6 +357,11 @@ main {
 
 .side-column p:last-child {
   margin-bottom: 0;
+}
+
+/* A line under a contact (e.g. the internship call): a narrow column */
+.side-column .contact-note {
+  max-width: 13em;
 }
 
 .page-column {
@@ -484,6 +502,17 @@ main {
 
   .slide-arrow {
     display: none;
+  }
+
+  .slide-text {
+    width: auto;
+    min-height: 0;
+    display: block;
+    padding: 16px var(--margin) 10px;
+  }
+
+  .slide-text-column {
+    width: auto;
   }
 
   .text-column {

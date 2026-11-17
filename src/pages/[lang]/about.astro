@@ -38,17 +38,14 @@ const social = [
       }
       {
         site.contacts.map((c) => (
-          <p>
-            {c.title[lang]}
-            <br />
-            <a href={`mailto:${c.email}`}>{c.email}</a>
-            {c.note && (
-              <>
-                <br />
-                {c.note[lang]}
-              </>
-            )}
-          </p>
+          <>
+            <p>
+              {c.title[lang]}
+              <br />
+              <a href={`mailto:${c.email}`}>{c.email}</a>
+            </p>
+            {c.note && <p class="contact-note">{c.note[lang]}</p>}
+          </>
         ))
       }
       {

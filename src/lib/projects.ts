@@ -17,6 +17,6 @@ export function slidesOf(p: CollectionEntry<'projects'>, lang: Lang) {
   const d = p.data;
   return [
     ...(d.cover ? [{ src: d.cover, alt: d.title }] : []),
-    ...d.images.map((img) => ({ src: img.src, src2x: img.src2x, alt: img.caption?.[lang] ?? d.title })),
+    ...d.images.map((img) => ({ src: img.src, src2x: img.src2x, text: img.textSlide, alt: img.caption?.[lang] ?? d.title })),
   ];
 }
