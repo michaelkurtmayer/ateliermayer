@@ -551,6 +551,15 @@ a:hover {
   margin-top: 2px;
 }
 
+/* Links in the bio: told apart by colour only, no underline */
+.prose a {
+  color: var(--muted);
+}
+
+.prose a:hover {
+  color: var(--ink);
+}
+
 @media (max-width: 900px) {
   .about-photo,
   .about-body,
