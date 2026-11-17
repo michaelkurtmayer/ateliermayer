@@ -1,5 +1,7 @@
 ---
 import { getEntry, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import studio from '../../../about/studio.jpg';
 import Base from '../../layouts/Base.astro';
 import { langPaths, useTranslations, type Lang } from '../../i18n/ui';
 import { site } from '../../site';
@@ -12,6 +14,9 @@ const entry = await getEntry('about', lang);
 if (!entry) throw new Error(`Missing about/${lang}.md`);
 const { Content } = await render(entry);
 
+// Description of the photo for screen readers (translated with DeepL)
+const photoAlt: Record<Lang, string> = { fr: 'En studio', en: 'In the studio', de: 'Im Studio' };
+
 const contact = [
   site.email && { text: site.email, href: `mailto:${site.email}` },
   site.instagram && { text: 'Instagram', href: site.instagram },
@@ -22,6 +27,15 @@ const contact = [
 <Base lang={lang} title={t('about.title')}>
   <section class="about">
     <h1 class="visually-hidden">{t('about.title')}</h1>
+    <figure class="about-photo">
+      <Image
+        src={studio}
+        alt={photoAlt[lang]}
+        widths={[600, 900, 1200, 1600, 2000]}
+        sizes="(max-width: 900px) 100vw, 58vw"
+        loading="eager"
+      />
+    </figure>
     <div class="about-body prose">
       <Content />
     </div>

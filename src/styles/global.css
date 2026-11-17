@@ -504,7 +504,16 @@ a:hover {
 
 .about {
   margin-top: clamp(24px, 4vw, 56px);
-  row-gap: var(--space);
+  row-gap: clamp(28px, 3vw, 48px);
+}
+
+.about-photo {
+  grid-column: 6 / 13;
+  grid-row: 1;
+}
+
+.about-photo img {
+  width: 100%;
 }
 
 .about-contact {
@@ -518,6 +527,7 @@ a:hover {
 
 .about-body {
   grid-column: 6 / 12;
+  grid-row: 2;
   max-width: 62ch;
 }
 
@@ -535,15 +545,20 @@ a:hover {
 }
 
 @media (max-width: 900px) {
+  .about-photo,
   .about-body,
   .about-contact {
     grid-column: 1 / -1;
   }
-  .about-body {
+  .about-photo {
     grid-row: 1;
   }
-  .about-contact {
+  .about-body {
     grid-row: 2;
+  }
+  .about-contact {
+    grid-row: 3;
+    margin-top: 24px;
   }
 }
 
