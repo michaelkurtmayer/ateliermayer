@@ -39,13 +39,10 @@ text:
   de: |
     [Projektbeschreibung folgt: Standort, Programm, Konzept und Bauausführung. Zwei bis vier kurze Absätze.]
 
-cover: ./images/render.jpg
+cover: ./images/render-clearcut.jpg
 
 # size: full (whole width), half (two side by side) or half-right (one image on the right half)
 images:
-  - src: ./images/render-detail.jpg
-    size: half-right
-    caption: { fr: 'Photomontage, détail', en: 'Photomontage, detail', de: 'Fotomontage, Ausschnitt' }
   - src: ./images/plan-lookout.jpg
     size: full
     caption: { fr: 'Plan d’étage du belvédère, 1:50', en: 'Lookout floor plan, 1:50', de: 'Grundriss der Aussichtsplattform, 1:50' }

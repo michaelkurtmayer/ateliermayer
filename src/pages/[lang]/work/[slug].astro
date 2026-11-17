@@ -40,7 +40,7 @@ const meta = [
       <p class="project-summary">{d.summary[lang]}</p>
     </header>
 
-    <figure class="project-cover">
+    <figure class:list={['project-cover', { 'is-portrait': d.cover.height > d.cover.width }]}>
       <Image
         src={d.cover}
         alt={d.title}
