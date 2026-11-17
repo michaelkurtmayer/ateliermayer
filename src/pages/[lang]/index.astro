@@ -1,8 +1,9 @@
 ---
-import { Image, getImage } from 'astro:assets';
+import { getImage } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
+import Slideshow from '../../components/Slideshow.astro';
 import { getPublishedProjects } from '../../lib/projects';
-import { langPaths, localize, type Lang } from '../../i18n/ui';
+import { langPaths, type Lang } from '../../i18n/ui';
 import { site } from '../../site';
 
 export const getStaticPaths = langPaths;
@@ -11,13 +12,11 @@ const lang = Astro.params.lang as Lang;
 const projects = await getPublishedProjects();
 
 // Every image of every project (cover first, then the page's images),
-// interleaved project by project so the collage mixes them.
-const perProject = projects.map((p) =>
-  [
-    { src: p.data.cover!, alt: p.data.title },
-    ...p.data.images.map((img) => ({ src: img.src, alt: img.caption?.[lang] ?? p.data.title })),
-  ].map((item) => ({ ...item, project: p })),
-);
+// interleaved project by project.
+const perProject = projects.map((p) => [
+  { src: p.data.cover!, alt: p.data.title },
+  ...p.data.images.map((img) => ({ src: img.src, alt: img.caption?.[lang] ?? p.data.title })),
+]);
 const longest = Math.max(...perProject.map((list) => list.length));
 const items = [];
 for (let i = 0; i < longest; i++) {
@@ -28,25 +27,6 @@ const og = await getImage({ src: projects[0].data.cover!, width: 1200, format: '
 ---
 
 <Base lang={lang} ogImage={og.src}>
-  <section class="collage">
-    <h1 class="visually-hidden">{site.name}</h1>
-    <ul class="collage-grid">
-      {
-        items.map((item, i) => (
-          <li class="collage-item">
-            <a href={localize(lang, `/work/${item.project.id}/`)}>
-              <Image
-                src={item.src}
-                alt={item.alt}
-                widths={[480, 720, 960, 1200, 1600]}
-                sizes="(max-width: 720px) 100vw, 42vw"
-                loading={i < 2 ? 'eager' : 'lazy'}
-              />
-              <span class="collage-title">{item.project.data.title}</span>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </section>
+  <h1 class="visually-hidden">{site.name}</h1>
+  <Slideshow lang={lang} items={items} />
 </Base>

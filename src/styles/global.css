@@ -1,19 +1,18 @@
 /* Atelier Mayer — global styles
-   Text and images only: one text size, black on white, no lines.
-   Things are told apart by position, space and a lighter grey, never by
-   rules, borders or underlines. A 12-column grid keeps everything aligned. */
+   Modelled on the Zumthor Ferienhäuser site: Helvetica Neue at one size
+   (15 px, 18 px lines), dark grey text and black links on white, 20 px page
+   margins, three equal columns, a fixed two-row header, one large image at a
+   time (68 % of the window width) with the text below in the middle column.
+   No dividing lines anywhere. Phones: the name and a menu button, images
+   stacked edge to edge. */
 
 :root {
-  --bg: #ffffff;
-  --ink: #161616;
-  --muted: #8a8882;
-
-  --font: 'Instrument Sans Variable', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --size: 0.9375rem; /* the one text size */
-
-  --pad: clamp(16px, 3vw, 44px); /* page margin */
-  --gap: clamp(12px, 1.5vw, 24px); /* column gutter */
-  --space: clamp(56px, 8vw, 128px); /* space between blocks */
+  --text: #333;
+  --link: #000;
+  --bg: #fff;
+  --font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --margin: 20px;
+  --header: 150px;
 }
 
 /* ---------- Base ---------- */
@@ -31,21 +30,14 @@ html {
 
 body {
   margin: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   background: var(--bg);
-  color: var(--ink);
+  color: var(--text);
   font-family: var(--font);
-  font-size: var(--size);
-  line-height: 1.45;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-main {
-  flex: 1;
-  padding-bottom: var(--space);
 }
 
 h1,
@@ -54,8 +46,6 @@ h3,
 p,
 ul,
 ol,
-dl,
-dd,
 figure {
   margin: 0;
   padding: 0;
@@ -68,6 +58,10 @@ ol {
   list-style: none;
 }
 
+p {
+  margin-bottom: 10px;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -75,18 +69,17 @@ img {
 }
 
 a {
-  color: inherit;
+  color: var(--link);
   text-decoration: none;
-  transition: color 0.15s ease, opacity 0.2s ease;
 }
 
 a:hover {
-  color: var(--muted);
+  opacity: 0.6;
 }
 
 :focus-visible {
-  outline: 1px solid var(--ink);
-  outline-offset: 3px;
+  outline: 1px solid var(--link);
+  outline-offset: 2px;
 }
 
 .visually-hidden {
@@ -104,522 +97,402 @@ a:hover {
 }
 
 .skip:focus {
-  left: var(--pad);
-  top: 8px;
-  z-index: 10;
-  padding: 4px 8px;
+  left: var(--margin);
+  top: 4px;
+  z-index: 30;
   background: var(--bg);
 }
 
-.label {
-  color: var(--muted);
+main {
+  padding-top: var(--header);
+  padding-bottom: 60px;
 }
 
-/* The shared 12-column grid */
-.site-header,
-.collage-grid,
-.project-head,
-.project-body,
-.gallery,
-.about {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: var(--gap);
-}
-
-/* Page margins */
-.site-header,
-.collage,
-.work,
-.project,
-.about,
-.not-found {
-  padding-inline: var(--pad);
-}
-
-/* ---------- Header ---------- */
+/* ---------- Header ----------
+   Row 1: name / Work / About, languages at the far right.
+   Row 2: the projects. Each item sits at the start of its column. */
 
 .site-header {
-  /* name on the left, menu centred on the page, languages on the right */
-  grid-template-columns: 1fr auto 1fr;
-  padding-block: clamp(16px, 2.2vw, 28px);
-  align-items: baseline;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  height: var(--header);
+  padding: 20px var(--margin) 0;
+  background: var(--bg);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 21px 21px;
+  row-gap: 40px;
+  align-content: start;
+  line-height: 21.4286px;
 }
 
 .wordmark {
-  grid-column: 1;
+  grid-area: 1 / 1;
   justify-self: start;
 }
 
-.nav {
+.site-menu,
+.nav-main,
+.nav-projects {
+  display: contents;
+}
+
+.nav-work {
+  grid-area: 1 / 2;
+}
+
+.nav-about {
+  grid-area: 1 / 3;
+}
+
+.nav-projects li {
+  grid-row: 2;
+}
+
+.nav-projects li:nth-child(3n + 1) {
+  grid-column: 1;
+}
+
+.nav-projects li:nth-child(3n + 2) {
   grid-column: 2;
 }
 
-.nav ul {
-  display: flex;
-  gap: 1.5em;
+.nav-projects li:nth-child(3n + 3) {
+  grid-column: 3;
+}
+
+.wordmark,
+.site-menu li {
+  white-space: nowrap;
 }
 
 .langs {
   display: flex;
-  gap: 0.8em;
-}
-
-.langs a {
-  color: var(--muted);
-}
-
-.langs a:hover,
-.langs a[aria-current] {
-  color: var(--ink);
+  gap: 0.6em;
 }
 
 .header-langs {
-  grid-column: 3;
-  justify-self: end;
-}
-
-.wordmark,
-.nav ul,
-.header-langs {
-  white-space: nowrap;
-}
-
-/* Phones: name, menu and languages stay on one line at the top;
-   tighter spacing so everything fits. */
-@media (max-width: 600px) {
-  .site-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 10px;
-  }
-  .nav ul {
-    gap: 0.9em;
-  }
-  .langs {
-    gap: 0.55em;
-  }
-}
-
-/* Very narrow phones: tighter still; wraps rather than overflowing */
-@media (max-width: 340px) {
-  .site-header {
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .nav ul {
-    gap: 0.6em;
-  }
-  .langs {
-    gap: 0.4em;
-  }
-}
-
-/* ---------- Home: a collage of images and drawings ----------
-   Images from the projects, staggered on the 12-column grid in a
-   repeating pattern of six, with plenty of white space. */
-
-.collage {
-  padding-block: clamp(24px, 4vw, 56px) 0;
-}
-
-.collage-grid {
-  row-gap: clamp(56px, 8vw, 140px);
-  align-items: start;
-}
-
-.collage-item a {
-  display: block;
-}
-
-.collage-item a:hover {
-  color: inherit;
-}
-
-.collage-item img {
-  width: 100%;
-  transition: opacity 0.2s ease;
-}
-
-.collage-item a:hover img {
-  opacity: 0.9;
-}
-
-/* The project's name appears under an image when you point at it */
-.collage-title {
-  display: block;
-  margin-top: 8px;
-  color: var(--muted);
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.collage-item a:hover .collage-title,
-.collage-item a:focus-visible .collage-title {
-  opacity: 1;
-}
-
-.collage-item:nth-child(6n + 1) { grid-column: 1 / span 5; }
-.collage-item:nth-child(6n + 2) { grid-column: 8 / span 4; margin-top: 10vw; }
-.collage-item:nth-child(6n + 3) { grid-column: 3 / span 4; }
-.collage-item:nth-child(6n + 4) { grid-column: 8 / span 5; margin-top: 6vw; }
-.collage-item:nth-child(6n + 5) { grid-column: 1 / span 4; margin-top: 4vw; }
-.collage-item:nth-child(6n + 6) { grid-column: 6 / span 5; }
-
-@media (max-width: 720px) {
-  .collage-grid {
-    row-gap: 40px;
-  }
-  .collage-item:nth-child(n) {
-    grid-column: 1 / -1;
-    margin-top: 0;
-  }
-  .collage-title {
-    opacity: 1;
-  }
-}
-
-/* ---------- Work index ---------- */
-
-.work {
-  margin-top: clamp(24px, 4vw, 56px);
-}
-
-.index {
-  /* column width inside the index */
-  --col: calc((100% - 11 * var(--gap)) / 12);
-  position: relative;
-  min-height: calc(((100vw - 2 * var(--pad) - 11 * var(--gap)) / 12 * 4 + 3 * var(--gap)) * 0.72);
-}
-
-.index-head,
-.row {
-  width: calc(var(--col) * 8 + var(--gap) * 7);
-}
-
-.index-head,
-.row-link {
-  display: grid;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
-  column-gap: var(--gap);
-  align-items: baseline;
-}
-
-.index-head {
-  margin-bottom: 6px;
-}
-
-.index-head span:nth-child(1),
-.row-title {
-  grid-column: 1 / 5;
-}
-
-.index-head span:nth-child(2),
-.row-type {
-  grid-column: 5 / 8;
-}
-
-.index-head span:nth-child(3),
-.row-year {
-  grid-column: 8 / 9;
-  text-align: right;
-}
-
-.row-link {
-  padding-block: 3px;
-}
-
-a.row-link:hover {
-  color: inherit;
-}
-
-/* Hovering one project fades the others */
-.index-list:has(a.row-link:hover) .row:not(:hover) .row-link {
-  color: var(--muted);
-}
-
-/* Preview image on the right; shows the first project until you hover another */
-.row-thumb {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: calc(var(--col) * 4 + var(--gap) * 3);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
+  top: 20px;
+  right: var(--margin);
 }
 
-.row-thumb img {
-  width: 100%;
+.menu-button {
+  display: none;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--link);
+  cursor: pointer;
 }
 
-.row:first-child .row-thumb,
-.index:has(a.row-link:hover) .row:hover .row-thumb,
-.index:has(.row a:focus-visible) .row:has(a:focus-visible) .row-thumb {
-  opacity: 1;
+.menu-button svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
 }
 
-.index:has(a.row-link:hover) .row:first-child:not(:hover) .row-thumb,
-.index:has(.row a:focus-visible) .row:first-child:not(:has(a:focus-visible)) .row-thumb {
-  opacity: 0;
+.menu-icon-close,
+.site-header.is-open .menu-icon-open {
+  display: none !important;
 }
 
-@media (max-width: 900px) {
-  .index {
-    min-height: 0;
-  }
-  .index-head {
-    display: none;
-  }
-  .row {
-    width: 100%;
-  }
-  .row + .row {
-    margin-top: 40px;
-  }
-  .row-link {
-    grid-template-columns: 1fr auto;
-    padding-block: 0;
-  }
-  .row-thumb {
-    position: static;
-    grid-column: 1 / -1;
-    grid-row: 1;
-    width: 100%;
-    margin-bottom: 10px;
-    opacity: 1;
-    pointer-events: auto;
-  }
-  .row-title {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  .row-year {
-    grid-column: 2;
-    grid-row: 2;
-  }
-  .row-type {
-    grid-column: 1 / -1;
-    grid-row: 3;
-    color: var(--muted);
-  }
-  .index:has(a.row-link:hover) .row:first-child:not(:hover) .row-thumb {
-    opacity: 1;
-  }
-  .index-list:has(a.row-link:hover) .row:not(:hover) .row-link {
-    color: inherit;
-  }
+.site-header.is-open .menu-icon-close {
+  display: block !important;
 }
 
-/* ---------- Project page ---------- */
+/* ---------- Slideshow ---------- */
 
-.project-head {
-  margin-top: clamp(24px, 4vw, 56px);
+.slideshow {
+  position: relative;
+  padding-top: 5px;
 }
 
-.project-title,
-.project-summary {
-  grid-column: 1 / 7;
+.slides {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  outline: none;
 }
 
-.project-summary {
-  color: var(--muted);
+.slides::-webkit-scrollbar {
+  display: none;
 }
 
-.project-cover {
-  margin-top: clamp(20px, 3vw, 40px);
+.slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  scroll-snap-align: start;
 }
 
-.project-cover img,
-.gallery-item img {
-  width: 100%;
+.slide img {
+  width: 68vw;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
 }
 
-/* A tall (portrait) cover keeps its proportions and fits the screen height */
-.project-cover.is-portrait img {
-  width: auto;
-  max-width: 100%;
-  max-height: 92vh;
+.slide-arrow {
+  position: absolute;
+  /* vertically centred on the image (68vw wide, 3:2) */
+  top: calc(5px + 68vw / 3 - 19px);
+  width: 50px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
 }
 
-.project-body {
-  margin-top: var(--space);
-  row-gap: 40px;
+.slide-arrow svg {
+  display: block;
+  width: 19px;
+  height: 38px;
+  margin: 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
 }
 
-.meta {
-  grid-column: 1 / 5;
+.slide-arrow:hover {
+  color: #000;
 }
 
-.meta-item {
+.slide-prev {
+  left: 7px;
+}
+
+.slide-next {
+  right: 7px;
+}
+
+/* ---------- Text below the images: the middle column ---------- */
+
+.text-column {
+  width: min(46vw, 662px);
+  margin: 5px 0 0 calc(var(--margin) + (100% - 2 * var(--margin)) / 3);
+}
+
+/* ---------- Project list ---------- */
+
+.work-list {
+  padding: 17px var(--margin) 0;
+}
+
+.work-row {
   display: grid;
-  grid-template-columns: minmax(6.5rem, 38%) 1fr;
-  column-gap: var(--gap);
+  grid-template-columns: repeat(3, 1fr);
+  line-height: 21.4286px;
 }
 
-.meta-item + .meta-item {
-  margin-top: 4px;
+/* ---------- Text pages (About): side column + middle column ---------- */
+
+.text-page {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 var(--margin);
 }
 
-.meta dt {
-  color: var(--muted);
+.side-column {
+  grid-column: 1;
+  padding-top: 17px;
 }
 
-.project-text {
-  grid-column: 6 / 12;
-  max-width: 62ch;
+.page-column {
+  grid-column: 2 / 4;
+  width: min(44vw, 662px);
 }
 
-.project-text p + p {
-  margin-top: 1em;
+.page-image {
+  margin-bottom: 10px;
 }
 
-.gallery {
-  margin-top: var(--space);
-  row-gap: clamp(28px, 4vw, 64px);
-  align-items: start;
-}
-
-.gallery-item.is-full {
-  grid-column: 1 / -1;
-}
-
-.gallery-item.is-half {
-  grid-column: span 6;
-}
-
-.gallery-item.is-half-right {
-  grid-column: 7 / span 6;
-}
-
-
-
-
-
-@media (max-width: 900px) {
-  .project-title,
-  .project-summary,
-  .meta,
-  .project-text {
-    grid-column: 1 / -1;
-  }
-}
-
-@media (max-width: 640px) {
-  .gallery-item.is-half,
-  .gallery-item.is-half-right {
-    grid-column: 1 / -1;
-  }
-}
-
-/* ---------- About ---------- */
-
-.about {
-  margin-top: clamp(24px, 4vw, 56px);
-  row-gap: clamp(20px, 2vw, 32px);
-  grid-template-rows: auto 1fr;
-}
-
-/* Left column: photo with the contact underneath. Right: the bio. */
-.about-photo {
-  grid-column: 1 / 5;
-  grid-row: 1;
-}
-
-.about-photo img {
+.page-image img {
   width: 100%;
 }
 
-.about-contact {
-  grid-column: 1 / 5;
-  grid-row: 2;
-  align-self: start;
-}
-
-.about-contact h2 {
-  color: var(--muted);
-}
-
-.about-body {
-  grid-column: 6 / 12;
-  grid-row: 1 / span 2;
-  max-width: 62ch;
-}
-
-.prose p + p {
-  margin-top: 1em;
-}
-
-.prose h2 {
-  margin: 2.4em 0 0.4em;
-  color: var(--muted);
-}
-
-.prose ul li + li {
-  margin-top: 2px;
-}
-
-/* Links in the bio: told apart by colour only, no underline */
-.prose a {
-  color: var(--muted);
-}
-
-.prose a:hover {
-  color: var(--ink);
-}
-
-@media (max-width: 900px) {
-  .about {
-    grid-template-rows: none;
-  }
-  .about-photo,
-  .about-body,
-  .about-contact {
-    grid-column: 1 / -1;
-  }
-  .about-photo {
-    grid-row: 1;
-  }
-  .about-contact {
-    grid-row: 2;
-  }
-  .about-body {
-    grid-row: 3;
-    margin-top: 16px;
-  }
-}
-
-/* ---------- 404 and language chooser ---------- */
+/* ---------- 404 and the language chooser ---------- */
 
 .not-found {
-  margin-top: clamp(24px, 4vw, 56px);
+  padding: 17px var(--margin) 0;
 }
 
-.not-found li + li {
-  margin-top: 4px;
+.not-found h1 {
+  margin-bottom: 10px;
 }
 
 .not-found a {
-  margin-left: 1.5em;
-  color: var(--muted);
-}
-
-.not-found a:hover {
-  color: var(--ink);
+  margin-left: 1em;
 }
 
 .chooser {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 16px;
-  padding: var(--pad);
+  padding: var(--margin);
 }
 
 .chooser .langs {
   gap: 1.5em;
 }
 
-.not-found h1 {
-  margin-bottom: 1em;
+/* ---------- Phones ---------- */
+
+@media (max-width: 720px) {
+  :root {
+    --margin: 16px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  main {
+    padding-top: 0;
+    padding-bottom: 40px;
+  }
+
+  /* The name and a menu button; the button opens everything else */
+  .site-header {
+    position: relative;
+    height: auto;
+    min-height: 30px;
+    padding: 3px var(--margin);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 18px;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .site-menu {
+    display: none;
+  }
+
+  .site-header.is-open .site-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-height: 100vh;
+    padding: 12px var(--margin) 40px;
+    background: var(--bg);
+  }
+
+  .site-header.is-open .nav-main,
+  .site-header.is-open .nav-projects {
+    display: block;
+  }
+
+  .site-header.is-open .site-menu li {
+    line-height: 26px;
+  }
+
+  .site-header.is-open .header-langs {
+    position: static;
+    gap: 1em;
+  }
+
+  /* Images stacked, full width, edge to edge, thin white gaps */
+  .slideshow {
+    padding-top: 0;
+  }
+
+  .slides {
+    display: block;
+    overflow: visible;
+  }
+
+  .slide {
+    display: block;
+  }
+
+  .slide + .slide {
+    margin-top: 6px;
+  }
+
+  .slide img {
+    width: 100%;
+    aspect-ratio: auto;
+    object-fit: initial;
+  }
+
+  .slide-arrow {
+    display: none;
+  }
+
+  .text-column {
+    width: auto;
+    margin: 16px var(--margin) 0;
+  }
+
+  .work-list {
+    padding-top: 16px;
+  }
+
+  .work-row {
+    grid-template-columns: 1fr auto;
+    line-height: 20px;
+  }
+
+  .work-row + .work-row {
+    margin-top: 14px;
+  }
+
+  .work-row > :nth-child(2) {
+    grid-row: 2;
+  }
+
+  .work-row > :nth-child(3) {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  /* About: photo edge to edge, then contact, then the bio */
+  .text-page {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-column {
+    display: contents;
+  }
+
+  .page-image {
+    order: 1;
+    margin: 0 calc(-1 * var(--margin)) 0;
+  }
+
+  .side-column {
+    order: 2;
+    padding: 16px 0;
+  }
+
+  .prose {
+    order: 3;
+  }
+
+  .not-found {
+    padding-top: 16px;
+  }
 }

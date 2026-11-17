@@ -1,6 +1,7 @@
 ---
-import { Image, getImage } from 'astro:assets';
+import { getImage } from 'astro:assets';
 import Base from '../../../layouts/Base.astro';
+import Slideshow from '../../../components/Slideshow.astro';
 import { getPublishedProjects } from '../../../lib/projects';
 import { langs, paragraphs, useTranslations, type Lang } from '../../../i18n/ui';
 
@@ -20,65 +21,37 @@ const t = useTranslations(lang);
 const d = project.data;
 const og = await getImage({ src: d.cover!, width: 1200, format: 'jpg' });
 
-const meta = [
-  { label: t('meta.type'), value: d.type[lang] },
-  { label: t('meta.location'), value: d.location },
-  { label: t('meta.year'), value: d.year },
-  { label: t('meta.status'), value: d.status[lang] },
-  { label: t('meta.context'), value: d.context[lang] },
+const items = [
+  { src: d.cover!, alt: d.title },
+  ...d.images.map((img) => ({ src: img.src, alt: img.caption?.[lang] ?? d.title })),
+];
+
+const facts = [
+  [t('meta.type'), d.type[lang]],
+  [t('meta.location'), d.location],
+  [t('meta.year'), d.year],
+  [t('meta.status'), d.status[lang]],
+  [t('meta.context'), d.context[lang]],
 ];
 ---
 
 <Base lang={lang} title={d.title} description={d.summary[lang]} ogImage={og.src}>
   <article class="project">
-    <header class="project-head">
-      <h1 class="project-title">{d.title}</h1>
-      <p class="project-summary">{d.summary[lang]}</p>
-    </header>
-
-    <figure class:list={['project-cover', { 'is-portrait': d.cover!.height > d.cover!.width }]}>
-      <Image
-        src={d.cover!}
-        alt={d.title}
-        widths={[800, 1200, 1600, 2000, 2400]}
-        sizes="100vw"
-        loading="eager"
-        fetchpriority="high"
-      />
-    </figure>
-
-    <section class="project-body">
-      <dl class="meta">
+    <h1 class="visually-hidden">{d.title}</h1>
+    <Slideshow lang={lang} items={items} />
+    <div class="text-column">
+      <p>{d.summary[lang]}</p>
+      <p>
         {
-          meta.map((m) => (
-            <div class="meta-item">
-              <dt>{m.label}</dt>
-              <dd>{m.value}</dd>
-            </div>
+          facts.map(([label, value], i) => (
+            <>
+              {label}: {value}
+              {i < facts.length - 1 && <br />}
+            </>
           ))
         }
-      </dl>
-      <div class="project-text">
-        {paragraphs(d.text[lang]).map((p) => <p>{p}</p>)}
-      </div>
-    </section>
-
-    {
-      d.images.length > 0 && (
-        <section class="gallery">
-          {d.images.map((img) => (
-            <figure class:list={['gallery-item', `is-${img.size}`]}>
-              <Image
-                src={img.src}
-                alt={img.caption?.[lang] ?? d.title}
-                widths={img.size === 'full' ? [800, 1200, 1600, 2000, 2400] : [600, 900, 1200, 1600]}
-                sizes={img.size === 'full' ? '100vw' : '(max-width: 640px) 100vw, 50vw'}
-              />
-            </figure>
-          ))}
-        </section>
-      )
-    }
-
+      </p>
+      {paragraphs(d.text[lang]).map((p) => <p>{p}</p>)}
+    </div>
   </article>
 </Base>

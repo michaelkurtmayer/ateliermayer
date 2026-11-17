@@ -1,5 +1,10 @@
 ---
+// Header in two rows on the three-column grid:
+//   Atelier Mayer      Work        About                       FR DE
+//   La Gare …          L'Auberge … Le Musée …
+// On phones: the name and a menu button that opens all of the above.
 import LangSwitch from './LangSwitch.astro';
+import { getProjects } from '../lib/projects';
 import { localize, useTranslations, type Lang } from '../i18n/ui';
 import { site } from '../site';
 
@@ -10,26 +15,70 @@ interface Props {
 
 const { lang, path } = Astro.props;
 const t = useTranslations(lang);
-const links = [
-  { href: '/work/', label: t('nav.work') },
-  { href: '/about/', label: t('nav.about') },
-];
+const projects = await getProjects();
+const current = (href: string) => (path.startsWith(href) ? 'page' : undefined);
 ---
 
 <header class="site-header">
   <a class="wordmark" href={localize(lang, '/')}>{site.name}</a>
-  <nav class="nav" aria-label={site.name}>
-    <ul>
+
+  <!-- Phones only: opens the menu -->
+  <button
+    class="menu-button"
+    type="button"
+    aria-expanded="false"
+    aria-controls="site-menu"
+    aria-label={t('nav.menu')}
+    data-label-open={t('nav.menu')}
+    data-label-close={t('nav.close')}
+  >
+    <svg class="menu-icon-open" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M2 6h20M2 12h20M2 18h20" />
+    </svg>
+    <svg class="menu-icon-close" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 5l14 14M19 5L5 19" />
+    </svg>
+  </button>
+
+  <nav class="site-menu" id="site-menu" aria-label={site.name}>
+    <ul class="nav-main">
+      <li class="nav-work">
+        <a href={localize(lang, '/work/')} aria-current={current('/work/')}>{t('nav.work')}</a>
+      </li>
+      <li class="nav-about">
+        <a href={localize(lang, '/about/')} aria-current={current('/about/')}>{t('nav.about')}</a>
+      </li>
+    </ul>
+    <ul class="nav-projects">
       {
-        links.map((l) => (
+        projects.map((p) => (
           <li>
-            <a href={localize(lang, l.href)} aria-current={path.startsWith(l.href) ? 'page' : undefined}>
-              {l.label}
-            </a>
+            {p.data.cover ? (
+              <a href={localize(lang, `/work/${p.id}/`)} aria-current={current(`/work/${p.id}/`)}>
+                {p.data.title}
+              </a>
+            ) : (
+              <span>{p.data.title}</span>
+            )}
           </li>
         ))
       }
     </ul>
+    <LangSwitch lang={lang} path={path} class="header-langs" others />
   </nav>
-  <LangSwitch lang={lang} path={path} class="header-langs" />
 </header>
+
+<script>
+  const header = document.querySelector<HTMLElement>('.site-header');
+  const button = header?.querySelector<HTMLButtonElement>('.menu-button');
+  const setOpen = (open: boolean) => {
+    if (!header || !button) return;
+    header.classList.toggle('is-open', open);
+    button.setAttribute('aria-expanded', String(open));
+    button.setAttribute('aria-label', (open ? button.dataset.labelClose : button.dataset.labelOpen) ?? '');
+  };
+  button?.addEventListener('click', () => setOpen(!header?.classList.contains('is-open')));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setOpen(false);
+  });
+</script>

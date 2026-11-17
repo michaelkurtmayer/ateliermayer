@@ -25,22 +25,9 @@ const contact = [
 ---
 
 <Base lang={lang} title={t('about.title')}>
-  <section class="about">
+  <div class="text-page">
     <h1 class="visually-hidden">{t('about.title')}</h1>
-    <figure class="about-photo">
-      <Image
-        src={studio}
-        alt={photoAlt[lang]}
-        widths={[600, 900, 1200, 1600, 2000]}
-        sizes="(max-width: 900px) 100vw, 33vw"
-        loading="eager"
-      />
-    </figure>
-    <div class="about-body prose">
-      <Content />
-    </div>
-    <aside class="about-contact" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">{t('about.contact')}</h2>
+    <aside class="side-column" aria-label={t('about.contact')}>
       <ul>
         {
           contact.map((c) => (
@@ -51,5 +38,19 @@ const contact = [
         }
       </ul>
     </aside>
-  </section>
+    <div class="page-column">
+      <figure class="page-image">
+        <Image
+          src={studio}
+          alt={photoAlt[lang]}
+          widths={[600, 900, 1200, 1600]}
+          sizes="(max-width: 720px) 100vw, 44vw"
+          loading="eager"
+        />
+      </figure>
+      <div class="prose">
+        <Content />
+      </div>
+    </div>
+  </div>
 </Base>

@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import Base from '../../../layouts/Base.astro';
 import { getProjects } from '../../../lib/projects';
 import { langPaths, localize, useTranslations, type Lang } from '../../../i18n/ui';
@@ -12,43 +11,20 @@ const projects = await getProjects();
 ---
 
 <Base lang={lang} title={t('work.title')}>
-  <section class="work">
-    <h1 class="visually-hidden">{t('work.title')}</h1>
-    <div class="index">
-      <div class="index-head label" aria-hidden="true">
-        <span>{t('meta.project')}</span>
-        <span>{t('meta.type')}</span>
-        <span>{t('meta.year')}</span>
-      </div>
-      <ul class="index-list">
-        {
-          projects.map((p) => (
-            <li class:list={['row', { 'is-blank': !p.data.cover }]}>
-              {p.data.cover ? (
-                <a class="row-link" href={localize(lang, `/work/${p.id}/`)}>
-                  <span class="row-title">{p.data.title}</span>
-                  <span class="row-type">{p.data.type[lang]}</span>
-                  <span class="row-year">{p.data.year}</span>
-                  <span class="row-thumb">
-                    <Image
-                      src={p.data.cover}
-                      alt=""
-                      widths={[600, 900, 1200]}
-                      sizes="(max-width: 900px) 100vw, 40vw"
-                    />
-                  </span>
-                </a>
-              ) : (
-                <div class="row-link">
-                  <span class="row-title">{p.data.title}</span>
-                  <span class="row-type">{p.data.type[lang]}</span>
-                  <span class="row-year">{p.data.year}</span>
-                </div>
-              )}
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-  </section>
+  <h1 class="visually-hidden">{t('work.title')}</h1>
+  <ul class="work-list">
+    {
+      projects.map((p) => (
+        <li class="work-row">
+          {p.data.cover ? (
+            <a href={localize(lang, `/work/${p.id}/`)}>{p.data.title}</a>
+          ) : (
+            <span>{p.data.title}</span>
+          )}
+          <span>{p.data.type[lang]}</span>
+          <span>{p.data.year}</span>
+        </li>
+      ))
+    }
+  </ul>
 </Base>
