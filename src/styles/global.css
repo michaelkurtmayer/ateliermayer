@@ -117,7 +117,7 @@ a:hover {
 
 /* The shared 12-column grid */
 .site-header,
-.home-projects,
+.collage-grid,
 .project-head,
 .project-body,
 .gallery,
@@ -129,7 +129,7 @@ a:hover {
 
 /* Page margins */
 .site-header,
-.home,
+.collage,
 .work,
 .project,
 .about,
@@ -216,67 +216,67 @@ a:hover {
   }
 }
 
-/* ---------- Home: the three projects ---------- */
+/* ---------- Home: a collage of images and drawings ----------
+   Images from the projects, staggered on the 12-column grid in a
+   repeating pattern of six, with plenty of white space. */
 
-.home {
-  display: grid;
-  align-content: center;
-  min-height: calc(100vh - 140px);
-  padding-block: var(--space);
+.collage {
+  padding-block: clamp(24px, 4vw, 56px) 0;
 }
 
-.home-projects {
-  row-gap: 48px;
-  align-items: end; /* images of different heights share one caption line */
+.collage-grid {
+  row-gap: clamp(56px, 8vw, 140px);
+  align-items: start;
 }
 
-.home-project {
-  grid-column: span 4;
+.collage-item a {
+  display: block;
 }
 
-.home-project a:hover {
+.collage-item a:hover {
   color: inherit;
 }
 
-.home-project img {
+.collage-item img {
   width: 100%;
   transition: opacity 0.2s ease;
 }
 
-.home-project a:hover img {
-  opacity: 0.88;
+.collage-item a:hover img {
+  opacity: 0.9;
 }
 
-.home-text {
+/* The project's name appears under an image when you point at it */
+.collage-title {
   display: block;
-  margin-top: 10px;
-}
-
-/* A project without images: blank space the size of a landscape image */
-.home-blank {
-  display: block;
-  aspect-ratio: 3 / 2;
-}
-
-.home-project.is-blank,
-.home-project.is-blank .label {
+  margin-top: 8px;
   color: var(--muted);
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
-.home-text span {
-  display: block;
+.collage-item a:hover .collage-title,
+.collage-item a:focus-visible .collage-title {
+  opacity: 1;
 }
+
+.collage-item:nth-child(6n + 1) { grid-column: 1 / span 5; }
+.collage-item:nth-child(6n + 2) { grid-column: 8 / span 4; margin-top: 10vw; }
+.collage-item:nth-child(6n + 3) { grid-column: 3 / span 4; }
+.collage-item:nth-child(6n + 4) { grid-column: 8 / span 5; margin-top: 6vw; }
+.collage-item:nth-child(6n + 5) { grid-column: 1 / span 4; margin-top: 4vw; }
+.collage-item:nth-child(6n + 6) { grid-column: 6 / span 5; }
 
 @media (max-width: 720px) {
-  .home {
-    min-height: 0;
-    padding-block: 24px 0;
+  .collage-grid {
+    row-gap: 40px;
   }
-  .home-project {
+  .collage-item:nth-child(n) {
     grid-column: 1 / -1;
+    margin-top: 0;
   }
-  .home-blank {
-    display: none;
+  .collage-title {
+    opacity: 1;
   }
 }
 
