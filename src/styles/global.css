@@ -435,8 +435,9 @@ main {
 @media (max-width: 720px) {
   :root {
     --margin: 16px;
-    /* white space between the header and the page */
-    --phone-gap: 24px;
+    /* the header: the name with the same white space above and below it
+       (16 px, like the side margins), then the page right away */
+    --phone-header: 50px;
   }
 
   body {
@@ -444,16 +445,15 @@ main {
   }
 
   main {
-    padding-top: var(--phone-gap);
+    padding-top: 0;
     padding-bottom: 40px;
   }
 
   /* The name and a menu button; the button opens everything else */
   .site-header {
     position: relative;
-    height: auto;
-    min-height: 30px;
-    padding: 3px var(--margin);
+    height: var(--phone-header);
+    padding: 0 var(--margin);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -521,11 +521,11 @@ main {
     margin-top: 6px;
   }
 
-  /* never taller than the screen below the 30 px header and the gap */
+  /* never taller than the screen below the header */
   .slide img,
   .page-image img {
     width: 100%;
-    max-height: calc(100svh - 30px - var(--phone-gap));
+    max-height: calc(100svh - var(--phone-header));
     object-fit: contain;
     object-position: center;
   }
