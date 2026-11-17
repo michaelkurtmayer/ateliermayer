@@ -31,6 +31,8 @@ Michael's rules for this site. They hold in every session; see README.md for how
 - Captions only on project pages, in the left column under "Atelier Mayer" (under each image on
   phones): a simple name (Site plan, Ground floor plan, Cross section, Perspective…), the scale on
   the line below. Never the titles on the drawing sheets. None on the home page.
+- Text beside an image starts level with the top of the image or sheet (its edge), never with
+  the drawing inside the sheet; captions stay put as the images change.
 - Drawings with a `src2x` are served exactly as exported; never recompress them.
 - Simplicity first (reference: Pelletier de Fontenay; layout after the Zumthor Ferienhäuser site).
 

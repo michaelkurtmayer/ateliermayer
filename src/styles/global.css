@@ -248,8 +248,9 @@ main {
    top of the image: its name, then the scale. It moves with its image. */
 .slide-caption {
   position: absolute;
-  /* level with the top of the image, or of the drawing within its white margin */
-  top: calc(var(--caption-top, 0px) - var(--cap));
+  /* its letters level with the top of the image or sheet (the edge of the
+     picture, not the drawing inside it); it stays put as images change */
+  top: calc(-1 * var(--cap));
   left: var(--margin);
   width: calc((100% - 2 * var(--margin)) / 3 - var(--margin));
 }
