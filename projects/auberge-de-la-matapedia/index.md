@@ -42,17 +42,15 @@ text:
   de: |
     [Projektbeschreibung folgt: Standort, Programm, Konzept und Bauausführung. Zwei bis vier kurze Absätze.]
 
-# No images for now: without a cover the project shows blank in the lists,
-# can't be clicked and has no page. To bring the images back, remove the
-# '# ' at the start of the lines below.
-# cover: ./images/axo.jpg
+# No cover: the project page and the Work page thumbnails start with the first
+# image below. (Older images, not shown: ./images/axo.jpg, plan-ground.jpg, section.jpg.)
 #
-# # size: full (whole width), half (two side by side) or half-right (one image on the right half)
-# images:
-#   - src: ./images/plan-ground.jpg
-#     size: full
-#     caption: { fr: 'Plan du rez-de-chaussée, 1:50', en: 'Ground floor plan, 1:50', de: 'Grundriss des Erdgeschosses, 1:50' }
-#   - src: ./images/section.jpg
-#     size: full
-#     caption: { fr: 'Coupe transversale traversant le vestiaire, le salon et la chambre à coucher n° 4, 1:50', en: 'Section through the mudroom, lounge and bedroom 4, 1:50', de: 'Schnitt durch den Hauswirtschaftsraum, das Wohnzimmer und Schlafzimmer 4, 1:50' }
+# size: full (whole width), half (two side by side) or half-right (one image on the right half)
+# src2x: drawings only, the same drawing at twice the size; both files are then
+#   served exactly as exported (never recompressed), so the lines stay crisp
+images:
+  - src: ./images/section-d.jpg
+    src2x: ./images/section-d@2x.jpg
+    size: full
+    caption: { fr: 'Coupe transversale traversant le vestiaire, le salon et la chambre 4, à l’échelle 1:50', en: 'Section through the mudroom, lounge and bedroom 4, 1:50', de: 'Schnitt durch den Hauswirtschaftsraum, das Wohnzimmer und Schlafzimmer 4, Maßstab 1:50' }
 ---

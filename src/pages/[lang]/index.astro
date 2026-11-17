@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Slideshow from '../../components/Slideshow.astro';
-import { getPublishedProjects } from '../../lib/projects';
+import { getPublishedProjects, slidesOf } from '../../lib/projects';
 import { langPaths, type Lang } from '../../i18n/ui';
 import { site } from '../../site';
 
@@ -15,10 +15,7 @@ const projects = await getPublishedProjects();
 // images again, interleaved project by project.
 const SHOW_ALL = false;
 
-const perProject = projects.map((p) => [
-  { src: p.data.cover!, alt: p.data.title },
-  ...p.data.images.map((img) => ({ src: img.src, src2x: img.src2x, alt: img.caption?.[lang] ?? p.data.title })),
-]);
+const perProject = projects.map((p) => slidesOf(p, lang));
 const all = [];
 const longest = Math.max(...perProject.map((list) => list.length));
 for (let i = 0; i < longest; i++) {

@@ -23,7 +23,7 @@ const projects = defineCollection({
       context: t,
       summary: t,
       text: t,
-      cover: image().optional(), // no cover = blank, unclickable, no page
+      cover: image().optional(), // no cover and no images = blank, unclickable, no page
       images: z
         .array(
           z.object({

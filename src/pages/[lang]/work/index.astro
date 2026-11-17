@@ -4,7 +4,7 @@
 // page at that image. Several projects can be open at once.
 import { Image } from 'astro:assets';
 import Base from '../../../layouts/Base.astro';
-import { getProjects } from '../../../lib/projects';
+import { getProjects, slidesOf } from '../../../lib/projects';
 import { langPaths, localize, useTranslations, type Lang } from '../../../i18n/ui';
 
 export const getStaticPaths = langPaths;
@@ -14,13 +14,7 @@ const t = useTranslations(lang);
 const projects = await getProjects();
 
 // The same images, in the same order, as the project page's slideshow
-const imagesOf = (p: (typeof projects)[number]) =>
-  p.data.cover
-    ? [
-        { src: p.data.cover, alt: p.data.title },
-        ...p.data.images.map((img) => ({ src: img.src, alt: img.caption?.[lang] ?? p.data.title })),
-      ]
-    : [];
+const imagesOf = (p: (typeof projects)[number]) => slidesOf(p, lang);
 ---
 
 <Base lang={lang} title={t('work.title')}>
