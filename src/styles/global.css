@@ -14,9 +14,11 @@
   --font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --margin: 20px;
   --header: 90px;
-  /* Width of the image frame (3:2): 68 % of the window width, or less so that
-     the whole frame fits between the header and the bottom of the screen */
-  --slide-w: min(68vw, (100svh - var(--header) - 25px) * 1.5);
+  /* The tallest an image may be: a share of the screen height */
+  --img-h: 60svh;
+  /* Width of the image frame (3:2): 68 % of the window width at most, never
+     taller than --img-h, and always fitting below the header */
+  --slide-w: min(68vw, var(--img-h) * 1.5, (100svh - var(--header) - 25px) * 1.5);
 }
 
 /* ---------- Base ---------- */
@@ -226,10 +228,15 @@ main {
   scroll-snap-align: start;
 }
 
-.slide img {
-  width: var(--slide-w);
-  aspect-ratio: 3 / 2;
-  object-fit: contain;
+/* Computers: every image in the same 3:2 frame. (On phones each image keeps
+   its own proportions, taken from its width and height, so the page doesn't
+   jump while images load.) */
+@media (min-width: 721px) {
+  .slide img {
+    width: var(--slide-w);
+    aspect-ratio: 3 / 2;
+    object-fit: contain;
+  }
 }
 
 .slide-arrow {
@@ -286,6 +293,37 @@ main {
   line-height: 21.4286px;
 }
 
+/* A project with images: the row opens a band of thumbnails (as on
+   karamukkuo.com), 150 px tall at their own widths, 4 px apart */
+.work-item > summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.work-item > summary::-webkit-details-marker {
+  display: none;
+}
+
+.work-item > summary:hover {
+  opacity: 0.6;
+}
+
+.work-title {
+  color: var(--link);
+}
+
+.work-thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 0 18px;
+}
+
+.work-thumbs img {
+  width: auto;
+  height: 150px;
+}
+
 /* ---------- Text pages (About): side column + middle column ---------- */
 
 .text-page {
@@ -320,7 +358,7 @@ main {
 .page-image img {
   width: 100%;
   /* never taller than what fits below the header */
-  max-height: calc(100svh - var(--header) - 20px);
+  max-height: min(var(--img-h), 100svh - var(--header) - 20px);
   object-fit: contain;
   object-position: left top;
 }
@@ -438,7 +476,6 @@ main {
   .slide img,
   .page-image img {
     width: 100%;
-    aspect-ratio: auto;
     max-height: calc(100svh - 30px);
     object-fit: contain;
     object-position: center;
@@ -462,8 +499,12 @@ main {
     line-height: 20px;
   }
 
-  .work-row + .work-row {
+  .work-list li + li {
     margin-top: 14px;
+  }
+
+  .work-thumbs img {
+    height: 96px;
   }
 
   .work-row > :nth-child(2) {

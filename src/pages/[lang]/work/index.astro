@@ -1,4 +1,8 @@
 ---
+// The project list, as on karamukkuo.com: clicking a project opens a band of
+// thumbnails of all its images underneath; each thumbnail opens the project
+// page at that image. Only one project is open at a time.
+import { Image } from 'astro:assets';
 import Base from '../../../layouts/Base.astro';
 import { getProjects } from '../../../lib/projects';
 import { langPaths, localize, useTranslations, type Lang } from '../../../i18n/ui';
@@ -8,23 +12,51 @@ export const getStaticPaths = langPaths;
 const lang = Astro.params.lang as Lang;
 const t = useTranslations(lang);
 const projects = await getProjects();
+
+// The same images, in the same order, as the project page's slideshow
+const imagesOf = (p: (typeof projects)[number]) =>
+  p.data.cover
+    ? [
+        { src: p.data.cover, alt: p.data.title },
+        ...p.data.images.map((img) => ({ src: img.src, alt: img.caption?.[lang] ?? p.data.title })),
+      ]
+    : [];
 ---
 
 <Base lang={lang} title={t('work.title')}>
   <h1 class="visually-hidden">{t('work.title')}</h1>
   <ul class="work-list">
     {
-      projects.map((p) => (
-        <li class="work-row">
-          {p.data.cover ? (
-            <a href={localize(lang, `/work/${p.id}/`)}>{p.data.title}</a>
-          ) : (
-            <span>{p.data.title}</span>
-          )}
-          <span>{p.data.type[lang]}</span>
-          <span>{p.data.year}</span>
-        </li>
-      ))
+      projects.map((p) => {
+        const images = imagesOf(p);
+        const page = localize(lang, `/work/${p.id}/`);
+        return (
+          <li>
+            {images.length > 0 ? (
+              <details class="work-item" name="work">
+                <summary class="work-row">
+                  <span class="work-title">{p.data.title}</span>
+                  <span>{p.data.type[lang]}</span>
+                  <span>{p.data.year}</span>
+                </summary>
+                <div class="work-thumbs">
+                  {images.map((img, i) => (
+                    <a href={`${page}#slide-${i}`}>
+                      <Image src={img.src} alt={img.alt} height={150} densities={[1, 2]} quality={90} loading="lazy" />
+                    </a>
+                  ))}
+                </div>
+              </details>
+            ) : (
+              <div class="work-row">
+                <span>{p.data.title}</span>
+                <span>{p.data.type[lang]}</span>
+                <span>{p.data.year}</span>
+              </div>
+            )}
+          </li>
+        );
+      })
     }
   </ul>
 </Base>

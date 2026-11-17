@@ -80,6 +80,16 @@ const drawingSizes = (img: ImageMetadata) => {
       const next = (i + count) % count; // wraps around at both ends
       track.scrollTo({ left: next * track.clientWidth, behavior: 'smooth' });
     };
+    // A link ending in #slide-N (from the Work page thumbnails) opens image N
+    const match = location.hash.match(/^#slide-(\d+)$/);
+    const target = match ? track.children[Number(match[1])] : null;
+    if (target instanceof HTMLElement) {
+      if (getComputedStyle(track).display === 'flex') {
+        track.scrollLeft = Number(match![1]) * track.clientWidth; // desktop: that slide
+      } else {
+        target.scrollIntoView({ block: 'start' }); // phones: scroll down to it
+      }
+    }
     show.querySelector('.slide-prev')?.addEventListener('click', () => go(index() - 1));
     show.querySelector('.slide-next')?.addEventListener('click', () => go(index() + 1));
     document.addEventListener('keydown', (e) => {
