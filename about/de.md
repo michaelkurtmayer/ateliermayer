@@ -1,4 +1,5 @@
-<!-- Translated from en.md with DeepL, 17 Nov 2026. -->
+<!-- Translated from en.md with DeepL, 17 Nov 2026.
+     "Bachelor of Science" is a protected term: kept in English, never translated (see CLAUDE.md). -->
 
 Michael Kurt Mayer wurde in Montréal geboren und wuchs in der Region Montérégie in Québec auf.
 

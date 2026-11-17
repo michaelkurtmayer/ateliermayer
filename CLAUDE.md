@@ -11,6 +11,17 @@ Michael's rules for this site. They hold in every session; see README.md for how
   short or technical phrase comes back wrong, rephrase the English input so it is unambiguous
   (e.g. "Section A through the site" instead of "Site section A") and translate again.
 - If DeepL is unavailable, say so and ask before translating any other way.
+- **Protected terms** stay in English in every language and are never sent to DeepL as words.
+  DeepL translates them whatever the settings (e.g. "Bachelor of Science" → "baccalauréat ès
+  sciences", which Michael rejects). Before each DeepL call, replace every protected term with a
+  placeholder such as `XQBSCX` (DeepL leaves these untouched), translate, then put the English
+  term back. After writing, search the FR/DE files for any translated form of each term.
+
+  | Protected term | Must never become |
+  | --- | --- |
+  | Bachelor of Science | baccalauréat (ès/en) sciences, licence en sciences, Bachelor in … |
+
+  Add a term here whenever Michael says a name must not be translated.
 - His own word choices override DeepL: French bio "travaillé" (not "exercé"); the Hospitality type
   stays "Hôtellerie". Note any deviation in the file's translation comment.
 
