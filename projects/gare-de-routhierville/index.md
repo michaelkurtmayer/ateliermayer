@@ -39,13 +39,13 @@ text:
   de: |
     [Projektbeschreibung folgt: Standort, Programm, Konzept und Bauausführung. Zwei bis vier kurze Absätze.]
 
-cover: ./images/render.jpg
+cover: ./images/render-across-tracks.jpg
 
 # size: full (whole width), half (two side by side) or half-right (one image on the right half)
 images:
-  - src: ./images/render-detail.jpg
+  - src: ./images/render-down-tracks.jpg
     size: half-right
-    caption: { fr: 'Photomontage, détail', en: 'Photomontage, detail', de: 'Fotomontage, Ausschnitt' }
+    caption: { fr: 'Vue le long des voies', en: 'View down the tracks', de: 'Blick entlang der Gleise' }
   - src: ./images/plan-ground.jpg
     size: full
     caption: { fr: 'Plan du rez-de-chaussée, 1:50', en: 'Ground floor plan, 1:50', de: 'Grundriss des Erdgeschosses, 1:50' }
