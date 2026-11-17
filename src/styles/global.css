@@ -277,6 +277,29 @@ main {
   margin-top: calc(-1 * var(--cap));
 }
 
+/* Home page: the photo fills the whole window below the header, edge to
+   edge (cropped to fit, centred), and the page doesn't scroll */
+main:has(.slideshow-bleed) {
+  padding-bottom: 0;
+}
+
+.slideshow-bleed {
+  padding-top: 0;
+}
+
+.slideshow-bleed .slide {
+  padding-left: 0;
+}
+
+.slideshow-bleed .slide img {
+  width: 100%;
+  height: calc(100svh - var(--header));
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
 .slide-arrow {
   position: absolute;
   /* vertically centred on the image frame (3:2) */
@@ -514,6 +537,10 @@ main {
   .slide {
     display: block;
     padding-left: 0;
+  }
+
+  .slideshow-bleed .slide img {
+    height: calc(100svh - var(--phone-header));
   }
 
   /* Phones: the caption under its image */

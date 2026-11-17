@@ -28,5 +28,5 @@ const items = SHOW_ALL || !station ? all : [{ src: station.data.cover!, alt: sta
 
 <Base lang={lang}>
   <h1 class="visually-hidden">{site.name}</h1>
-  <Slideshow lang={lang} items={items} />
+  <Slideshow lang={lang} items={items} fullBleed={!SHOW_ALL} />
 </Base>

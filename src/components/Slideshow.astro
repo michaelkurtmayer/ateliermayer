@@ -8,10 +8,12 @@ import { useTranslations, type Lang } from '../i18n/ui';
 
 interface Props {
   lang: Lang;
+  /* the home page: one image filling the window below the header, edge to edge */
+  fullBleed?: boolean;
   items: { src: ImageMetadata; src2x?: ImageMetadata; text?: string; caption?: string; scale?: string; alt: string }[];
 }
 
-const { lang, items } = Astro.props;
+const { lang, items, fullBleed = false } = Astro.props;
 const t = useTranslations(lang);
 
 // Drawings (items with a 2x file) are served as exported, never recompressed:
@@ -62,7 +64,7 @@ const drawingSizes = (img: ImageMetadata) => {
 };
 ---
 
-<div class="slideshow" data-slideshow>
+<div class:list={['slideshow', { 'slideshow-bleed': fullBleed }]} data-slideshow>
   <div class="slides" tabindex="0">
     {
       items.map((item, i) => (
@@ -87,7 +89,7 @@ const drawingSizes = (img: ImageMetadata) => {
               src={item.src}
               alt={item.alt}
               widths={[600, 900, 1200, 1600, 2000, 2400]}
-              sizes="(max-width: 720px) 100vw, 68vw"
+              sizes={fullBleed ? '100vw' : '(max-width: 720px) 100vw, 68vw'}
               loading={i === 0 ? 'eager' : 'lazy'}
               fetchpriority={i === 0 ? 'high' : undefined}
             />
