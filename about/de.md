@@ -1,7 +1,4 @@
----
-# Translated from en.md with DeepL
-lead: Atelier Mayer ist das Architekturbüro von Michael Kurt Mayer.
----
+<!-- Translated from en.md with DeepL -->
 
 Michael Kurt Mayer wurde in Montréal geboren und wuchs in der Region Montérégie in Québec auf.
 

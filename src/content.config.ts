@@ -39,9 +39,7 @@ const projects = defineCollection({
 // About page: one Markdown file per language (fr.md, en.md, de.md).
 const about = defineCollection({
   loader: glob({ pattern: '*.md', base: './about' }),
-  schema: z.object({
-    lead: z.string(),
-  }),
+  schema: z.object({}),
 });
 
 export const collections = { projects, about };

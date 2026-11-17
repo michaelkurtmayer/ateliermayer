@@ -19,11 +19,10 @@ const contact = [
 ].filter(Boolean) as { text: string; href: string }[];
 ---
 
-<Base lang={lang} title={t('about.title')} description={entry.data.lead}>
+<Base lang={lang} title={t('about.title')}>
   <section class="about">
     <h1 class="visually-hidden">{t('about.title')}</h1>
     <div class="about-body prose">
-      <p>{entry.data.lead}</p>
       <Content />
     </div>
     <aside class="about-contact" aria-labelledby="contact-heading">

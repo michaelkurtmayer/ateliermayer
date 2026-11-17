@@ -31,7 +31,7 @@ const ui = {
     'about.title': 'About',
     'about.contact': 'Contact',
     'site.description':
-      'Atelier Mayer is the architecture practice of Michael Kurt Mayer.',
+      'Atelier Mayer — Michael Kurt Mayer, Montréal.',
     'skip': 'Skip to content',
   },
   fr: {
@@ -51,7 +51,7 @@ const ui = {
     'about.title': 'À propos',
     'about.contact': 'Contact',
     'site.description':
-      'Atelier Mayer est le cabinet d’architecture de Michael Kurt Mayer.',
+      'Atelier Mayer — Michael Kurt Mayer, Montréal.',
     'skip': 'Aller au contenu',
   },
   de: {
@@ -71,7 +71,7 @@ const ui = {
     'about.title': 'Profil',
     'about.contact': 'Kontakt',
     'site.description':
-      'Atelier Mayer ist das Architekturbüro von Michael Kurt Mayer.',
+      'Atelier Mayer — Michael Kurt Mayer, Montréal.',
     'skip': 'Zum Inhalt springen',
   },
 } as const;

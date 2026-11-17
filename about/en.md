@@ -1,7 +1,3 @@
----
-lead: Atelier Mayer is the architecture practice of Michael Kurt Mayer.
----
-
 Michael Kurt Mayer was born in Montréal and raised in the Montérégie region of Québec.
 
 He has practiced in Europe and North America. At Wulf Architekten in Germany, he worked on the Historische Oberamteistraße Museum in Reutlingen. He later joined Atelier Peter Zumthor in Switzerland, where he contributed to the new buildings for the Los Angeles County Museum of Art and the Fondation Beyeler. He founded Atelier Mayer in Montréal in 2026.
