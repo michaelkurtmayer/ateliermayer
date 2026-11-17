@@ -6,4 +6,4 @@ Er war in Europa und Nordamerika tätig. Bei Wulf Architekten in Deutschland arb
 
 Er hat einen Bachelor of Science in Architektur von der McGill University, wo er mit dem Derek-Drummond-Preis für Architektur und dem Wilfred-Truman-Shaver-Stipendium ausgezeichnet wurde. Derzeit absolviert er ein Masterstudium in Architektur an der Harvard University, wo ihm der Plimpton-Poorvu-Designpreis verliehen wurde. Während seines Studiums war er als wissenschaftlicher Mitarbeiter bei Salmaan Craig sowie als Lehrassistent bei Xaveer De Geyter und Adrien Verschuere tätig.
 
-Er besitzt die kanadische und die deutsche Staatsangehörigkeit und hat alle Prüfungen zur Zulassung als Architekt im Commonwealth of Massachusetts bestanden.
+Er besitzt die kanadische und die deutsche Staatsangehörigkeit und hat alle Prüfungen zur Zulassung als Architekt im Bundesstaat Massachusetts bestanden.

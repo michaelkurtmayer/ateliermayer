@@ -21,9 +21,9 @@ status:
   de: In Bearbeitung
 
 context:
-  fr: Thèse « Railway-Oriented Tourism », Harvard Graduate School of Design
+  fr: Mémoire de maîtrise « Railway-Oriented Tourism », Harvard Graduate School of Design
   en: Thesis “Railway-Oriented Tourism”, Harvard Graduate School of Design
-  de: Abschlussarbeit „Railway-Oriented Tourism“, Harvard Graduate School of Design
+  de: Masterarbeit „Railway-Oriented Tourism“, Harvard Graduate School of Design
 
 summary:
   fr: Un musée de la foresterie et une tour d’observation à Routhierville, dans la vallée de la Matapédia, au Québec.
@@ -48,7 +48,7 @@ images:
     caption: { fr: 'Photomontage, détail', en: 'Photomontage, detail', de: 'Fotomontage, Ausschnitt' }
   - src: ./images/plan-lookout.jpg
     size: full
-    caption: { fr: 'Plan d’étage du belvédère, 1:50', en: 'Lookout floor plan, 1:50', de: 'Grundriss der Aussichtsebene, 1:50' }
+    caption: { fr: 'Plan d’étage du belvédère, 1:50', en: 'Lookout floor plan, 1:50', de: 'Grundriss der Aussichtsplattform, 1:50' }
   - src: ./images/section-long.jpg
     size: half
     caption: { fr: 'Coupe longitudinale, 1:50', en: 'Long section, 1:50', de: 'Längsschnitt, 1:50' }

@@ -21,9 +21,9 @@ status:
   de: In Bearbeitung
 
 context:
-  fr: Thèse « Railway-Oriented Tourism », Harvard Graduate School of Design
+  fr: Mémoire de maîtrise « Railway-Oriented Tourism », Harvard Graduate School of Design
   en: Thesis “Railway-Oriented Tourism”, Harvard Graduate School of Design
-  de: Abschlussarbeit „Railway-Oriented Tourism“, Harvard Graduate School of Design
+  de: Masterarbeit „Railway-Oriented Tourism“, Harvard Graduate School of Design
 
 summary:
   fr: Une gare à Routhierville, dans la vallée de la Matapédia, au Québec.

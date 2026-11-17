@@ -21,9 +21,9 @@ status:
   de: In Bearbeitung
 
 context:
-  fr: Thèse « Railway-Oriented Tourism », Harvard Graduate School of Design
+  fr: Mémoire de maîtrise « Railway-Oriented Tourism », Harvard Graduate School of Design
   en: Thesis “Railway-Oriented Tourism”, Harvard Graduate School of Design
-  de: Abschlussarbeit „Railway-Oriented Tourism“, Harvard Graduate School of Design
+  de: Masterarbeit „Railway-Oriented Tourism“, Harvard Graduate School of Design
 
 summary:
   fr: Une auberge à Routhierville, dans la vallée de la Matapédia, au Québec.
@@ -48,5 +48,5 @@ images:
     caption: { fr: 'Plan du rez-de-chaussée, 1:50', en: 'Ground floor plan, 1:50', de: 'Grundriss des Erdgeschosses, 1:50' }
   - src: ./images/section.jpg
     size: full
-    caption: { fr: 'Coupe passant par le vestiaire, le salon et la chambre 4, 1:50', en: 'Section through the mudroom, lounge and bedroom 4, 1:50', de: 'Schnitt durch Windfang, Lounge und Zimmer 4, 1:50' }
+    caption: { fr: 'Coupe transversale traversant le vestiaire, le salon et la chambre à coucher n° 4, 1:50', en: 'Section through the mudroom, lounge and bedroom 4, 1:50', de: 'Schnitt durch den Hauswirtschaftsraum, das Wohnzimmer und Schlafzimmer 4, 1:50' }
 ---
