@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import { languageNames, langs, withBase } from '../i18n/ui';
+
+const messages = {
+  fr: 'Page introuvable.',
+  en: 'Page not found.',
+  de: 'Seite nicht gefunden.',
+};
+---
+
+<Base lang="en" title="404" alternates={false}>
+  <section class="not-found">
+    <h1 class="label">404</h1>
+    <ul>
+      {
+        langs.map((l) => (
+          <li lang={l}>
+            <span class="not-found-msg">{messages[l]}</span>
+            <a href={withBase(`/${l}/`)}>{languageNames[l]} →</a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Base>

@@ -1,0 +1,42 @@
+---
+import { getEntry, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { langPaths, useTranslations, type Lang } from '../../i18n/ui';
+import { site } from '../../site';
+
+export const getStaticPaths = langPaths;
+
+const lang = Astro.params.lang as Lang;
+const t = useTranslations(lang);
+const entry = await getEntry('about', lang);
+if (!entry) throw new Error(`Missing about/${lang}.md`);
+const { Content } = await render(entry);
+
+const contact = [
+  site.email && { text: site.email, href: `mailto:${site.email}` },
+  site.instagram && { text: 'Instagram', href: site.instagram },
+  site.linkedin && { text: 'LinkedIn', href: site.linkedin },
+].filter(Boolean) as { text: string; href: string }[];
+---
+
+<Base lang={lang} title={t('about.title')} description={entry.data.lead}>
+  <section class="about">
+    <h1 class="visually-hidden">{t('about.title')}</h1>
+    <div class="about-body prose">
+      <p>{entry.data.lead}</p>
+      <Content />
+    </div>
+    <aside class="about-contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">{t('about.contact')}</h2>
+      <ul>
+        {
+          contact.map((c) => (
+            <li>
+              <a href={c.href}>{c.text}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </aside>
+  </section>
+</Base>

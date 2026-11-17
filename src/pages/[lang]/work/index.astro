@@ -1,0 +1,46 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../../../layouts/Base.astro';
+import { getProjects } from '../../../lib/projects';
+import { langPaths, localize, useTranslations, type Lang } from '../../../i18n/ui';
+
+export const getStaticPaths = langPaths;
+
+const lang = Astro.params.lang as Lang;
+const t = useTranslations(lang);
+const projects = await getProjects();
+---
+
+<Base lang={lang} title={t('work.title')}>
+  <section class="work">
+    <h1 class="visually-hidden">{t('work.title')}</h1>
+    <div class="index">
+      <div class="index-head label" aria-hidden="true">
+        <span>{t('meta.project')}</span>
+        <span>{t('meta.programme')}</span>
+        <span>{t('meta.year')}</span>
+      </div>
+      <ul class="index-list">
+        {
+          projects.map((p) => (
+            <li class="row">
+              <a href={localize(lang, `/work/${p.id}/`)}>
+                <span class="row-title">{p.data.title}</span>
+                <span class="row-programme">{p.data.programme[lang]}</span>
+                <span class="row-year">{p.data.year}</span>
+                <span class="row-thumb">
+                  <Image
+                    src={p.data.cover}
+                    alt=""
+                    widths={[600, 900, 1200]}
+                    sizes="(max-width: 900px) 100vw, 40vw"
+                  />
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</Base>

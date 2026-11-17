@@ -1,0 +1,46 @@
+---
+// The bare address (ateliermayer.ca) sends visitors to their language:
+// the one they last used here, else their browser's, else the default.
+import '../styles/global.css';
+import { defaultLang, languageNames, langs, withBase } from '../i18n/ui';
+import { site } from '../site';
+---
+
+<!doctype html>
+<html lang={defaultLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{site.name}</title>
+    <link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml" />
+    {langs.map((l) => <link rel="alternate" hreflang={l} href={new URL(withBase(`/${l}/`), Astro.site)} />)}
+    <script is:inline define:vars={{ supported: langs, fallback: defaultLang, base: withBase('/').replace(/\/$/, '') }}>
+      var pick = null;
+      try { pick = localStorage.getItem('lang'); } catch (e) {}
+      if (supported.indexOf(pick) === -1) {
+        pick = fallback;
+        var list = navigator.languages || [navigator.language || ''];
+        for (var i = 0; i < list.length; i++) {
+          var code = String(list[i] || '').slice(0, 2).toLowerCase();
+          if (supported.indexOf(code) !== -1) { pick = code; break; }
+        }
+      }
+      location.replace(base + '/' + pick + '/');
+    </script>
+    <noscript><meta http-equiv="refresh" content={`0; url=${withBase(`/${defaultLang}/`)}`} /></noscript>
+  </head>
+  <body class="chooser">
+    <p class="wordmark">{site.name}</p>
+    <ul class="langs">
+      {
+        langs.map((l) => (
+          <li>
+            <a href={withBase(`/${l}/`)} hreflang={l} lang={l}>
+              {languageNames[l]}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+---
+import { Image, getImage } from 'astro:assets';
+import Base from '../../../layouts/Base.astro';
+import { getProjects } from '../../../lib/projects';
+import { langs, localize, paragraphs, useTranslations, type Lang } from '../../../i18n/ui';
+
+export async function getStaticPaths() {
+  const projects = await getProjects();
+  return langs.flatMap((lang) =>
+    projects.map((project, i) => ({
+      params: { lang, slug: project.id },
+      props: {
+        project,
+        previous: projects[(i - 1 + projects.length) % projects.length],
+        next: projects[(i + 1) % projects.length],
+      },
+    })),
+  );
+}
+
+const { project, previous, next } = Astro.props;
+const lang = Astro.params.lang as Lang;
+const t = useTranslations(lang);
+const d = project.data;
+const og = await getImage({ src: d.cover, width: 1200, format: 'jpg' });
+
+const meta = [
+  { label: t('meta.programme'), value: d.programme[lang] },
+  { label: t('meta.location'), value: d.location },
+  { label: t('meta.year'), value: d.year },
+  { label: t('meta.status'), value: d.status[lang] },
+  { label: t('meta.context'), value: d.context[lang] },
+];
+---
+
+<Base lang={lang} title={d.title} description={d.summary[lang]} ogImage={og.src}>
+  <article class="project">
+    <header class="project-head">
+      <h1 class="project-title">{d.title}</h1>
+      <p class="project-summary">{d.summary[lang]}</p>
+    </header>
+
+    <figure class="project-cover">
+      <Image
+        src={d.cover}
+        alt={d.title}
+        widths={[800, 1200, 1600, 2000, 2400]}
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </figure>
+
+    <section class="project-body">
+      <dl class="meta">
+        {
+          meta.map((m) => (
+            <div class="meta-item">
+              <dt>{m.label}</dt>
+              <dd>{m.value}</dd>
+            </div>
+          ))
+        }
+      </dl>
+      <div class="project-text">
+        {paragraphs(d.text[lang]).map((p) => <p>{p}</p>)}
+      </div>
+    </section>
+
+    {
+      d.images.length > 0 && (
+        <section class="gallery">
+          {d.images.map((img) => (
+            <figure class:list={['gallery-item', `is-${img.size}`]}>
+              <Image
+                src={img.src}
+                alt={img.caption?.[lang] ?? d.title}
+                widths={img.size === 'full' ? [800, 1200, 1600, 2000, 2400] : [600, 900, 1200, 1600]}
+                sizes={img.size === 'full' ? '100vw' : '(max-width: 640px) 100vw, 50vw'}
+              />
+              {img.caption && <figcaption>{img.caption[lang]}</figcaption>}
+            </figure>
+          ))}
+        </section>
+      )
+    }
+
+    <nav class="project-nav" aria-label={t('project.all')}>
+      <a class="project-nav-prev" href={localize(lang, `/work/${previous.id}/`)} title={t('project.previous')}>
+        ← {previous.data.title}
+      </a>
+      <a class="project-nav-all" href={localize(lang, '/work/')}>{t('project.all')}</a>
+      <a class="project-nav-next" href={localize(lang, `/work/${next.id}/`)} title={t('project.next')}>
+        {next.data.title} →
+      </a>
+    </nav>
+  </article>
+</Base>
