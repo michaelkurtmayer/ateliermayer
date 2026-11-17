@@ -435,6 +435,8 @@ main {
 @media (max-width: 720px) {
   :root {
     --margin: 16px;
+    /* white space between the header and the page */
+    --phone-gap: 24px;
   }
 
   body {
@@ -442,7 +444,7 @@ main {
   }
 
   main {
-    padding-top: 0;
+    padding-top: var(--phone-gap);
     padding-bottom: 40px;
   }
 
@@ -519,11 +521,11 @@ main {
     margin-top: 6px;
   }
 
-  /* never taller than the screen below the 30 px header */
+  /* never taller than the screen below the 30 px header and the gap */
   .slide img,
   .page-image img {
     width: 100%;
-    max-height: calc(100svh - 30px);
+    max-height: calc(100svh - 30px - var(--phone-gap));
     object-fit: contain;
     object-position: center;
   }
@@ -536,7 +538,7 @@ main {
     width: auto;
     min-height: 0;
     display: block;
-    padding: 16px var(--margin) 10px;
+    padding: 0 var(--margin) 10px;
   }
 
   .slide-text-column {
@@ -549,7 +551,7 @@ main {
   }
 
   .work-list {
-    padding-top: 16px;
+    padding-top: 0;
   }
 
   .work-row {
@@ -599,6 +601,6 @@ main {
   }
 
   .not-found {
-    padding-top: 16px;
+    padding-top: 0;
   }
 }
