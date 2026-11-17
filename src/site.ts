@@ -22,6 +22,9 @@ export const site = {
       },
     },
   ] as { email: string; title: Record<'fr' | 'en' | 'de', string>; note?: Record<'fr' | 'en' | 'de', string> }[],
+  // Cloudflare Web Analytics (cookie-free visitor counts): the token from the snippet that
+  // Cloudflare gives under Web Analytics > ateliermayer.ca. Empty = no analytics.
+  cloudflareAnalyticsToken: '1a9f9d35b3f140c282e4e4748fbb7fc9',
   instagram: '', // e.g. 'https://www.instagram.com/ateliermayer/'
   linkedin: '', // e.g. 'https://www.linkedin.com/in/...'
 };

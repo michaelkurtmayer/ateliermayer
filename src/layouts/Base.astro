@@ -57,6 +57,17 @@ const ogLocale: Record<Lang, string> = { fr: 'fr_CA', en: 'en_CA', de: 'de_DE' }
     <script is:inline>
       try { localStorage.setItem('lang', document.documentElement.lang); } catch (e) {}
     </script>
+    {
+      /* Cloudflare Web Analytics: cookie-free visit counts, published site only */
+      site.cloudflareAnalyticsToken && import.meta.env.PROD && (
+        <script
+          is:inline
+          type="module"
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon={JSON.stringify({ token: site.cloudflareAnalyticsToken })}
+        />
+      )
+    }
   </head>
   <body>
     <a class="skip" href="#main">{t('skip')}</a>
