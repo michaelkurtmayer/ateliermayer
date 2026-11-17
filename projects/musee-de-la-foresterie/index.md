@@ -45,14 +45,19 @@ text:
 cover: ./images/render-clearcut.jpg
 
 # size: full (whole width), half (two side by side) or half-right (one image on the right half)
+# src2x: drawings only, the same drawing at twice the size; both files are then
+#   served exactly as exported (never recompressed), so the lines stay crisp
 images:
   - src: ./images/plan-lookout.jpg
+    src2x: ./images/plan-lookout@2x.jpg
     size: full
     caption: { fr: 'Plan d’étage du belvédère, 1:50', en: 'Lookout floor plan, 1:50', de: 'Grundriss der Aussichtsplattform, 1:50' }
   - src: ./images/section-long.jpg
+    src2x: ./images/section-long@2x.jpg
     size: half
     caption: { fr: 'Coupe longitudinale, 1:50', en: 'Long section, 1:50', de: 'Längsschnitt, 1:50' }
   - src: ./images/section-cross.jpg
+    src2x: ./images/section-cross@2x.jpg
     size: half
     caption: { fr: 'Coupe transversale, 1:50', en: 'Cross section, 1:50', de: 'Querschnitt, 1:50' }
 ---

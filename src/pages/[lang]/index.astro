@@ -15,7 +15,7 @@ const projects = await getPublishedProjects();
 // interleaved project by project.
 const perProject = projects.map((p) => [
   { src: p.data.cover!, alt: p.data.title },
-  ...p.data.images.map((img) => ({ src: img.src, alt: img.caption?.[lang] ?? p.data.title })),
+  ...p.data.images.map((img) => ({ src: img.src, src2x: img.src2x, alt: img.caption?.[lang] ?? p.data.title })),
 ]);
 const longest = Math.max(...perProject.map((list) => list.length));
 const items = [];

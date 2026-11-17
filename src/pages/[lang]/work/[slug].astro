@@ -23,7 +23,7 @@ const og = await getImage({ src: d.cover!, width: 1200, format: 'jpg' });
 
 const items = [
   { src: d.cover!, alt: d.title },
-  ...d.images.map((img) => ({ src: img.src, alt: img.caption?.[lang] ?? d.title })),
+  ...d.images.map((img) => ({ src: img.src, src2x: img.src2x, alt: img.caption?.[lang] ?? d.title })),
 ];
 
 const facts = [

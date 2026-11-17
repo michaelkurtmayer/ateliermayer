@@ -28,6 +28,9 @@ const projects = defineCollection({
         .array(
           z.object({
             src: image(),
+            // Drawings: a version at twice the size. With it, both files are
+            // served exactly as exported (never recompressed), so lines stay crisp.
+            src2x: image().optional(),
             size: z.enum(['full', 'half', 'half-right']).default('full'),
             caption: t.optional(),
           }),
