@@ -2,23 +2,19 @@
 import { Image, getImage } from 'astro:assets';
 import Base from '../../../layouts/Base.astro';
 import { getPublishedProjects } from '../../../lib/projects';
-import { langs, localize, paragraphs, useTranslations, type Lang } from '../../../i18n/ui';
+import { langs, paragraphs, useTranslations, type Lang } from '../../../i18n/ui';
 
 export async function getStaticPaths() {
   const projects = await getPublishedProjects();
   return langs.flatMap((lang) =>
-    projects.map((project, i) => ({
+    projects.map((project) => ({
       params: { lang, slug: project.id },
-      props: {
-        project,
-        previous: projects[(i - 1 + projects.length) % projects.length],
-        next: projects[(i + 1) % projects.length],
-      },
+      props: { project },
     })),
   );
 }
 
-const { project, previous, next } = Astro.props;
+const { project } = Astro.props;
 const lang = Astro.params.lang as Lang;
 const t = useTranslations(lang);
 const d = project.data;
@@ -78,21 +74,11 @@ const meta = [
                 widths={img.size === 'full' ? [800, 1200, 1600, 2000, 2400] : [600, 900, 1200, 1600]}
                 sizes={img.size === 'full' ? '100vw' : '(max-width: 640px) 100vw, 50vw'}
               />
-              {img.caption && <figcaption>{img.caption[lang]}</figcaption>}
             </figure>
           ))}
         </section>
       )
     }
 
-    <nav class="project-nav" aria-label={t('project.all')}>
-      <a class="project-nav-prev" href={localize(lang, `/work/${previous.id}/`)} title={t('project.previous')}>
-        ← {previous.data.title}
-      </a>
-      <a class="project-nav-all" href={localize(lang, '/work/')}>{t('project.all')}</a>
-      <a class="project-nav-next" href={localize(lang, `/work/${next.id}/`)} title={t('project.next')}>
-        {next.data.title} →
-      </a>
-    </nav>
   </article>
 </Base>

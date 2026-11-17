@@ -25,9 +25,6 @@ const ui = {
     'meta.year': 'Year',
     'meta.status': 'Status',
     'meta.context': 'Context',
-    'project.previous': 'Previous project',
-    'project.next': 'Next project',
-    'project.all': 'All projects',
     'about.title': 'About',
     'about.contact': 'Contact',
     'site.description':
@@ -45,9 +42,6 @@ const ui = {
     'meta.year': 'Année',
     'meta.status': 'Statut',
     'meta.context': 'Contexte',
-    'project.previous': 'Projet précédent',
-    'project.next': 'Prochain projet',
-    'project.all': 'Tous les projets',
     'about.title': 'À propos',
     'about.contact': 'Contact',
     'site.description':
@@ -65,9 +59,6 @@ const ui = {
     'meta.year': 'Jahr',
     'meta.status': 'Status',
     'meta.context': 'Kontext',
-    'project.previous': 'Vorheriges Projekt',
-    'project.next': 'Nächstes Projekt',
-    'project.all': 'Alle Projekte',
     'about.title': 'Über',
     'about.contact': 'Kontakt',
     'site.description':
