@@ -10,18 +10,23 @@ export const getStaticPaths = langPaths;
 const lang = Astro.params.lang as Lang;
 const projects = await getPublishedProjects();
 
-// Every image of every project (cover first, then the page's images),
-// interleaved project by project.
+// For now the home page shows a single image: the station seen from the
+// tracks (the station's cover). Set SHOW_ALL to true to show every project's
+// images again, interleaved project by project.
+const SHOW_ALL = false;
+
 const perProject = projects.map((p) => [
   { src: p.data.cover!, alt: p.data.title },
   ...p.data.images.map((img) => ({ src: img.src, src2x: img.src2x, alt: img.caption?.[lang] ?? p.data.title })),
 ]);
+const all = [];
 const longest = Math.max(...perProject.map((list) => list.length));
-const items = [];
 for (let i = 0; i < longest; i++) {
-  for (const list of perProject) if (list[i]) items.push(list[i]);
+  for (const list of perProject) if (list[i]) all.push(list[i]);
 }
 
+const station = projects.find((p) => p.id === 'gare-de-routhierville');
+const items = SHOW_ALL || !station ? all : [{ src: station.data.cover!, alt: station.data.title }];
 ---
 
 <Base lang={lang}>
