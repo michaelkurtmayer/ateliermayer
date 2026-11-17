@@ -1,10 +1,9 @@
 ---
-// Header in two rows on the three-column grid:
+// Header in one row on the three-column grid:
 //   Atelier Mayer      Work        About                       FR DE
-//   La Gare …          L'Auberge … Le Musée …
+// The project names appear only on the Work page.
 // On phones: the name and a menu button that opens all of the above.
 import LangSwitch from './LangSwitch.astro';
-import { getProjects } from '../lib/projects';
 import { localize, useTranslations, type Lang } from '../i18n/ui';
 import { site } from '../site';
 
@@ -15,7 +14,6 @@ interface Props {
 
 const { lang, path } = Astro.props;
 const t = useTranslations(lang);
-const projects = await getProjects();
 const current = (href: string) => (path.startsWith(href) ? 'page' : undefined);
 ---
 
@@ -49,22 +47,7 @@ const current = (href: string) => (path.startsWith(href) ? 'page' : undefined);
         <a href={localize(lang, '/about/')} aria-current={current('/about/')}>{t('nav.about')}</a>
       </li>
     </ul>
-    <ul class="nav-projects">
-      {
-        projects.map((p) => (
-          <li>
-            {p.data.cover ? (
-              <a href={localize(lang, `/work/${p.id}/`)} aria-current={current(`/work/${p.id}/`)}>
-                {p.data.title}
-              </a>
-            ) : (
-              <span>{p.data.title}</span>
-            )}
-          </li>
-        ))
-      }
-    </ul>
-    <LangSwitch lang={lang} path={path} class="header-langs" others />
+    <LangSwitch lang={lang} path={path} class="header-langs" />
   </nav>
 </header>
 

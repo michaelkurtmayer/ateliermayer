@@ -17,8 +17,7 @@ const { Content } = await render(entry);
 // Description of the photo for screen readers (translated with DeepL)
 const photoAlt: Record<Lang, string> = { fr: 'En studio', en: 'In the studio', de: 'Im Studio' };
 
-const contact = [
-  site.email && { text: site.email, href: `mailto:${site.email}` },
+const social = [
   site.instagram && { text: 'Instagram', href: site.instagram },
   site.linkedin && { text: 'LinkedIn', href: site.linkedin },
 ].filter(Boolean) as { text: string; href: string }[];
@@ -28,15 +27,36 @@ const contact = [
   <div class="text-page">
     <h1 class="visually-hidden">{t('about.title')}</h1>
     <aside class="side-column" aria-label={t('about.contact')}>
-      <ul>
-        {
-          contact.map((c) => (
-            <li>
-              <a href={c.href}>{c.text}</a>
-            </li>
-          ))
-        }
-      </ul>
+      {
+        (site.city || site.phone) && (
+          <p>
+            {site.city}
+            {site.city && site.phone && <br />}
+            {site.phone && <a href={`tel:${site.phone.replace(/\s+/g, '')}`}>{site.phone}</a>}
+          </p>
+        )
+      }
+      {
+        site.contacts.map((c) => (
+          <p>
+            {c.title[lang]}
+            <br />
+            <a href={`mailto:${c.email}`}>{c.email}</a>
+          </p>
+        ))
+      }
+      {
+        social.length > 0 && (
+          <p>
+            {social.map((s, i) => (
+              <>
+                {i > 0 && <br />}
+                <a href={s.href}>{s.text}</a>
+              </>
+            ))}
+          </p>
+        )
+      }
     </aside>
     <div class="page-column">
       <figure class="page-image">

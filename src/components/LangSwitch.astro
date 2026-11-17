@@ -5,18 +5,16 @@ interface Props {
   lang: Lang;
   path: string;
   class?: string;
-  /** Show only the other languages (the current one is left out). */
-  others?: boolean;
 }
 
-const { lang, path, class: className, others = false } = Astro.props;
+// All three languages, always; the current one is shown greyed out.
+const { lang, path, class: className } = Astro.props;
 const t = useTranslations(lang);
-const shown = others ? langs.filter((l) => l !== lang) : langs;
 ---
 
 <ul class:list={['langs', className]} aria-label={t('nav.language')}>
   {
-    shown.map((l) => (
+    langs.map((l) => (
       <li>
         <a
           href={localize(l, path)}

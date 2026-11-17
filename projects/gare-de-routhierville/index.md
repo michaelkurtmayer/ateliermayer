@@ -51,6 +51,11 @@ images:
   - src: ./images/render-across-tracks.jpg
     size: full
     caption: { fr: 'Vue depuis l’autre côté des voies', en: 'View across the tracks', de: 'Blick über die Gleise' }
+  # Site plan: on hold until it is redrawn with the inn (drawings session, 17 Nov)
+  # - src: ./images/site-plan.jpg
+  #   src2x: ./images/site-plan@2x.jpg
+  #   size: full
+  #   caption: { fr: 'Plan de situation, 1:1000', en: 'Site plan, 1:1000', de: 'Lageplan, 1:1000' }
   - src: ./images/plan-ground.jpg
     src2x: ./images/plan-ground@2x.jpg
     size: full

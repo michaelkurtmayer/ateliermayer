@@ -1,10 +1,11 @@
 /* Atelier Mayer — global styles
    Modelled on the Zumthor Ferienhäuser site: Helvetica Neue at one size
    (15 px, 18 px lines), dark grey text and black links on white, 20 px page
-   margins, three equal columns, a fixed two-row header, one large image at a
-   time (68 % of the window width) with the text below in the middle column.
-   No dividing lines anywhere. Phones: the name and a menu button, images
-   stacked edge to edge. */
+   margins, three equal columns, a fixed one-row header, one large image at a
+   time with the text below in the middle column. Every image always fits on
+   the screen whole: 68 % of the window width at most, smaller when the window
+   is too short. No dividing lines anywhere. Phones: the name and a menu
+   button, images stacked edge to edge. */
 
 :root {
   --text: #333;
@@ -12,7 +13,10 @@
   --bg: #fff;
   --font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --margin: 20px;
-  --header: 150px;
+  --header: 90px;
+  /* Width of the image frame (3:2): 68 % of the window width, or less so that
+     the whole frame fits between the header and the bottom of the screen */
+  --slide-w: min(68vw, (100svh - var(--header) - 25px) * 1.5);
 }
 
 /* ---------- Base ---------- */
@@ -109,8 +113,8 @@ main {
 }
 
 /* ---------- Header ----------
-   Row 1: name / Work / About, languages at the far right.
-   Row 2: the projects. Each item sits at the start of its column. */
+   One row: name / Work / About, languages at the far right.
+   Each item sits at the start of its column. */
 
 .site-header {
   position: fixed;
@@ -123,8 +127,7 @@ main {
   background: var(--bg);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 21px 21px;
-  row-gap: 40px;
+  grid-template-rows: 21px;
   align-content: start;
   line-height: 21.4286px;
 }
@@ -135,8 +138,7 @@ main {
 }
 
 .site-menu,
-.nav-main,
-.nav-projects {
+.nav-main {
   display: contents;
 }
 
@@ -148,22 +150,6 @@ main {
   grid-area: 1 / 3;
 }
 
-.nav-projects li {
-  grid-row: 2;
-}
-
-.nav-projects li:nth-child(3n + 1) {
-  grid-column: 1;
-}
-
-.nav-projects li:nth-child(3n + 2) {
-  grid-column: 2;
-}
-
-.nav-projects li:nth-child(3n + 3) {
-  grid-column: 3;
-}
-
 .wordmark,
 .site-menu li {
   white-space: nowrap;
@@ -172,6 +158,11 @@ main {
 .langs {
   display: flex;
   gap: 0.6em;
+}
+
+/* The language being read, greyed out */
+.langs a[aria-current] {
+  opacity: 0.35;
 }
 
 .header-langs {
@@ -236,15 +227,15 @@ main {
 }
 
 .slide img {
-  width: 68vw;
+  width: var(--slide-w);
   aspect-ratio: 3 / 2;
   object-fit: contain;
 }
 
 .slide-arrow {
   position: absolute;
-  /* vertically centred on the image (68vw wide, 3:2) */
-  top: calc(5px + 68vw / 3 - 19px);
+  /* vertically centred on the image frame (3:2) */
+  top: calc(5px + var(--slide-w) / 3 - 19px);
   width: 50px;
   height: 38px;
   padding: 0;
@@ -308,6 +299,15 @@ main {
   padding-top: 17px;
 }
 
+/* City, then each address under its title, a blank line between them */
+.side-column p {
+  margin-bottom: 18px;
+}
+
+.side-column p:last-child {
+  margin-bottom: 0;
+}
+
 .page-column {
   grid-column: 2 / 4;
   width: min(44vw, 662px);
@@ -319,6 +319,10 @@ main {
 
 .page-image img {
   width: 100%;
+  /* never taller than what fits below the header */
+  max-height: calc(100svh - var(--header) - 20px);
+  object-fit: contain;
+  object-position: left top;
 }
 
 /* ---------- 404 and the language chooser ---------- */
@@ -399,8 +403,7 @@ main {
     background: var(--bg);
   }
 
-  .site-header.is-open .nav-main,
-  .site-header.is-open .nav-projects {
+  .site-header.is-open .nav-main {
     display: block;
   }
 
@@ -431,10 +434,14 @@ main {
     margin-top: 6px;
   }
 
-  .slide img {
+  /* never taller than the screen below the 30 px header */
+  .slide img,
+  .page-image img {
     width: 100%;
     aspect-ratio: auto;
-    object-fit: initial;
+    max-height: calc(100svh - 30px);
+    object-fit: contain;
+    object-position: center;
   }
 
   .slide-arrow {

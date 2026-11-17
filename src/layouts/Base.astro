@@ -8,11 +8,10 @@ interface Props {
   lang: Lang;
   title?: string;
   description?: string;
-  ogImage?: string;
   alternates?: boolean;
 }
 
-const { lang, title, description, ogImage, alternates = true } = Astro.props;
+const { lang, title, description, alternates = true } = Astro.props;
 const t = useTranslations(lang);
 // Language links point at the same page in the other language
 // (or at each home page when there is no translated equivalent, e.g. 404).
@@ -30,9 +29,9 @@ const ogLocale: Record<Lang, string> = { fr: 'fr_CA', en: 'en_CA', de: 'de_DE' }
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={desc} />
-    <link rel="icon" href={withBase('/favicon.ico')} sizes="32x32" />
-    <link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml" />
-    <link rel="apple-touch-icon" href={withBase('/apple-touch-icon.png')} />
+    <link rel="icon" href={withBase('/favicon.ico?v=2')} sizes="32x32" />
+    <link rel="icon" href={withBase('/favicon.svg?v=2')} type="image/svg+xml" />
+    <link rel="apple-touch-icon" href={withBase('/apple-touch-icon.png?v=2')} />
     {
       alternates && (
         <>
@@ -50,7 +49,11 @@ const ogLocale: Record<Lang, string> = { fr: 'fr_CA', en: 'en_CA', de: 'de_DE' }
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content={ogLocale[lang]} />
-    {ogImage && <meta property="og:image" content={new URL(ogImage, Astro.site)} />}
+    <!-- Link previews (messages, social media) show the black circle -->
+    <meta property="og:image" content={new URL(withBase('/share.png'), Astro.site)} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={site.name} />
     <script is:inline>
       try { localStorage.setItem('lang', document.documentElement.lang); } catch (e) {}
     </script>

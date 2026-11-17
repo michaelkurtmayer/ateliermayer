@@ -1,5 +1,4 @@
 ---
-import { getImage } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import Slideshow from '../../components/Slideshow.astro';
 import { getPublishedProjects } from '../../lib/projects';
@@ -23,10 +22,9 @@ for (let i = 0; i < longest; i++) {
   for (const list of perProject) if (list[i]) items.push(list[i]);
 }
 
-const og = await getImage({ src: projects[0].data.cover!, width: 1200, format: 'jpg' });
 ---
 
-<Base lang={lang} ogImage={og.src}>
+<Base lang={lang}>
   <h1 class="visually-hidden">{site.name}</h1>
   <Slideshow lang={lang} items={items} />
 </Base>

@@ -32,7 +32,7 @@ lists where each file came from in the thesis folder.
 | A project's text, facts, images    | `projects/<project>/index.md`                            |
 | A project's images                 | `projects/<project>/images/`                             |
 | The About page (bio, CV)           | `about/fr.md`, `en.md`, `de.md`                          |
-| Email and social links             | `src/site.ts`                                            |
+| City, email addresses, social links | `src/site.ts` (new addresses also need a Porkbun forward) |
 | Menu labels and other small text   | `src/i18n/ui.ts`                                         |
 | Colours, type sizes, layout        | `src/styles/global.css`                                  |
 
