@@ -111,10 +111,14 @@ export function langPaths() {
   return langs.map((lang) => ({ params: { lang } }));
 }
 
-/** Splits a block of text on blank lines into paragraphs. */
+/**
+ * Splits a block of text on blank lines into paragraphs.
+ * A paragraph wrapped in [square brackets] is a placeholder still to be
+ * written, and is left off the page.
+ */
 export function paragraphs(text: string): string[] {
   return text
     .split(/\n\s*\n/)
     .map((p) => p.trim())
-    .filter(Boolean);
+    .filter((p) => p && !/^\[[\s\S]*\]$/.test(p));
 }
