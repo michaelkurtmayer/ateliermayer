@@ -18,7 +18,7 @@ const projects = defineCollection({
       order: z.number(),
       year: z.string(),
       location: z.string(),
-      programme: t,
+      type: t,
       status: t,
       context: t,
       summary: t,

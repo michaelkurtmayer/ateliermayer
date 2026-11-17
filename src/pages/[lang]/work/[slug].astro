@@ -25,7 +25,7 @@ const d = project.data;
 const og = await getImage({ src: d.cover, width: 1200, format: 'jpg' });
 
 const meta = [
-  { label: t('meta.programme'), value: d.programme[lang] },
+  { label: t('meta.type'), value: d.type[lang] },
   { label: t('meta.location'), value: d.location },
   { label: t('meta.year'), value: d.year },
   { label: t('meta.status'), value: d.status[lang] },

@@ -10,7 +10,7 @@ order: 2
 year: '2026'
 location: Routhierville, Québec
 
-programme:
+type:
   fr: Auberge
   en: Inn
   de: Gasthaus

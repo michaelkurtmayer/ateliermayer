@@ -17,7 +17,7 @@ const projects = await getProjects();
     <div class="index">
       <div class="index-head label" aria-hidden="true">
         <span>{t('meta.project')}</span>
-        <span>{t('meta.programme')}</span>
+        <span>{t('meta.type')}</span>
         <span>{t('meta.year')}</span>
       </div>
       <ul class="index-list">
@@ -26,7 +26,7 @@ const projects = await getProjects();
             <li class="row">
               <a href={localize(lang, `/work/${p.id}/`)}>
                 <span class="row-title">{p.data.title}</span>
-                <span class="row-programme">{p.data.programme[lang]}</span>
+                <span class="row-type">{p.data.type[lang]}</span>
                 <span class="row-year">{p.data.year}</span>
                 <span class="row-thumb">
                   <Image
