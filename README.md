@@ -64,6 +64,24 @@ Until ateliermayer.ca is connected, the site lives at a temporary
 `https://<user>.github.io/<repository>/` address; the workflow adapts the
 links to whichever address is set in the repository's Pages settings.
 
+### Maintenance page
+
+Instead of taking the site down, ateliermayer.ca can show a single page
+saying the site is under maintenance (French, English, German, with
+info@ateliermayer.ca), at every address. The page is `maintenance/index.html`.
+
+The repository variable `SITE_MODE` chooses what is published:
+
+- `live` (or not set): the website
+- `maintenance`: the maintenance page
+
+To switch, change `SITE_MODE` on GitHub (Settings > Secrets and variables >
+Actions > Variables), then run the workflow again (Actions > Publish site >
+Run workflow). The switch takes about a minute. From a terminal:
+
+    gh variable set SITE_MODE --body maintenance   # or: live
+    gh workflow run publish.yml
+
 ## Addresses
 
 - `/` sends visitors to their language (last used, else browser language, else English)

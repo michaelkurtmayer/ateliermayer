@@ -1,0 +1,82 @@
+<!doctype html>
+<!--
+  Maintenance page. Shown at every address of ateliermayer.ca while the
+  repository variable SITE_MODE is "maintenance" (see README, "Maintenance
+  page"). Self-contained: no build step; the icons are copied in from public/.
+-->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Atelier Mayer</title>
+    <meta name="description" content="Atelier Mayer — Michael Kurt Mayer, Montréal." />
+    <link rel="icon" href="/favicon.ico?v=2" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
+    <meta property="og:site_name" content="Atelier Mayer" />
+    <meta property="og:title" content="Atelier Mayer" />
+    <meta property="og:image" content="https://ateliermayer.ca/share.png" />
+    <style>
+      /* The same type and grid as the site: Helvetica Neue 15/18 px,
+         dark grey text, black links, 20 px margins, three columns. */
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+      }
+      body {
+        margin: 0;
+        padding: 20px;
+        background: #fff;
+        color: #333;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 15px;
+        line-height: 18px;
+        -webkit-font-smoothing: antialiased;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: start;
+      }
+      p {
+        margin: 0 0 18px;
+      }
+      a {
+        color: #000;
+        text-decoration: none;
+      }
+      a:hover {
+        opacity: 0.6;
+      }
+      .name {
+        grid-column: 1;
+        color: #000;
+      }
+      .message {
+        grid-column: 2 / 4;
+        padding-top: 75px;
+      }
+      @media (max-width: 720px) {
+        body {
+          display: block;
+          padding: 6px 16px;
+          font-size: 16px;
+        }
+        .message {
+          padding-top: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="name">Atelier Mayer</div>
+    <div class="message">
+      <p lang="fr">Site Web en cours de maintenance.</p>
+      <p lang="en">Website under maintenance.</p>
+      <p lang="de">Die Website wird derzeit gewartet.</p>
+      <p><a href="mailto:info@ateliermayer.ca">info@ateliermayer.ca</a></p>
+    </div>
+  </body>
+</html>

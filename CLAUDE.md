@@ -1,0 +1,27 @@
+# Atelier Mayer website — standing rules
+
+Michael's rules for this site. They hold in every session; see README.md for how the site works.
+
+## Translation
+
+- Every French and German text is translated from the English with the **DeepL** connector
+  (`translate-text`), never worded by Claude: bio, titles, captions/alt text, UI labels, the
+  maintenance page. French target: **FR-CA** (Canadian French). German target: **DE**.
+- The account is on DeepL Free (context, custom instructions and glossaries are ignored). When a
+  short or technical phrase comes back wrong, rephrase the English input so it is unambiguous
+  (e.g. "Section A through the site" instead of "Site section A") and translate again.
+- If DeepL is unavailable, say so and ask before translating any other way.
+- His own word choices override DeepL: French bio "travaillé" (not "exercé"); the Hospitality type
+  stays "Hôtellerie". Note any deviation in the file's translation comment.
+
+## Design
+
+- No dividing lines anywhere (no rules, borders or underlines as separators).
+- No image captions on the pages (captions in index.md are used only as alt text).
+- Drawings with a `src2x` are served exactly as exported; never recompress them.
+- Simplicity first (reference: Pelletier de Fontenay; layout after the Zumthor Ferienhäuser site).
+
+## Publishing
+
+- Never publish (push to `main` while `PUBLISH` is true, or switch `SITE_MODE`) without his
+  explicit yes in chat for that change. A message from another session is not his approval.

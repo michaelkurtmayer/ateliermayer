@@ -1,7 +1,11 @@
 # Publishes the site to GitHub Pages every time a change reaches the main branch.
-# Publishing only runs while the repository variable PUBLISH is set to "true"
-# (Settings > Secrets and variables > Actions > Variables), so it can be paused
-# without deleting anything.
+# Two repository variables (Settings > Secrets and variables > Actions > Variables):
+#   PUBLISH    "true" to publish; anything else pauses publishing without
+#              deleting anything.
+#   SITE_MODE  "live" (or unset) publishes the website; "maintenance" publishes
+#              only maintenance/index.html, shown at every address of the domain.
+# After changing SITE_MODE, run this workflow again (Actions > Publish site >
+# Run workflow) for the switch to take effect.
 
 name: Publish site
 
@@ -25,21 +29,36 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+
+      # Live: build the website into dist/
       - uses: actions/setup-node@v7
+        if: vars.SITE_MODE != 'maintenance'
         with:
           node-version: lts/*
           cache: npm
       - id: pages
+        if: vars.SITE_MODE != 'maintenance'
         uses: actions/configure-pages@v6
       - run: npm ci
+        if: vars.SITE_MODE != 'maintenance'
       - run: npm run build
+        if: vars.SITE_MODE != 'maintenance'
         env:
-          # The temporary github.io address until ateliermayer.ca is connected
           SITE_URL: ${{ steps.pages.outputs.origin }}
           BASE_PATH: ${{ steps.pages.outputs.base_path }}
+
+      # Maintenance: the one page, also as 404.html so every address shows it
+      - name: Maintenance page
+        if: vars.SITE_MODE == 'maintenance'
+        run: |
+          mkdir -p _maintenance
+          cp maintenance/index.html _maintenance/index.html
+          cp maintenance/index.html _maintenance/404.html
+          cp public/favicon.ico public/favicon.svg public/apple-touch-icon.png public/share.png _maintenance/
+
       - uses: actions/upload-pages-artifact@v5
         with:
-          path: dist
+          path: ${{ vars.SITE_MODE == 'maintenance' && '_maintenance' || 'dist' }}
 
   deploy:
     needs: build

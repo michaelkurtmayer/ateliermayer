@@ -54,15 +54,15 @@ images:
   - src: ./images/site-plan.jpg
     src2x: ./images/site-plan@2x.jpg
     size: full
-    caption: { fr: 'Plan de situation, 1:1000', en: 'Site plan, 1:1000', de: 'Lageplan, 1:1000' }
+    caption: { fr: 'Plan d’ensemble, à l’échelle 1:1 000', en: 'Site plan, 1:1000', de: 'Lageplan, Maßstab 1:1000' }
   - src: ./images/site-section-a.jpg
     src2x: ./images/site-section-a@2x.jpg
     size: full
-    caption: { fr: 'Coupe du site A, 1:1000', en: 'Site section A, 1:1000', de: 'Geländeschnitt A, 1:1000' }
+    caption: { fr: 'Coupe A à travers le site, à l’échelle 1:1 000', en: 'Site section A, 1:1000', de: 'Querschnitt A durch das Gelände, Maßstab 1:1000' }
   - src: ./images/site-section-b.jpg
     src2x: ./images/site-section-b@2x.jpg
     size: full
-    caption: { fr: 'Coupe du site B, 1:1000', en: 'Site section B, 1:1000', de: 'Geländeschnitt B, 1:1000' }
+    caption: { fr: 'Coupe B à travers le site, à l’échelle 1:1 000', en: 'Site section B, 1:1000', de: 'Querschnitt B durch das Gelände, Maßstab 1:1000' }
   - src: ./images/plan-ground.jpg
     src2x: ./images/plan-ground@2x.jpg
     size: full
