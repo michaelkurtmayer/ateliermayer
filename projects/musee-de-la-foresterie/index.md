@@ -42,7 +42,7 @@ text:
   de: |
     [Projektbeschreibung folgt: Standort, Programm, Konzept und Bauausführung. Zwei bis vier kurze Absätze.]
 
-cover: ./images/render-clearcut.jpg
+cover: ./images/render-clearing.jpg
 
 # size: full (whole width), half (two side by side) or half-right (one image on the right half)
 # src2x: drawings only, the same drawing at twice the size; both files are then

@@ -42,6 +42,12 @@ const social = [
             {c.title[lang]}
             <br />
             <a href={`mailto:${c.email}`}>{c.email}</a>
+            {c.note && (
+              <>
+                <br />
+                {c.note[lang]}
+              </>
+            )}
           </p>
         ))
       }

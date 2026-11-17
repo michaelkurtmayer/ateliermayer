@@ -10,8 +10,17 @@ export const site = {
   // Porkbun > Email forwarding); a new one must be added there too.
   contacts: [
     { email: 'info@ateliermayer.ca', title: { fr: 'Informations', en: 'General', de: 'Allgemeines' } },
-    { email: 'emplois@ateliermayer.ca', title: { fr: 'Emplois', en: 'Jobs', de: 'Stellenangebote' } },
-  ],
+    {
+      email: 'emplois@ateliermayer.ca',
+      title: { fr: 'Emplois', en: 'Jobs', de: 'Stellenangebote' },
+      // Optional line under the address (DeepL); delete `note` to hide it.
+      note: {
+        fr: 'Nous recherchons actuellement des stagiaires pour des stages de trois mois.',
+        en: 'We are currently looking for interns for 3-month internships.',
+        de: 'Wir suchen derzeit Praktikanten für ein dreimonatiges Praktikum.',
+      },
+    },
+  ] as { email: string; title: Record<'fr' | 'en' | 'de', string>; note?: Record<'fr' | 'en' | 'de', string> }[],
   instagram: '', // e.g. 'https://www.instagram.com/ateliermayer/'
   linkedin: '', // e.g. 'https://www.linkedin.com/in/...'
 };

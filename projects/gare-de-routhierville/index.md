@@ -42,15 +42,12 @@ text:
   de: |
     [Projektbeschreibung folgt: Standort, Programm, Konzept und Bauausführung. Zwei bis vier kurze Absätze.]
 
-cover: ./images/render-down-tracks.jpg
+cover: ./images/render-main-track.jpg
 
 # size: full (whole width), half (two side by side) or half-right (one image on the right half)
 # src2x: drawings only, the same drawing at twice the size; both files are then
 #   served exactly as exported (never recompressed), so the lines stay crisp
 images:
-  - src: ./images/render-across-tracks.jpg
-    size: full
-    caption: { fr: 'Vue depuis l’autre côté des voies', en: 'View across the tracks', de: 'Blick über die Gleise' }
   - src: ./images/plan-ground.jpg
     src2x: ./images/plan-ground@2x.jpg
     size: full
