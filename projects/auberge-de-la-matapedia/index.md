@@ -10,9 +10,9 @@ order: 2
 year: '2026'
 location: Routhierville, Québec
 
-# Type, one of: Cultural, Hospitality, Residential, Transportation
-#   FR: Culturel, Hôtellerie, Résidentiel, Transport
-#   DE: Kultur, Hotellerie, Wohnen, Verkehr
+# Type, one of: Cultural, Hospitality, Infrastructure, Residential, Transportation
+#   FR: Culturel, Hôtellerie, Infrastructure, Résidentiel, Transport
+#   DE: Kultur, Hotellerie, Infrastruktur, Wohnen, Verkehr
 type:
   fr: Hôtellerie
   en: Hospitality

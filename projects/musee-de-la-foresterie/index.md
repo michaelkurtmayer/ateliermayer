@@ -10,9 +10,9 @@ order: 3
 year: '2026'
 location: Routhierville, Québec
 
-# Type, one of: Cultural, Hospitality, Residential, Transportation
-#   FR: Culturel, Hôtellerie, Résidentiel, Transport
-#   DE: Kultur, Hotellerie, Wohnen, Verkehr
+# Type, one of: Cultural, Hospitality, Infrastructure, Residential, Transportation
+#   FR: Culturel, Hôtellerie, Infrastructure, Résidentiel, Transport
+#   DE: Kultur, Hotellerie, Infrastruktur, Wohnen, Verkehr
 type:
   fr: Culturel
   en: Cultural
@@ -48,18 +48,6 @@ cover: ./images/render-clearcut.jpg
 # src2x: drawings only, the same drawing at twice the size; both files are then
 #   served exactly as exported (never recompressed), so the lines stay crisp
 images:
-  - src: ../gare-de-routhierville/images/site-plan.jpg
-    src2x: ../gare-de-routhierville/images/site-plan@2x.jpg
-    size: full
-    caption: { fr: 'Plan d’ensemble, à l’échelle 1:1 000', en: 'Site plan, 1:1000', de: 'Lageplan, Maßstab 1:1000' }
-  - src: ../gare-de-routhierville/images/site-section-a.jpg
-    src2x: ../gare-de-routhierville/images/site-section-a@2x.jpg
-    size: full
-    caption: { fr: 'Coupe A à travers le site, à l’échelle 1:1 000', en: 'Site section A, 1:1000', de: 'Querschnitt A durch das Gelände, Maßstab 1:1000' }
-  - src: ../gare-de-routhierville/images/site-section-b.jpg
-    src2x: ../gare-de-routhierville/images/site-section-b@2x.jpg
-    size: full
-    caption: { fr: 'Coupe B à travers le site, à l’échelle 1:1 000', en: 'Site section B, 1:1000', de: 'Querschnitt B durch das Gelände, Maßstab 1:1000' }
   - src: ./images/plan-lookout.jpg
     src2x: ./images/plan-lookout@2x.jpg
     size: full

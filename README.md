@@ -7,6 +7,7 @@ Portfolio site in French, English and German, built with [Astro](https://astro.b
 ```
 Website/
 ├── projects/                      what the site shows, one folder per project
+│   ├── routhierville-tourism-infrastructure/   site plan and site sections
 │   ├── gare-de-routhierville/
 │   │   ├── index.md               text in FR / EN / DE, facts, which images to show
 │   │   └── images/                web-sized renders and drawings
@@ -43,7 +44,9 @@ be turned into JPGs first.
 
 **Add a project:** copy one project folder, rename it (the folder name
 becomes the web address, e.g. `/fr/work/new-project/`), replace the
-images, edit `index.md` and set its `order:`.
+images, edit `index.md` and set its `order:`. A project with no `cover:`
+starts with its first image; one with no images at all shows blank in the
+list and has no page.
 
 ## Run it on your Mac
 
