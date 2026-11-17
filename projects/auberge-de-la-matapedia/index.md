@@ -11,9 +11,9 @@ year: '2026'
 location: Routhierville, Québec
 
 type:
-  fr: Auberge
-  en: Inn
-  de: Gasthaus
+  fr: Hôtellerie
+  en: Hospitality
+  de: Hotellerie
 
 status:
   fr: En cours
@@ -39,14 +39,17 @@ text:
   de: |
     [Projektbeschreibung folgt: Standort, Programm, Konzept und Bauausführung. Zwei bis vier kurze Absätze.]
 
-cover: ./images/axo.jpg
-
-# size: full (whole width), half (two side by side) or half-right (one image on the right half)
-images:
-  - src: ./images/plan-ground.jpg
-    size: full
-    caption: { fr: 'Plan du rez-de-chaussée, 1:50', en: 'Ground floor plan, 1:50', de: 'Grundriss des Erdgeschosses, 1:50' }
-  - src: ./images/section.jpg
-    size: full
-    caption: { fr: 'Coupe transversale traversant le vestiaire, le salon et la chambre à coucher n° 4, 1:50', en: 'Section through the mudroom, lounge and bedroom 4, 1:50', de: 'Schnitt durch den Hauswirtschaftsraum, das Wohnzimmer und Schlafzimmer 4, 1:50' }
+# No images for now: without a cover the project shows blank in the lists,
+# can't be clicked and has no page. To bring the images back, remove the
+# '# ' at the start of the lines below.
+# cover: ./images/axo.jpg
+#
+# # size: full (whole width), half (two side by side) or half-right (one image on the right half)
+# images:
+#   - src: ./images/plan-ground.jpg
+#     size: full
+#     caption: { fr: 'Plan du rez-de-chaussée, 1:50', en: 'Ground floor plan, 1:50', de: 'Grundriss des Erdgeschosses, 1:50' }
+#   - src: ./images/section.jpg
+#     size: full
+#     caption: { fr: 'Coupe transversale traversant le vestiaire, le salon et la chambre à coucher n° 4, 1:50', en: 'Section through the mudroom, lounge and bedroom 4, 1:50', de: 'Schnitt durch den Hauswirtschaftsraum, das Wohnzimmer und Schlafzimmer 4, 1:50' }
 ---

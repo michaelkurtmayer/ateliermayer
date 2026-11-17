@@ -9,7 +9,8 @@ export const getStaticPaths = langPaths;
 
 const lang = Astro.params.lang as Lang;
 const projects = await getProjects();
-const og = await getImage({ src: projects[0].data.cover, width: 1200, format: 'jpg' });
+const firstCover = projects.find((p) => p.data.cover)!.data.cover!;
+const og = await getImage({ src: firstCover, width: 1200, format: 'jpg' });
 ---
 
 <Base lang={lang} ogImage={og.src}>
@@ -18,20 +19,30 @@ const og = await getImage({ src: projects[0].data.cover, width: 1200, format: 'j
     <ul class="home-projects">
       {
         projects.map((p, i) => (
-          <li class="home-project">
-            <a href={localize(lang, `/work/${p.id}/`)}>
-              <Image
-                src={p.data.cover}
-                alt={p.data.title}
-                widths={[480, 720, 960, 1200, 1600]}
-                sizes="(max-width: 720px) 100vw, 33vw"
-                loading={i === 0 ? 'eager' : 'lazy'}
-              />
-              <span class="home-text">
-                <span>{p.data.title}</span>
-                <span class="label">{p.data.type[lang]}</span>
-              </span>
-            </a>
+          <li class:list={['home-project', { 'is-blank': !p.data.cover }]}>
+            {p.data.cover ? (
+              <a href={localize(lang, `/work/${p.id}/`)}>
+                <Image
+                  src={p.data.cover}
+                  alt={p.data.title}
+                  widths={[480, 720, 960, 1200, 1600]}
+                  sizes="(max-width: 720px) 100vw, 33vw"
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                />
+                <span class="home-text">
+                  <span>{p.data.title}</span>
+                  <span class="label">{p.data.type[lang]}</span>
+                </span>
+              </a>
+            ) : (
+              <div>
+                <span class="home-blank" aria-hidden="true" />
+                <span class="home-text">
+                  <span>{p.data.title}</span>
+                  <span class="label">{p.data.type[lang]}</span>
+                </span>
+              </div>
+            )}
           </li>
         ))
       }

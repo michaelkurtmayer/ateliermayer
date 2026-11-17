@@ -11,9 +11,9 @@ year: '2026'
 location: Routhierville, Québec
 
 type:
-  fr: Gare ferroviaire
-  en: Train station
-  de: Bahnhof
+  fr: Transport
+  en: Transport
+  de: Verkehr
 
 status:
   fr: En cours

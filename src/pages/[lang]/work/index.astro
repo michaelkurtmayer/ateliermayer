@@ -23,20 +23,28 @@ const projects = await getProjects();
       <ul class="index-list">
         {
           projects.map((p) => (
-            <li class="row">
-              <a href={localize(lang, `/work/${p.id}/`)}>
-                <span class="row-title">{p.data.title}</span>
-                <span class="row-type">{p.data.type[lang]}</span>
-                <span class="row-year">{p.data.year}</span>
-                <span class="row-thumb">
-                  <Image
-                    src={p.data.cover}
-                    alt=""
-                    widths={[600, 900, 1200]}
-                    sizes="(max-width: 900px) 100vw, 40vw"
-                  />
-                </span>
-              </a>
+            <li class:list={['row', { 'is-blank': !p.data.cover }]}>
+              {p.data.cover ? (
+                <a class="row-link" href={localize(lang, `/work/${p.id}/`)}>
+                  <span class="row-title">{p.data.title}</span>
+                  <span class="row-type">{p.data.type[lang]}</span>
+                  <span class="row-year">{p.data.year}</span>
+                  <span class="row-thumb">
+                    <Image
+                      src={p.data.cover}
+                      alt=""
+                      widths={[600, 900, 1200]}
+                      sizes="(max-width: 900px) 100vw, 40vw"
+                    />
+                  </span>
+                </a>
+              ) : (
+                <div class="row-link">
+                  <span class="row-title">{p.data.title}</span>
+                  <span class="row-type">{p.data.type[lang]}</span>
+                  <span class="row-year">{p.data.year}</span>
+                </div>
+              )}
             </li>
           ))
         }

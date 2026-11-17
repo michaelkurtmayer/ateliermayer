@@ -12,7 +12,9 @@ import { site } from '../site';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{site.name}</title>
+    <link rel="icon" href={withBase('/favicon.ico')} sizes="32x32" />
     <link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml" />
+    <link rel="apple-touch-icon" href={withBase('/apple-touch-icon.png')} />
     {langs.map((l) => <link rel="alternate" hreflang={l} href={new URL(withBase(`/${l}/`), Astro.site)} />)}
     <script is:inline define:vars={{ supported: langs, fallback: defaultLang, base: withBase('/').replace(/\/$/, '') }}>
       var pick = null;

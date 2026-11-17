@@ -4,7 +4,7 @@
    rules, borders or underlines. A 12-column grid keeps everything aligned. */
 
 :root {
-  --bg: #fbfaf8;
+  --bg: #ffffff;
   --ink: #161616;
   --muted: #8a8882;
 
@@ -232,6 +232,17 @@ a:hover {
   margin-top: 10px;
 }
 
+/* A project without images: blank space the size of a landscape image */
+.home-blank {
+  display: block;
+  aspect-ratio: 3 / 2;
+}
+
+.home-project.is-blank,
+.home-project.is-blank .label {
+  color: var(--muted);
+}
+
 .home-text span {
   display: block;
 }
@@ -243,6 +254,9 @@ a:hover {
   }
   .home-project {
     grid-column: 1 / -1;
+  }
+  .home-blank {
+    display: none;
   }
 }
 
@@ -265,7 +279,7 @@ a:hover {
 }
 
 .index-head,
-.row a {
+.row-link {
   display: grid;
   grid-template-columns: repeat(8, minmax(0, 1fr));
   column-gap: var(--gap);
@@ -292,16 +306,16 @@ a:hover {
   text-align: right;
 }
 
-.row a {
+.row-link {
   padding-block: 3px;
 }
 
-.row a:hover {
+a.row-link:hover {
   color: inherit;
 }
 
 /* Hovering one project fades the others */
-.index-list:has(.row:hover) .row:not(:hover) a {
+.index-list:has(a.row-link:hover) .row:not(:hover) .row-link {
   color: var(--muted);
 }
 
@@ -321,12 +335,12 @@ a:hover {
 }
 
 .row:first-child .row-thumb,
-.index:has(.row:hover) .row:hover .row-thumb,
+.index:has(a.row-link:hover) .row:hover .row-thumb,
 .index:has(.row a:focus-visible) .row:has(a:focus-visible) .row-thumb {
   opacity: 1;
 }
 
-.index:has(.row:hover) .row:first-child:not(:hover) .row-thumb,
+.index:has(a.row-link:hover) .row:first-child:not(:hover) .row-thumb,
 .index:has(.row a:focus-visible) .row:first-child:not(:has(a:focus-visible)) .row-thumb {
   opacity: 0;
 }
@@ -344,7 +358,7 @@ a:hover {
   .row + .row {
     margin-top: 40px;
   }
-  .row a {
+  .row-link {
     grid-template-columns: 1fr auto;
     padding-block: 0;
   }
@@ -370,10 +384,10 @@ a:hover {
     grid-row: 3;
     color: var(--muted);
   }
-  .index:has(.row:hover) .row:first-child:not(:hover) .row-thumb {
+  .index:has(a.row-link:hover) .row:first-child:not(:hover) .row-thumb {
     opacity: 1;
   }
-  .index-list:has(.row:hover) .row:not(:hover) a {
+  .index-list:has(a.row-link:hover) .row:not(:hover) .row-link {
     color: inherit;
   }
 }

@@ -11,9 +11,9 @@ year: '2026'
 location: Routhierville, Québec
 
 type:
-  fr: Musée de la foresterie et tour d’observation
-  en: Forestry museum and lookout tower
-  de: Forstmuseum und Aussichtsturm
+  fr: Culturel
+  en: Cultural
+  de: Kultur
 
 status:
   fr: En cours

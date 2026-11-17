@@ -1,11 +1,11 @@
 ---
 import { Image, getImage } from 'astro:assets';
 import Base from '../../../layouts/Base.astro';
-import { getProjects } from '../../../lib/projects';
+import { getPublishedProjects } from '../../../lib/projects';
 import { langs, localize, paragraphs, useTranslations, type Lang } from '../../../i18n/ui';
 
 export async function getStaticPaths() {
-  const projects = await getProjects();
+  const projects = await getPublishedProjects();
   return langs.flatMap((lang) =>
     projects.map((project, i) => ({
       params: { lang, slug: project.id },
@@ -22,7 +22,7 @@ const { project, previous, next } = Astro.props;
 const lang = Astro.params.lang as Lang;
 const t = useTranslations(lang);
 const d = project.data;
-const og = await getImage({ src: d.cover, width: 1200, format: 'jpg' });
+const og = await getImage({ src: d.cover!, width: 1200, format: 'jpg' });
 
 const meta = [
   { label: t('meta.type'), value: d.type[lang] },
@@ -40,9 +40,9 @@ const meta = [
       <p class="project-summary">{d.summary[lang]}</p>
     </header>
 
-    <figure class:list={['project-cover', { 'is-portrait': d.cover.height > d.cover.width }]}>
+    <figure class:list={['project-cover', { 'is-portrait': d.cover!.height > d.cover!.width }]}>
       <Image
-        src={d.cover}
+        src={d.cover!}
         alt={d.title}
         widths={[800, 1200, 1600, 2000, 2400]}
         sizes="100vw"
