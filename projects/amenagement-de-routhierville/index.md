@@ -49,6 +49,9 @@ text:
 # size: full (whole width), half (two side by side) or half-right (one image on the right half)
 # src2x: drawings only, the same drawing at twice the size; both files are then
 #   served exactly as exported (never recompressed), so the lines stay crisp
+# caption: a simple name (never the sheet title), shown in the left column of
+#   the project page and used as alt text; scale: shown under it (drawings only).
+#   FR/DE from DeepL, asked as "<name>, <scale>" so it reads them as drawings.
 images:
   # The thesis abstract, as live text in the bio's type. Text: Mayer_Thesis_Fall2026/
   # Writing/Abstract/abstract_round29.html (14 Nov), word for word, in English,
@@ -56,7 +59,7 @@ images:
   # abstract.png is only its Work page thumbnail (tools/abstract-sheet/render.mjs).
   - src: ./images/abstract.png
     size: full
-    caption: { fr: 'Résumé de thèse', en: 'Thesis abstract', de: 'Zusammenfassung der Abschlussarbeit' }
+    caption: { fr: 'Résumé', en: 'Abstract', de: 'Zusammenfassung' }
     textSlide: |
       Designing the Ship of Theseus: Robustness through Redundancy along *Les Routes touristiques du Québec*
 
@@ -68,13 +71,16 @@ images:
   - src: ./images/site-plan.jpg
     src2x: ./images/site-plan@2x.jpg
     size: full
-    caption: { fr: 'Plan d’ensemble, à l’échelle 1:1 000', en: 'Site plan, 1:1000', de: 'Lageplan, Maßstab 1:1000' }
+    caption: { fr: 'Plan d’ensemble', en: 'Site plan', de: 'Lageplan' }
+    scale: '1:1000'
   - src: ./images/site-section-a.jpg
     src2x: ./images/site-section-a@2x.jpg
     size: full
-    caption: { fr: 'Coupe A à travers le site, à l’échelle 1:1 000', en: 'Site section A, 1:1000', de: 'Querschnitt A durch das Gelände, Maßstab 1:1000' }
+    caption: { fr: 'Coupe A à travers le site', en: 'Site section A', de: 'Querschnitt A durch das Gelände' }
+    scale: '1:1000'
   - src: ./images/site-section-b.jpg
     src2x: ./images/site-section-b@2x.jpg
     size: full
-    caption: { fr: 'Coupe B à travers le site, à l’échelle 1:1 000', en: 'Site section B, 1:1000', de: 'Querschnitt B durch das Gelände, Maßstab 1:1000' }
+    caption: { fr: 'Coupe B à travers le site', en: 'Site section B', de: 'Querschnitt B durch das Gelände' }
+    scale: '1:1000'
 ---

@@ -28,7 +28,9 @@ Michael's rules for this site. They hold in every session; see README.md for how
 ## Design
 
 - No dividing lines anywhere (no rules, borders or underlines as separators).
-- No image captions on the pages (captions in index.md are used only as alt text).
+- Captions only on project pages, in the left column under "Atelier Mayer" (under each image on
+  phones): a simple name (Site plan, Ground floor plan, Cross section, Perspective…), the scale on
+  the line below. Never the titles on the drawing sheets. None on the home page.
 - Drawings with a `src2x` are served exactly as exported; never recompress them.
 - Simplicity first (reference: Pelletier de Fontenay; layout after the Zumthor Ferienhäuser site).
 

@@ -12,11 +12,20 @@ export async function getPublishedProjects() {
   return (await getProjects()).filter((p) => slidesOf(p, 'en').length > 0);
 }
 
-/** A project's images in slideshow order: the cover (if any), then the images. */
+/** A project's images in slideshow order: the cover (if any), then the images.
+ *  Each has its caption (a simple name) and scale, shown beside it on the project page. */
 export function slidesOf(p: CollectionEntry<'projects'>, lang: Lang) {
   const d = p.data;
+  const alt = (caption?: string, scale?: string) => (caption ? (scale ? `${caption}, ${scale}` : caption) : d.title);
   return [
-    ...(d.cover ? [{ src: d.cover, alt: d.title }] : []),
-    ...d.images.map((img) => ({ src: img.src, src2x: img.src2x, text: img.textSlide, alt: img.caption?.[lang] ?? d.title })),
+    ...(d.cover ? [{ src: d.cover, caption: d.coverCaption?.[lang], alt: alt(d.coverCaption?.[lang]) }] : []),
+    ...d.images.map((img) => ({
+      src: img.src,
+      src2x: img.src2x,
+      text: img.textSlide,
+      caption: img.caption?.[lang],
+      scale: img.scale,
+      alt: alt(img.caption?.[lang], img.scale),
+    })),
   ];
 }

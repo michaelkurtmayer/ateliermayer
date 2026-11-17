@@ -7,7 +7,7 @@ import { useTranslations, type Lang } from '../i18n/ui';
 
 interface Props {
   lang: Lang;
-  items: { src: ImageMetadata; src2x?: ImageMetadata; text?: string; alt: string }[];
+  items: { src: ImageMetadata; src2x?: ImageMetadata; text?: string; caption?: string; scale?: string; alt: string }[];
 }
 
 const { lang, items } = Astro.props;
@@ -62,6 +62,17 @@ const drawingSizes = (img: ImageMetadata) => {
               loading={i === 0 ? 'eager' : 'lazy'}
               fetchpriority={i === 0 ? 'high' : undefined}
             />
+          )}
+          {item.caption && (
+            <figcaption class="slide-caption">
+              {item.caption}
+              {item.scale && (
+                <>
+                  <br />
+                  {item.scale}
+                </>
+              )}
+            </figcaption>
           )}
         </figure>
       ))

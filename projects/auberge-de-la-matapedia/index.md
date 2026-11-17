@@ -48,9 +48,13 @@ text:
 # size: full (whole width), half (two side by side) or half-right (one image on the right half)
 # src2x: drawings only, the same drawing at twice the size; both files are then
 #   served exactly as exported (never recompressed), so the lines stay crisp
+# caption: a simple name (never the sheet title), shown in the left column of
+#   the project page and used as alt text; scale: shown under it (drawings only).
+#   FR/DE from DeepL, asked as "<name>, <scale>" so it reads them as drawings.
 images:
   - src: ./images/section-d.jpg
     src2x: ./images/section-d@2x.jpg
     size: full
-    caption: { fr: 'Coupe transversale traversant le vestiaire, le salon et la chambre 4, à l’échelle 1:50', en: 'Section through the mudroom, lounge and bedroom 4, 1:50', de: 'Schnitt durch den Hauswirtschaftsraum, das Wohnzimmer und Schlafzimmer 4, Maßstab 1:50' }
+    caption: { fr: 'Coupe transversale', en: 'Cross section', de: 'Querschnitt' }
+    scale: '1:50'
 ---

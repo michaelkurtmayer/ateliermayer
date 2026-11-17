@@ -75,6 +75,11 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  /* harder to save: no dragging out, no long-press menu on phones (see Base.astro) */
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 a {
@@ -227,11 +232,21 @@ main {
 /* Each image starts under "Work" in the header (the start of the second
    column), like the photo on the About page */
 .slide {
+  position: relative;
   flex: 0 0 100%;
   display: flex;
   justify-content: flex-start;
   padding-left: calc(var(--margin) + (100% - 2 * var(--margin)) / 3);
   scroll-snap-align: start;
+}
+
+/* The caption sits in the left column, under "Atelier Mayer", level with the
+   top of the image: its name, then the scale. It moves with its image. */
+.slide-caption {
+  position: absolute;
+  top: 0;
+  left: var(--margin);
+  width: calc((100% - 2 * var(--margin)) / 3 - var(--margin));
 }
 
 /* Computers: every image in the same 3:2 frame. (On phones each image keeps
@@ -491,6 +506,13 @@ main {
   .slide {
     display: block;
     padding-left: 0;
+  }
+
+  /* Phones: the caption under its image */
+  .slide-caption {
+    position: static;
+    width: auto;
+    padding: 8px var(--margin) 12px;
   }
 
   .slide + .slide {

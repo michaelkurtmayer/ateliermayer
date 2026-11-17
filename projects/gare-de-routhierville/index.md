@@ -43,25 +43,33 @@ text:
     [Projektbeschreibung folgt: Standort, Programm, Konzept und Bauausführung. Zwei bis vier kurze Absätze.]
 
 cover: ./images/render-main-track.jpg
+coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 
 # size: full (whole width), half (two side by side) or half-right (one image on the right half)
 # src2x: drawings only, the same drawing at twice the size; both files are then
 #   served exactly as exported (never recompressed), so the lines stay crisp
+# caption: a simple name (never the sheet title), shown in the left column of
+#   the project page and used as alt text; scale: shown under it (drawings only).
+#   FR/DE from DeepL, asked as "<name>, <scale>" so it reads them as drawings.
 images:
   - src: ./images/plan-ground.jpg
     src2x: ./images/plan-ground@2x.jpg
     size: full
-    caption: { fr: 'Plan du rez-de-chaussée, 1:50', en: 'Ground floor plan, 1:50', de: 'Grundriss des Erdgeschosses, 1:50' }
+    caption: { fr: 'Plan du rez-de-chaussée', en: 'Ground floor plan', de: 'Grundriss des Erdgeschosses' }
+    scale: '1:50'
   - src: ./images/plan-upper.jpg
     src2x: ./images/plan-upper@2x.jpg
     size: full
-    caption: { fr: 'Plan de l’étage supérieur, 1:50', en: 'Upper floor plan, 1:50', de: 'Grundriss des Obergeschosses, 1:50' }
+    caption: { fr: 'Plan de l’étage supérieur', en: 'Upper floor plan', de: 'Grundriss des Obergeschosses' }
+    scale: '1:50'
   - src: ./images/section-long.jpg
     src2x: ./images/section-long@2x.jpg
     size: full
-    caption: { fr: 'Coupe longitudinale, 1:50', en: 'Long section, 1:50', de: 'Längsschnitt, 1:50' }
+    caption: { fr: 'Coupe longitudinale', en: 'Longitudinal section', de: 'Längsschnitt' }
+    scale: '1:50'
   - src: ./images/section-cross.jpg
     src2x: ./images/section-cross@2x.jpg
     size: full
-    caption: { fr: 'Coupe transversale, 1:50', en: 'Cross section, 1:50', de: 'Querschnitt, 1:50' }
+    caption: { fr: 'Coupe transversale', en: 'Cross section', de: 'Querschnitt' }
+    scale: '1:50'
 ---

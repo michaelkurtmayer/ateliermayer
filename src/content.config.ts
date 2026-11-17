@@ -24,6 +24,7 @@ const projects = defineCollection({
       summary: t,
       text: t,
       cover: image().optional(), // no cover and no images = blank, unclickable, no page
+      coverCaption: t.optional(), // shown beside the cover on the project page (e.g. Perspective)
       images: z
         .array(
           z.object({
@@ -36,7 +37,10 @@ const projects = defineCollection({
             // separated by a blank line; *asterisks* for italics; English.
             textSlide: z.string().optional(),
             size: z.enum(['full', 'half', 'half-right']).default('full'),
+            // A simple name (never the sheet title), shown in the left column of the
+            // project page and used as alt text; the scale goes on the line below it.
             caption: t.optional(),
+            scale: z.string().optional(),
           }),
         )
         .default([]),

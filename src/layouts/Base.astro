@@ -64,5 +64,13 @@ const ogLocale: Record<Lang, string> = { fr: 'fr_CA', en: 'en_CA', de: 'de_DE' }
     <main id="main">
       <slot />
     </main>
+    <script>
+      // Makes saving the images harder: no right-click menu ("Save image as…") and
+      // no dragging them out. Not a lock: anything on screen can still be
+      // screenshotted or taken from the browser's developer tools.
+      const isImage = (e: Event) => e.target instanceof HTMLImageElement;
+      document.addEventListener('contextmenu', (e) => isImage(e) && e.preventDefault());
+      document.addEventListener('dragstart', (e) => isImage(e) && e.preventDefault());
+    </script>
   </body>
 </html>
