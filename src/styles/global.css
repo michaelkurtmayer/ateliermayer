@@ -17,8 +17,11 @@
   /* The tallest an image may be: a share of the screen height */
   --img-h: 60svh;
   /* Width of the image frame (3:2): 68 % of the window width at most, never
-     taller than --img-h, and always fitting below the header */
-  --slide-w: min(68vw, var(--img-h) * 1.5, (100svh - var(--header) - 25px) * 1.5);
+     taller than --img-h, always fitting below the header, and never wider
+     than the two right-hand columns it starts in (under "Work"), less room
+     for the right arrow */
+  --slide-w: min(68vw, var(--img-h) * 1.5, (100svh - var(--header) - 25px) * 1.5,
+    (100vw - 2 * var(--margin)) * 2 / 3 - 40px);
 }
 
 /* ---------- Base ---------- */
@@ -221,10 +224,13 @@ main {
   display: none;
 }
 
+/* Each image starts under "Work" in the header (the start of the second
+   column), like the photo on the About page */
 .slide {
   flex: 0 0 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: calc(var(--margin) + (100% - 2 * var(--margin)) / 3);
   scroll-snap-align: start;
 }
 
@@ -236,16 +242,15 @@ main {
     width: var(--slide-w);
     aspect-ratio: 3 / 2;
     object-fit: contain;
+    object-position: left top;
   }
 }
 
 /* A slide of text (the thesis abstract): the bio's type and column width,
-   at the top of the image frame. A long text runs below the frame. */
+   at the top left of the image frame. A long text runs below the frame. */
 .slide-text {
   width: var(--slide-w);
   min-height: calc(var(--slide-w) * 2 / 3);
-  display: flex;
-  justify-content: center;
 }
 
 .slide-text-column {
@@ -485,6 +490,7 @@ main {
 
   .slide {
     display: block;
+    padding-left: 0;
   }
 
   .slide + .slide {
