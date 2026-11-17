@@ -1,11 +1,12 @@
 ---
-# Routhierville Tourism Infrastructure: the site-level drawings
+# Aménagement de Routhierville: the site-level drawings (the title is Michael's own,
+# in French in every language like the other project names)
 # FR/DE text translated from the English with DeepL.
 # Web images live in ./images/ next to this file (full-resolution
 # originals are in /originals/site). To add one, drop it in ./images/ and
 # add an entry under "images:".
 
-title: Routhierville Tourism Infrastructure
+title: Aménagement de Routhierville
 order: 0
 year: '2026'
 location: Routhierville, Québec

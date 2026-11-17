@@ -22,7 +22,8 @@ Michael's rules for this site. They hold in every session; see README.md for how
 
   Add a row whenever Michael fixes how a term is said.
 - His own word choices override DeepL: French bio "travaillé" (not "exercé"); the Hospitality type
-  stays "Hôtellerie". Note any deviation in the file's translation comment.
+  stays "Hôtellerie"; the French title above info@ on the About page is "Informations" (not
+  "Généralités"). Note any deviation in the file's translation comment.
 
 ## Design
 

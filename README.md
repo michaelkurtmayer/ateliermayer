@@ -7,7 +7,7 @@ Portfolio site in French, English and German, built with [Astro](https://astro.b
 ```
 Website/
 ├── projects/                      what the site shows, one folder per project
-│   ├── routhierville-tourism-infrastructure/   site plan and site sections
+│   ├── amenagement-de-routhierville/  site plan and site sections
 │   ├── gare-de-routhierville/
 │   │   ├── index.md               text in FR / EN / DE, facts, which images to show
 │   │   └── images/                web-sized renders and drawings
