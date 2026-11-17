@@ -1,7 +1,7 @@
 ---
 // The project list, as on karamukkuo.com: clicking a project opens a band of
 // thumbnails of all its images underneath; each thumbnail opens the project
-// page at that image. Only one project is open at a time.
+// page at that image. Several projects can be open at once.
 import { Image } from 'astro:assets';
 import Base from '../../../layouts/Base.astro';
 import { getProjects } from '../../../lib/projects';
@@ -33,7 +33,7 @@ const imagesOf = (p: (typeof projects)[number]) =>
         return (
           <li>
             {images.length > 0 ? (
-              <details class="work-item" name="work">
+              <details class="work-item">
                 <summary class="work-row">
                   <span class="work-title">{p.data.title}</span>
                   <span>{p.data.type[lang]}</span>
