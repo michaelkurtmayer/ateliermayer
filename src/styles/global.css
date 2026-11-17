@@ -13,7 +13,9 @@
   --bg: #fff;
   --font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --margin: 20px;
-  --header: 90px;
+  /* the header: the name with the same white space above and below its line
+     (20 px, like the side margins), then the page right away */
+  --header: calc(2 * var(--margin) + 21.4286px);
   /* From the top of a 15/18 px line to the top of its capitals: text beside an
      image is raised by this much so its letters start level with the image */
   --cap: 3px;
@@ -217,7 +219,6 @@ main {
 
 .slideshow {
   position: relative;
-  padding-top: 5px;
 }
 
 .slides {
@@ -277,8 +278,10 @@ main {
   margin-top: calc(-1 * var(--cap));
 }
 
-/* Home page: the photo fills the whole window below the header, edge to
-   edge (cropped to fit, centred), and the page doesn't scroll */
+/* Home page: the photo runs edge to edge at the full window width, whole,
+   and the page scrolls when it is taller than the window (the one image
+   allowed to). Where it would be shorter (phones), it is cropped, centred,
+   to fill the window below the header. */
 main:has(.slideshow-bleed) {
   padding-bottom: 0;
 }
@@ -293,7 +296,8 @@ main:has(.slideshow-bleed) {
 
 .slideshow-bleed .slide img {
   width: 100%;
-  height: calc(100svh - var(--header));
+  height: auto;
+  min-height: calc(100svh - var(--header));
   max-height: none;
   aspect-ratio: auto;
   object-fit: cover;
@@ -303,7 +307,7 @@ main:has(.slideshow-bleed) {
 .slide-arrow {
   position: absolute;
   /* vertically centred on the image frame (3:2) */
-  top: calc(5px + var(--slide-w) / 3 - 19px);
+  top: calc(var(--slide-w) / 3 - 19px);
   width: 50px;
   height: 38px;
   padding: 0;
@@ -345,7 +349,10 @@ main:has(.slideshow-bleed) {
 /* ---------- Project list ---------- */
 
 .work-list {
-  padding: 17px var(--margin) 0;
+  padding: 0 var(--margin);
+  /* its rows are 21.4 px lines, so their letters sit 1.7 px lower than in an
+     18 px line: raised by that much more than --cap */
+  margin-top: calc(-1 * var(--cap) - 1.7px);
 }
 
 .work-row {
@@ -434,7 +441,8 @@ main:has(.slideshow-bleed) {
 /* ---------- 404 and the language chooser ---------- */
 
 .not-found {
-  padding: 17px var(--margin) 0;
+  padding: 0 var(--margin);
+  margin-top: calc(-1 * var(--cap));
 }
 
 .not-found h1 {
@@ -540,7 +548,7 @@ main:has(.slideshow-bleed) {
   }
 
   .slideshow-bleed .slide img {
-    height: calc(100svh - var(--phone-header));
+    min-height: calc(100svh - var(--phone-header));
   }
 
   /* Phones: the caption under its image */
@@ -586,6 +594,8 @@ main:has(.slideshow-bleed) {
 
   .work-list {
     padding-top: 0;
+    /* letters level with the top of an image: 16/20 px rows */
+    margin-top: -3px;
   }
 
   .work-row {
@@ -637,5 +647,6 @@ main:has(.slideshow-bleed) {
 
   .not-found {
     padding-top: 0;
+    margin-top: 0;
   }
 }
