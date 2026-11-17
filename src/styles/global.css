@@ -515,12 +515,13 @@ a:hover {
 
 .about {
   margin-top: clamp(24px, 4vw, 56px);
-  row-gap: clamp(28px, 3vw, 48px);
+  row-gap: clamp(20px, 2vw, 32px);
+  grid-template-rows: auto 1fr;
 }
 
-/* Contact on the left, bio in the middle, a smaller photo beside it */
+/* Left column: photo with the contact underneath. Right: the bio. */
 .about-photo {
-  grid-column: 10 / 13;
+  grid-column: 1 / 5;
   grid-row: 1;
 }
 
@@ -530,7 +531,8 @@ a:hover {
 
 .about-contact {
   grid-column: 1 / 5;
-  grid-row: 1;
+  grid-row: 2;
+  align-self: start;
 }
 
 .about-contact h2 {
@@ -538,8 +540,8 @@ a:hover {
 }
 
 .about-body {
-  grid-column: 5 / 10;
-  grid-row: 1;
+  grid-column: 6 / 12;
+  grid-row: 1 / span 2;
   max-width: 62ch;
 }
 
@@ -566,6 +568,9 @@ a:hover {
 }
 
 @media (max-width: 900px) {
+  .about {
+    grid-template-rows: none;
+  }
   .about-photo,
   .about-body,
   .about-contact {
@@ -574,12 +579,12 @@ a:hover {
   .about-photo {
     grid-row: 1;
   }
-  .about-body {
+  .about-contact {
     grid-row: 2;
   }
-  .about-contact {
+  .about-body {
     grid-row: 3;
-    margin-top: 24px;
+    margin-top: 16px;
   }
 }
 
