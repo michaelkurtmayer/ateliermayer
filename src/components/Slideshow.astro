@@ -3,6 +3,7 @@
 // on phones the images are simply stacked, edge to edge.
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import sharp from 'sharp';
 import { useTranslations, type Lang } from '../i18n/ui';
 
 interface Props {
@@ -16,6 +17,34 @@ const t = useTranslations(lang);
 // Drawings (items with a 2x file) are served as exported, never recompressed:
 // the browser picks the 1x or the 2x file for the width the drawing is shown at.
 // Desktop: inside a 68vw × (68vw × 2/3) frame, so narrower drawings show narrower.
+// Drawings keep the white margin of their sheet above the drawing (they are
+// served as exported, never cropped). Measure it, as a share of the image's
+// height, so the caption can start level with the drawing itself.
+const whiteAbove = async (img: ImageMetadata) => {
+  const path = (img as ImageMetadata & { fsPath?: string }).fsPath;
+  if (!path) return 0;
+  // full size, so faint stipple (tree tops) counts; a row starts the drawing
+  // once it holds a few marks darker than paper white
+  const { data, info } = await sharp(path).greyscale().raw().toBuffer({ resolveWithObject: true });
+  for (let y = 0; y < info.height; y++) {
+    let marks = 0;
+    for (let x = 0; x < info.width; x++) if (data[y * info.width + x] < 235 && ++marks >= 3) return y / info.height;
+  }
+  return 0;
+};
+// On computers the image sits at the top left of a 3:2 frame (--slide-w wide):
+// the caption's offset is that white margin at the size the drawing is shown.
+const captionOffsets = await Promise.all(
+  items.map(async (item) => {
+    if (!item.src2x || item.text) return undefined;
+    const share = await whiteAbove(item.src);
+    if (share < 0.005) return undefined;
+    const ratio = item.src.width / item.src.height;
+    const heightPerWidth = ratio <= 1.5 ? 2 / 3 : 1 / ratio;
+    return `--caption-top: calc(var(--slide-w) * ${(heightPerWidth * share).toFixed(4)})`;
+  }),
+);
+
 // A slide of text: paragraphs on blank lines, line breaks kept, *italics*
 const textHtml = (text: string) =>
   text
@@ -64,7 +93,7 @@ const drawingSizes = (img: ImageMetadata) => {
             />
           )}
           {item.caption && (
-            <figcaption class="slide-caption">
+            <figcaption class="slide-caption" style={captionOffsets[i]}>
               {item.caption}
               {item.scale && (
                 <>

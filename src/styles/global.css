@@ -14,6 +14,9 @@
   --font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --margin: 20px;
   --header: 90px;
+  /* From the top of a 15/18 px line to the top of its capitals: text beside an
+     image is raised by this much so its letters start level with the image */
+  --cap: 3px;
   /* The tallest an image may be: a share of the screen height */
   --img-h: 60svh;
   /* Width of the image frame (3:2): 68 % of the window width at most, never
@@ -244,7 +247,8 @@ main {
    top of the image: its name, then the scale. It moves with its image. */
 .slide-caption {
   position: absolute;
-  top: 0;
+  /* level with the top of the image, or of the drawing within its white margin */
+  top: calc(var(--caption-top, 0px) - var(--cap));
   left: var(--margin);
   width: calc((100% - 2 * var(--margin)) / 3 - var(--margin));
 }
@@ -270,6 +274,7 @@ main {
 
 .slide-text-column {
   width: min(100%, 44vw, 662px);
+  margin-top: calc(-1 * var(--cap));
 }
 
 .slide-arrow {
@@ -365,9 +370,10 @@ main {
   padding: 0 var(--margin);
 }
 
+/* The contact text starts level with the top of the photo */
 .side-column {
   grid-column: 1;
-  padding-top: 17px;
+  margin-top: calc(-1 * var(--cap));
 }
 
 /* City, then each address under its title, a blank line between them */
@@ -543,6 +549,7 @@ main {
 
   .slide-text-column {
     width: auto;
+    margin-top: 0;
   }
 
   .text-column {
@@ -593,6 +600,7 @@ main {
 
   .side-column {
     order: 2;
+    margin-top: 0;
     padding: 16px 0;
   }
 
