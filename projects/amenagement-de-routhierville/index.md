@@ -51,15 +51,13 @@ text:
 #   served exactly as exported (never recompressed), so the lines stay crisp
 images:
   # The thesis abstract, as live text in the bio's type. Text: Mayer_Thesis_Fall2026/
-  # Writing/Abstract/abstract_round29.html (14 Nov), word for word, in English.
+  # Writing/Abstract/abstract_round29.html (14 Nov), word for word, in English,
+  # without the name and advisor lines (his call, 17 Nov).
   # abstract.png is only its Work page thumbnail (tools/abstract-sheet/render.mjs).
   - src: ./images/abstract.png
     size: full
     caption: { fr: 'Résumé de thèse', en: 'Thesis abstract', de: 'Zusammenfassung der Abschlussarbeit' }
     textSlide: |
-      Michael Kurt Mayer
-      Advised by Charles Waldheim
-
       Designing the Ship of Theseus: Robustness through Redundancy along *Les Routes touristiques du Québec*
 
       This thesis suggests designing buildings the same way as tourism economies, by providing robustness through redundancy of structural members and tourism infrastructure.
