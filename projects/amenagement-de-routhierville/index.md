@@ -83,4 +83,13 @@ images:
     size: full
     caption: { fr: 'Coupe B à travers le site', en: 'Site section B', de: 'Querschnitt B durch das Gelände' }
     scale: '1:1000'
+  # VIA's Ocean, Montréal–Halifax, 20–26 July 2025, as a timetable graph: the trains
+  # (thin lines), the night (stipple) and each train passing Routhierville (black
+  # circles). Exported whole, as an A5 spread (Drawings/Diagrams_Gap_2026-11-18), 18 Nov.
+  # Caption from DeepL; French asked as "Railway timetable diagram" (the shorter
+  # phrase came back ambiguous), German as "Timetable diagram".
+  - src: ./images/diagram-ocean-week.jpg
+    src2x: ./images/diagram-ocean-week@2x.jpg
+    size: full
+    caption: { fr: 'Schéma des horaires ferroviaires', en: 'Timetable diagram', de: 'Fahrplandiagramm' }
 ---
