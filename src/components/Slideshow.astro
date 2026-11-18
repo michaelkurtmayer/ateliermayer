@@ -33,6 +33,19 @@ const drawingSizes = (img: ImageMetadata) => {
   const vw = Math.min(68, (68 * (img.width / img.height)) / 1.5);
   return `(max-width: 720px) 100vw, ${vw.toFixed(1)}vw`;
 };
+
+// Renders (the cover and the other perspectives): copies up to the render's
+// own full width, at quality 90 (the default, 80, looked soft on the cover).
+const renderWidths = (img: ImageMetadata) => [
+  ...[600, 900, 1200, 1600, 2000].filter((w) => w < img.width),
+  img.width,
+];
+
+// The home photo. On phones it fills the screen below the 50 px header and is
+// cropped at the sides, so it is shown much wider than the screen: tell the
+// browser that width, or it picks a copy a third of the size it needs.
+const bleedSizes = (img: ImageMetadata) =>
+  `(max-width: 720px) calc((100vh - 50px) * ${(img.width / img.height).toFixed(3)}), 100vw`;
 ---
 
 <div class:list={['slideshow', { 'slideshow-bleed': fullBleed }]} data-slideshow>
@@ -59,8 +72,9 @@ const drawingSizes = (img: ImageMetadata) => {
             <Image
               src={item.src}
               alt={item.alt}
-              widths={[600, 900, 1200, 1600, 2000, 2400]}
-              sizes={fullBleed ? '100vw' : '(max-width: 720px) 100vw, 68vw'}
+              widths={renderWidths(item.src)}
+              sizes={fullBleed ? bleedSizes(item.src) : '(max-width: 720px) 100vw, 68vw'}
+              quality={90}
               loading={i === 0 ? 'eager' : 'lazy'}
               fetchpriority={i === 0 ? 'high' : undefined}
             />
