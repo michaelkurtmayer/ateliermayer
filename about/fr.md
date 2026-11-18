@@ -1,7 +1,10 @@
 <!-- Translated from en.md with DeepL (Canadian French, FR-CA), 17 Nov 2026.
      "Bachelor of Science" is a fixed term: always "baccalauréat en sciences" in French (see CLAUDE.md).
      One change by Michael: "travaillé" instead of DeepL's "exercé".
-     The thesis title stays in English (kept out of DeepL with a placeholder). -->
+     The thesis title stays in English (kept out of DeepL with a placeholder).
+     18 Nov, Michael's choice: the last sentence differs from the English. Where en.md names the
+     Architect Registration Examination, French says the architect licensure exams in Massachusetts
+     (DeepL, from "has passed the architect licensure exams in the Commonwealth of Massachusetts"). -->
 
 Michael Kurt Mayer est né à Montréal et a grandi dans la région de la Montérégie, au Québec.
 
@@ -9,4 +12,4 @@ Il a travaillé en Europe et en Amérique du Nord. Au sein du cabinet [Wulf Arch
 
 Il est titulaire d’un baccalauréat en sciences de l’[Université McGill](https://www.mcgill.ca/architecture/), où il a reçu le prix Derek Drummond en architecture ainsi que la bourse Wilfred Truman Shaver. Il est actuellement candidat à la maîtrise en architecture à l’[Université Harvard](https://www.gsd.harvard.edu/), où il s’est vu décerner le prix de design Plimpton-Poorvu. Sa thèse de maîtrise, intitulée « Designing the Ship of Theseus: Robustness through Redundancy along Les Routes touristiques du Québec », bénéficie du soutien financier de la Harvard Mellon Urban Initiative et du Weatherhead Center for International Affairs. Au cours de ses études, il a occupé les fonctions d’adjoint à la recherche auprès de [Salmaan Craig](https://aud.ucla.edu/faculty/salmaan-craig) et d’adjoint à l’enseignement auprès de [Xaveer De Geyter](https://xdga.be/) et d’[Adrien Verschuere](https://bau-kunst.eu/en).
 
-Il possède la double citoyenneté canadienne et allemande, et a réussi tous les examens menant à l’obtention du permis d’architecte dans le Commonwealth du Massachusetts.
+Il possède la double citoyenneté canadienne et allemande, et a réussi les examens menant à l’obtention du permis d’architecte dans le Commonwealth du Massachusetts.

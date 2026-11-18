@@ -4,4 +4,4 @@ He has practiced in Europe and North America. At [Wulf Architekten](https://www.
 
 He holds a Bachelor of Science from [McGill University](https://www.mcgill.ca/architecture/), where he received the Derek Drummond Award in Architecture and the Wilfred Truman Shaver Scholarship. He is currently a Master of Architecture candidate at [Harvard University](https://www.gsd.harvard.edu/), where he was awarded the Plimpton-Poorvu Design Prize. His master’s thesis, *Designing the Ship of Theseus: Robustness through Redundancy along Les Routes touristiques du Québec*, is funded by the Harvard Mellon Urban Initiative and the Weatherhead Center for International Affairs. During his studies, he served as a research assistant to [Salmaan Craig](https://aud.ucla.edu/faculty/salmaan-craig) and as a teaching assistant to [Xaveer De Geyter](https://xdga.be/) and [Adrien Verschuere](https://bau-kunst.eu/en).
 
-He is a citizen of Canada and Germany, and has passed all of the architectural licensing examinations in the Commonwealth of Massachusetts.
+He is a citizen of Canada and Germany, and has passed the Architect Registration Examination.
