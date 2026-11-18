@@ -34,6 +34,12 @@ Michael's rules for this site. They hold in every session; see README.md for how
 - Text beside an image starts level with the top of the image or sheet (its edge), never with
   the drawing inside the sheet; captions stay put as the images change.
 - Drawings with a `src2x` are served exactly as exported; never recompress them.
+- Renderings have the drawing sheets' proportions, 1.48 : 1 (2371 × 1600, A1 with the title strip
+  cropped off), horizontal or vertical, so drawings and renders line up (on phones every image is
+  the same size). The web copies are cropped from the full renders, centred (e.g. 2436 × 1644);
+  the full files stay in the thesis folder. Shown whole. Images always fit the screen. The one
+  exception to both is the home page photo: full width and scrolling on computers, cropped to
+  fill the screen on phones.
 - Simplicity first (reference: Pelletier de Fontenay; layout after the Zumthor Ferienhäuser site).
 
 ## Publishing
