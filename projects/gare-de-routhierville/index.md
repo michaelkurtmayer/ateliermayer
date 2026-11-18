@@ -78,15 +78,4 @@ images:
     size: full
     caption: { fr: 'Coupe transversale', en: 'Cross section', de: 'Querschnitt' }
     scale: '1:50'
-  # South Eastern Railway locomotive No. 16 on a timber trestle, Eastern Townships,
-  # c. 1880s. Scanned from Booth, Railways of Southern Quebec I, p. 85; publication
-  # cleared by Bishop's University (Michael, 18 Nov 2026). Shown whole, not cropped.
-  # Credit wording from DeepL; no-break spaces keep "vol. I, p. 85" on one line.
-  - src: ./images/historic-trestle.jpg
-    size: full
-    caption: { fr: 'Photographie historique', en: 'Historic photograph', de: 'Historisches Foto' }
-    credit:
-      fr: "Collection Foster, Université Bishop’s\nDerek Booth, *Railways of Southern Quebec*, vol.\u00a0I,\u00a0p.\u00a085"
-      en: "Foster Collection, Bishop’s University\nDerek Booth, *Railways of Southern Quebec*, vol.\u00a0I,\u00a0p.\u00a085"
-      de: "Foster-Sammlung, Bishop’s University\nDerek Booth, *Railways of Southern Quebec*, Band\u00a0I,\u00a0S.\u00a085"
 ---
