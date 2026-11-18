@@ -550,6 +550,9 @@ main:has(.slideshow-bleed) {
 
   .slideshow-bleed .slide img {
     min-height: calc(100svh - var(--phone-header));
+    /* the home photo (station's road face) cropped right of centre, so the
+       roof edge, tree line and road show beside the braces (Michael, 18 Nov) */
+    object-position: 70% center;
   }
 
   /* Phones: the caption under its image */

@@ -10,8 +10,8 @@ export const getStaticPaths = langPaths;
 const lang = Astro.params.lang as Lang;
 const projects = await getPublishedProjects();
 
-// For now the home page shows a single image: the station seen from the
-// tracks (the station's cover). Set SHOW_ALL to true to show every project's
+// For now the home page shows a single image: the station's cover (its road
+// face, with the leaning log braces and the ramp). Set SHOW_ALL to true to show every project's
 // images again, interleaved project by project.
 const SHOW_ALL = false;
 
