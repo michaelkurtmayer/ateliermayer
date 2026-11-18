@@ -636,10 +636,12 @@ main:has(.slideshow-bleed) {
     margin: 0 calc(-1 * var(--margin)) 0;
   }
 
+  /* contact, then two lines of space before the bio (as between photo and
+     bio on computers) */
   .side-column {
     order: 2;
     margin-top: 0;
-    padding: 16px 0;
+    padding: 16px 0 36px;
   }
 
   .prose {
