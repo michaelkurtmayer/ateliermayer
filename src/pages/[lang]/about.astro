@@ -61,7 +61,7 @@ const social = [
         )
       }
     </aside>
-    <div class="page-column">
+    <div class="page-column" style={`--photo-ratio: ${(studio.width / studio.height).toFixed(4)}`}>
       <figure class="page-image">
         <Image
           src={studio}

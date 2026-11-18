@@ -25,6 +25,7 @@ export function slidesOf(p: CollectionEntry<'projects'>, lang: Lang) {
       text: img.textSlide,
       caption: img.caption?.[lang],
       scale: img.scale,
+      credit: img.credit?.[lang],
       alt: alt(img.caption?.[lang], img.scale),
     })),
   ];

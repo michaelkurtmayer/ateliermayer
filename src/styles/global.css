@@ -421,9 +421,12 @@ main:has(.slideshow-bleed) {
   max-width: 13em;
 }
 
+/* As wide as the photo is shown: in a short window the photo shrinks to fit
+   the height, and the column (so the bio's right edge) shrinks with it.
+   The bio stays left-aligned: never justified, never hyphenated. */
 .page-column {
   grid-column: 2 / 4;
-  width: min(44vw, 662px);
+  width: min(44vw, 662px, min(var(--img-h), 100svh - var(--header) - 20px) * var(--photo-ratio, 1.321));
 }
 
 /* Two lines of space between the About photo and the bio */

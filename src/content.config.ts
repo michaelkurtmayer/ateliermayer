@@ -41,6 +41,9 @@ const projects = defineCollection({
             // project page and used as alt text; the scale goes on the line below it.
             caption: t.optional(),
             scale: z.string().optional(),
+            // Images by others (e.g. a historic photo): who to credit, on the lines
+            // below the caption. A line break starts a new line; *asterisks* for titles.
+            credit: t.optional(),
           }),
         )
         .default([]),

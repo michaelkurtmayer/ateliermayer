@@ -9,7 +9,7 @@ interface Props {
   lang: Lang;
   /* the home page: one image filling the window below the header, edge to edge */
   fullBleed?: boolean;
-  items: { src: ImageMetadata; src2x?: ImageMetadata; text?: string; caption?: string; scale?: string; alt: string }[];
+  items: { src: ImageMetadata; src2x?: ImageMetadata; text?: string; caption?: string; scale?: string; credit?: string; alt: string }[];
 }
 
 const { lang, items, fullBleed = false } = Astro.props;
@@ -28,6 +28,16 @@ const textHtml = (text: string) =>
       return `<p>${safe.replace(/\*([^*]+)\*/g, '<em>$1</em>').replace(/\n/g, '<br />')}</p>`;
     })
     .join('');
+
+// A credit under a caption: line breaks kept, *titles* in italics
+const creditHtml = (text: string) =>
+  text
+    .trim()
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+    .replace(/\n/g, '<br />');
 
 const drawingSizes = (img: ImageMetadata) => {
   const vw = Math.min(68, (68 * (img.width / img.height)) / 1.5);
@@ -86,6 +96,12 @@ const bleedSizes = (img: ImageMetadata) =>
                 <>
                   <br />
                   {item.scale}
+                </>
+              )}
+              {item.credit && (
+                <>
+                  <br />
+                  <span set:html={creditHtml(item.credit)} />
                 </>
               )}
             </figcaption>
