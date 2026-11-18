@@ -42,7 +42,7 @@ text:
   de: |
     [Projektbeschreibung folgt: Standort, Programm, Konzept und Bauausführung. Zwei bis vier kurze Absätze.]
 
-cover: ./images/render-clearing.jpg
+cover: ./images/render-tower-head.jpg
 coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 
 # size: full (whole width), half (two side by side) or half-right (one image on the right half)
@@ -52,6 +52,9 @@ coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 #   the project page and used as alt text; scale: shown under it (drawings only).
 #   FR/DE from DeepL, asked as "<name>, <scale>" so it reads them as drawings.
 images:
+  - src: ./images/render-tower-path.jpg
+    size: full
+    caption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
   - src: ./images/plan-lookout.jpg
     src2x: ./images/plan-lookout@2x.jpg
     size: full
