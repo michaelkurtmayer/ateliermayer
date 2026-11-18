@@ -52,6 +52,9 @@ coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 #   the project page and used as alt text; scale: shown under it (drawings only).
 #   FR/DE from DeepL, asked as "<name>, <scale>" so it reads them as drawings.
 images:
+  - src: ./images/render-front.jpg
+    size: full
+    caption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
   - src: ./images/plan-ground.jpg
     src2x: ./images/plan-ground@2x.jpg
     size: full
