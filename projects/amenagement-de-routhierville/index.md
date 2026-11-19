@@ -103,4 +103,27 @@ images:
     src2x: ./images/diagram-wood-availability@2x.jpg
     size: full
     caption: { fr: 'Disponibilité de l’épinette dans un rayon de 20 km', en: 'Spruce availability within a 20 km radius', de: 'Verfügbarkeit von Fichtenholz im Umkreis von 20 km' }
+  # His site-visit photographs (13 June 2026, Sony A7III), after all the drawings, in
+  # the order he sent them, 19 Nov. The files are his Lightroom exports, copied
+  # unchanged (3000 × 2000) from Mayer_Thesis_Fall2026/Content/Site_Visit/
+  # mayer_michaelkurt-2 … -7.jpg; only the web copies are made from them.
+  # Caption "Photograph", FR/DE from DeepL.
+  - src: ./images/photo-log-pile.jpg
+    size: full
+    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
+  - src: ./images/photo-clear-cut.jpg
+    size: full
+    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
+  - src: ./images/photo-covered-bridge.jpg
+    size: full
+    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
+  - src: ./images/photo-red-house.jpg
+    size: full
+    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
+  - src: ./images/photo-railway.jpg
+    size: full
+    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
+  - src: ./images/photo-white-house.jpg
+    size: full
+    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
 ---
