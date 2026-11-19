@@ -125,10 +125,17 @@ images:
   # in 248 plots), black = the pieces' true cross-sections at 1:40 (4,075 pieces, 355 m³).
   # Exported whole, as an A5 spread, no title (his choice), 19 Nov. Caption is Michael's
   # ("spruce availability within a 20-kilometer radius"), FR/DE from DeepL.
+  # Credit (19 Nov, his yes): the sample plots are CC BY 4.0, which asks for the source
+  # and a link to the licence. "Data:" from DeepL (FR "Données :", DE "Daten:"), the
+  # names kept out with a placeholder; the link goes to the licence in each language.
   - src: ./images/diagram-wood-availability.jpg
     src2x: ./images/diagram-wood-availability@2x.jpg
     size: full
     caption: { fr: 'Disponibilité de l’épinette dans un rayon de 20 km', en: 'Spruce availability within a 20 km radius', de: 'Verfügbarkeit von Fichtenholz im Umkreis von 20 km' }
+    credit:
+      fr: 'Données : MRNF, Données Québec, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.fr)'
+      en: 'Data: MRNF, Données Québec, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)'
+      de: 'Daten: MRNF, Données Québec, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.de)'
   # The covered bridge (1931), its two A1 elevations at 1:50, west span and east span
   # (Drawings/Elevation_CoveredBridge_A1_1-50.pdf and …East…, printed 27 Oct), his pick
   # of the bridge drawings, 19 Nov. Web files from Drawings/Sections_v6g/Web_2026-11-17/

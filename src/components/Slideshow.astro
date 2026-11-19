@@ -29,7 +29,8 @@ const textHtml = (text: string) =>
     })
     .join('');
 
-// A credit under a caption: line breaks kept, *titles* in italics
+// A credit under a caption: line breaks kept, *titles* in italics,
+// [text](https://…) a link (e.g. to a data licence, which CC BY asks for)
 const creditHtml = (text: string) =>
   text
     .trim()
@@ -37,6 +38,7 @@ const creditHtml = (text: string) =>
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+    .replace(/\[([^\]]+)\]\((https:\/\/[^)\s"]+)\)/g, '<a href="$2">$1</a>')
     .replace(/\n/g, '<br />');
 
 const drawingSizes = (img: ImageMetadata) => {

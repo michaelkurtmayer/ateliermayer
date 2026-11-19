@@ -42,7 +42,8 @@ const projects = defineCollection({
             caption: t.optional(),
             scale: z.string().optional(),
             // Images by others (e.g. a historic photo): who to credit, on the lines
-            // below the caption. A line break starts a new line; *asterisks* for titles.
+            // below the caption. A line break starts a new line; *asterisks* for titles;
+            // [text](https://…) for a link (e.g. a data licence).
             credit: t.optional(),
           }),
         )
