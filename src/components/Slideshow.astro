@@ -46,8 +46,9 @@ const drawingSizes = (img: ImageMetadata) => {
 
 // Renders (the cover and the other perspectives): copies up to the render's
 // own full width, at quality 90 (the default, 80, looked soft on the cover).
+// The steps above 2000 only apply to the 5000 px renders (19 Nov).
 const renderWidths = (img: ImageMetadata) => [
-  ...[600, 900, 1200, 1600, 2000].filter((w) => w < img.width),
+  ...[600, 900, 1200, 1600, 2000, 2800, 3600, 4400].filter((w) => w < img.width),
   img.width,
 ];
 
