@@ -51,10 +51,10 @@ coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 # caption: a simple name (never the sheet title), shown in the left column of
 #   the project page and used as alt text; scale: shown under it (drawings only).
 #   FR/DE from DeepL, asked as "<name>, <scale>" so it reads them as drawings.
+#
+# The path view (the forest path to the tower's foot) was taken off the site on
+# 19 Nov (his call): the head-on view above is the tower's only render.
 images:
-  - src: ./images/render-tower-path.jpg
-    size: full
-    caption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
   - src: ./images/plan-lookout.jpg
     src2x: ./images/plan-lookout@2x.jpg
     size: full
