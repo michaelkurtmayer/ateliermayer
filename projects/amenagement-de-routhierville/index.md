@@ -92,4 +92,15 @@ images:
     src2x: ./images/diagram-ocean-week@2x.jpg
     size: full
     caption: { fr: 'Schéma des horaires ferroviaires', en: 'Timetable diagram', de: 'Fahrplandiagramm' }
+  # Spruce near Routhierville against every timber piece of the tower, station and inn:
+  # across, the piece's length (0–5.5 m; dashed, the 4.88 m / 16 ft limit); up, how
+  # many spruce within 20 km have a butt log that can give it (1 in 1 to 1 in 200, log
+  # scale); stipple = supply (MRNF sample plots, Données Québec, CC-BY 4.0: 1,832 spruce
+  # in 248 plots), black = the pieces' true cross-sections at 1:40 (4,075 pieces, 355 m³).
+  # Exported whole, as an A5 spread, no title (his choice), 19 Nov. Caption is Michael's
+  # ("spruce availability within a 20-kilometer radius"), FR/DE from DeepL.
+  - src: ./images/diagram-wood-availability.jpg
+    src2x: ./images/diagram-wood-availability@2x.jpg
+    size: full
+    caption: { fr: 'Disponibilité de l’épinette dans un rayon de 20 km', en: 'Spruce availability within a 20 km radius', de: 'Verfügbarkeit von Fichtenholz im Umkreis von 20 km' }
 ---
