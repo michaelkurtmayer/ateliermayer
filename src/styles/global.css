@@ -40,6 +40,11 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  /* Room for the scroll bar on every page, scrolling or not, so the header and
+     the columns stay put between pages that fit the window (Work) and pages
+     that scroll (About). Only matters where the scroll bar takes up space
+     (a Mac with a mouse, or set to always show it; Windows); 19 Nov. */
+  scrollbar-gutter: stable;
 }
 
 body {
