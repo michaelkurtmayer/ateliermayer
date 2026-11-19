@@ -53,6 +53,32 @@ text:
 #   the project page and used as alt text; scale: shown under it (drawings only).
 #   FR/DE from DeepL, asked as "<name>, <scale>" so it reads them as drawings.
 images:
+  # His site-visit photographs (13 June 2026, Sony A7III), first: before the abstract
+  # (his ask, 19 Nov: "put all the photos before the abstract"), so the covered bridge
+  # photo is also the project's Work page thumbnail. The files are his Lightroom
+  # exports, copied unchanged (3000 × 2000) from Mayer_Thesis_Fall2026/Content/
+  # Site_Visit/mayer_michaelkurt-2 … -7.jpg; only the web copies are made from them.
+  # Order, his (19 Nov): "bridge, station, railway, house, and then both logging photos"
+  # (station = the red house with the Routhierville sign, mayer_michaelkurt-5).
+  # Caption "Photograph", FR/DE from DeepL.
+  - src: ./images/photo-covered-bridge.jpg
+    size: full
+    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
+  - src: ./images/photo-station.jpg
+    size: full
+    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
+  - src: ./images/photo-railway.jpg
+    size: full
+    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
+  - src: ./images/photo-white-house.jpg
+    size: full
+    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
+  - src: ./images/photo-log-pile.jpg
+    size: full
+    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
+  - src: ./images/photo-clear-cut.jpg
+    size: full
+    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
   # The thesis abstract, as live text in the bio's type. Text: Mayer_Thesis_Fall2026/
   # Writing/Abstract/abstract_round29.html (14 Nov), word for word, in English,
   # without the name and advisor lines (his call, 17 Nov).
@@ -120,28 +146,4 @@ images:
     size: full
     caption: { fr: 'Vue en élévation du pont couvert, travée est', en: 'Elevation of the covered bridge, east span', de: 'Seitenansicht des östlichen Brückenfeldes der überdachten Brücke' }
     scale: '1:50'
-  # His site-visit photographs (13 June 2026, Sony A7III), after all the drawings. The
-  # files are his Lightroom exports, copied unchanged (3000 × 2000) from
-  # Mayer_Thesis_Fall2026/Content/Site_Visit/mayer_michaelkurt-2 … -7.jpg; only the web
-  # copies are made from them. Order, his (19 Nov): "bridge, station, railway, house,
-  # and then both logging photos" (station = the red house with the Routhierville sign,
-  # mayer_michaelkurt-5). Caption "Photograph", FR/DE from DeepL.
-  - src: ./images/photo-covered-bridge.jpg
-    size: full
-    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
-  - src: ./images/photo-station.jpg
-    size: full
-    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
-  - src: ./images/photo-railway.jpg
-    size: full
-    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
-  - src: ./images/photo-white-house.jpg
-    size: full
-    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
-  - src: ./images/photo-log-pile.jpg
-    size: full
-    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
-  - src: ./images/photo-clear-cut.jpg
-    size: full
-    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
 ---
