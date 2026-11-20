@@ -323,11 +323,13 @@ main:has(.slideshow-bleed) {
   cursor: pointer;
 }
 
+/* the same size and line as the X (20 Nov, his ask): each arrow is half of the X,
+   14 units tall; the button keeps its larger area to click */
 .slide-arrow svg {
   display: block;
   width: 19px;
-  height: 38px;
-  margin: 0 auto;
+  height: 19px;
+  margin: 9.5px auto;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.5;
@@ -343,6 +345,32 @@ main:has(.slideshow-bleed) {
 
 .slide-next {
   right: 7px;
+}
+
+/* Project pages: an X back to the Work page, in the arrows' line, at the top
+   right in line with the right arrow, its top level with the top of the image
+   (the caption's line on the left) */
+.slide-close {
+  position: absolute;
+  top: -3px;
+  right: 7px;
+  width: 50px;
+  height: 19px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.slide-close svg {
+  display: block;
+  width: 19px;
+  height: 19px;
+  margin: 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.slide-close:hover {
+  color: #000;
 }
 
 /* ---------- Text below the images: the middle column ---------- */
@@ -583,7 +611,8 @@ main:has(.slideshow-bleed) {
     object-position: center;
   }
 
-  .slide-arrow {
+  .slide-arrow,
+  .slide-close {
     display: none;
   }
 

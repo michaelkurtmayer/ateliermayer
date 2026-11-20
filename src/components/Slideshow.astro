@@ -10,9 +10,12 @@ interface Props {
   /* the home page: one image filling the window below the header, edge to edge */
   fullBleed?: boolean;
   items: { src: ImageMetadata; src2x?: ImageMetadata; text?: string; caption?: string; scale?: string; credit?: string; alt: string }[];
+  /* project pages: an X at the top right that goes back to the Work page, with the
+     projects that were open there open again (and this one) */
+  close?: { href: string; project: string };
 }
 
-const { lang, items, fullBleed = false } = Astro.props;
+const { lang, items, fullBleed = false, close } = Astro.props;
 const t = useTranslations(lang);
 
 // Drawings (items with a 2x file) are served as exported, never recompressed:
@@ -117,16 +120,25 @@ const bleedSizes = (img: ImageMetadata) =>
     items.length > 1 && (
       <>
         <button class="slide-arrow slide-prev" type="button" aria-label={t('slides.previous')}>
-          <svg viewBox="0 0 20 40" aria-hidden="true">
-            <path d="M17 2L3 20l14 18" />
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M13.5 3L6.5 10l7 7" />
           </svg>
         </button>
         <button class="slide-arrow slide-next" type="button" aria-label={t('slides.next')}>
-          <svg viewBox="0 0 20 40" aria-hidden="true">
-            <path d="M3 2l14 18L3 38" />
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M6.5 3l7 7-7 7" />
           </svg>
         </button>
       </>
+    )
+  }
+  {
+    close && (
+      <a class="slide-close" href={close.href} aria-label={t('nav.close')} data-project={close.project}>
+        <svg viewBox="0 0 20 20" aria-hidden="true">
+          <path d="M3 3l14 14M17 3L3 17" />
+        </svg>
+      </a>
     )
   }
 </div>
@@ -159,4 +171,21 @@ const bleedSizes = (img: ImageMetadata) =>
       if (e.key === 'ArrowRight') go(index() + 1);
     });
   });
+
+  // The X: tells the Work page which project we came from, so it opens the
+  // projects that were open before (see work/index.astro). Escape does the same.
+  const close = document.querySelector<HTMLAnchorElement>('.slide-close');
+  if (close) {
+    const leave = () => {
+      try {
+        sessionStorage.setItem('work-return', close.dataset.project ?? '');
+      } catch {}
+    };
+    close.addEventListener('click', leave);
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape' || getComputedStyle(close).display === 'none') return;
+      leave();
+      location.href = close.href;
+    });
+  }
 </script>

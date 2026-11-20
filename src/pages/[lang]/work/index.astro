@@ -27,7 +27,7 @@ const imagesOf = (p: (typeof projects)[number]) => slidesOf(p, lang);
         return (
           <li>
             {images.length > 0 ? (
-              <details class="work-item">
+              <details class="work-item" data-project={p.id}>
                 <summary class="work-row">
                   <span class="work-title">{p.data.title}</span>
                   <span>{p.data.type[lang]}</span>
@@ -54,3 +54,55 @@ const imagesOf = (p: (typeof projects)[number]) => slidesOf(p, lang);
     }
   </ul>
 </Base>
+
+<script>
+  // Remembers which projects are open (for this tab only). Coming back from a
+  // project page by its X (or the browser's back button), the same projects are
+  // open again, the one just seen among them, at the same scroll position.
+  // Arriving any other way (the Work link), every project starts closed.
+  const store = {
+    get: (k: string) => {
+      try {
+        return sessionStorage.getItem(k);
+      } catch {
+        return null;
+      }
+    },
+    set: (k: string, v: string) => {
+      try {
+        sessionStorage.setItem(k, v);
+      } catch {}
+    },
+    remove: (k: string) => {
+      try {
+        sessionStorage.removeItem(k);
+      } catch {}
+    },
+  };
+  const items = [...document.querySelectorAll<HTMLDetailsElement>('details.work-item')];
+  const save = () =>
+    store.set('work-open', JSON.stringify(items.filter((d) => d.open).map((d) => d.dataset.project)));
+  items.forEach((d) => d.addEventListener('toggle', save));
+  document.querySelectorAll('.work-thumbs a').forEach((a) =>
+    a.addEventListener('click', () => {
+      save();
+      store.set('work-scroll', String(window.scrollY));
+    }),
+  );
+
+  const from = store.get('work-return');
+  const nav = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined;
+  if (from !== null || nav?.type === 'back_forward') {
+    store.remove('work-return');
+    let open: string[] = [];
+    try {
+      open = JSON.parse(store.get('work-open') ?? '[]');
+    } catch {}
+    if (from) open.push(from);
+    items.forEach((d) => {
+      if (open.includes(d.dataset.project ?? '')) d.open = true;
+    });
+    const y = Number(store.get('work-scroll') ?? 0);
+    if (y > 0) window.scrollTo(0, y);
+  }
+</script>

@@ -2,7 +2,7 @@
 import Base from '../../../layouts/Base.astro';
 import Slideshow from '../../../components/Slideshow.astro';
 import { getPublishedProjects, slidesOf } from '../../../lib/projects';
-import { langs, paragraphs, useTranslations, type Lang } from '../../../i18n/ui';
+import { langs, localize, paragraphs, useTranslations, type Lang } from '../../../i18n/ui';
 
 export async function getStaticPaths() {
   const projects = await getPublishedProjects();
@@ -38,7 +38,7 @@ const facts = [
 <Base lang={lang} title={d.title} description={d.summary[lang]}>
   <article class="project">
     <h1 class="visually-hidden">{d.title}</h1>
-    <Slideshow lang={lang} items={items} />
+    <Slideshow lang={lang} items={items} close={{ href: localize(lang, '/work/'), project: project.id }} />
     {
       SHOW_TEXT && (
         <div class="text-column">
