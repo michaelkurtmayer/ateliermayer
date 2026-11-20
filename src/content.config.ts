@@ -40,7 +40,9 @@ const projects = defineCollection({
             // A simple name (never the sheet title), shown in the left column of the
             // project page and used as alt text; the scale goes on the line below it.
             caption: t.optional(),
-            scale: z.string().optional(),
+            // One string for all three languages ('1:50'), or one per language where the
+            // number is written differently (1:1,500,000 / 1:1 500 000 / 1:1.500.000).
+            scale: z.union([z.string(), t]).optional(),
             // Images by others (e.g. a historic photo): who to credit, on the lines
             // below the caption. A line break starts a new line; *asterisks* for titles;
             // [text](https://…) for a link (e.g. a data licence).

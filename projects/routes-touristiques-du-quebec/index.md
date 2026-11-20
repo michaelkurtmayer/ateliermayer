@@ -1,0 +1,73 @@
+---
+# Les Routes touristiques du Québec: the regional scale of the thesis (the name is
+# Michael's own, 20 Nov, in French in every language like the other project names).
+# FR/DE text translated from the English with DeepL.
+# Web images live in ./images/ next to this file (full-resolution
+# originals are in /originals/routes-touristiques-du-quebec). To add one, drop it in
+# ./images/ and add an entry under "images:".
+
+title: Les Routes touristiques du Québec
+# First on the Work page: the largest scale, before the site and the three buildings
+order: 0
+year: '2026'
+location: Québec
+
+# Type, one of: Cultural, Hospitality, Infrastructure, Residential, Transportation
+#   FR: Culturel, Hôtellerie, Infrastructure, Résidentiel, Transport
+#   DE: Kultur, Hotellerie, Infrastruktur, Wohnen, Verkehr
+type:
+  fr: Transport
+  en: Transportation
+  de: Verkehr
+
+status:
+  fr: En cours
+  en: In progress
+  de: In Bearbeitung
+
+context:
+  fr: Mémoire de maîtrise « Railway-Oriented Tourism », Harvard Graduate School of Design
+  en: Thesis “Railway-Oriented Tourism”, Harvard Graduate School of Design
+  de: Masterarbeit „Railway-Oriented Tourism“, Harvard Graduate School of Design
+
+# The page's description for search engines. FR/DE from DeepL, "VIA Rail" kept out
+# with a placeholder.
+summary:
+  fr: 'Les trois itinéraires de VIA Rail au Québec, imposés par le gouvernement fédéral, reliant Montréal à Senneterre, Jonquière et Gaspé, avec tous leurs arrêts.'
+  en: 'VIA Rail’s three federally mandated routes in Quebec, from Montréal to Senneterre, Jonquière and Gaspé, with all their stops.'
+  de: 'Die drei vom Bund vorgeschriebenen Linien von VIA Rail in Québec, von Montréal nach Senneterre, Jonquière und Gaspé, mit allen Haltestellen.'
+
+# Leave a blank line between paragraphs.
+text:
+  fr: |
+    [Description du projet à venir : emplacement, programme, concept et construction. Deux à quatre courts paragraphes.]
+  en: |
+    [Project description to come: site, programme, concept and construction. Two to four short paragraphs.]
+  de: |
+    [Projektbeschreibung folgt: Standort, Programm, Konzept und Bauausführung. Zwei bis vier kurze Absätze.]
+
+# size: full (whole width), half (two side by side) or half-right (one image on the right half)
+# src2x: drawings only, the same drawing at twice the size; both files are then
+#   served exactly as exported (never recompressed), so the lines stay crisp
+# caption: a simple name (never the sheet title), shown in the left column of
+#   the project page and used as alt text; scale: shown under it (drawings only).
+#   FR/DE from DeepL, asked as "<name>, <scale>" so it reads them as drawings.
+images:
+  # Map 14c, VIA Rail's three federally mandated routes in Québec (Montréal–Senneterre,
+  # Montréal–Jonquière, Montréal–Gaspé; Matapédia–Gaspé, being rebuilt, dashed), every
+  # stop named, over population density by municipality in stipple (2021 census).
+  # Drawings/Map_VIAMandatedRoutes_A1_1-1500000.pdf (QGIS, A1, 20 Nov), legend removed
+  # (his ask in the Minard session: "remove the legend and send the drawing to the website
+  # session for a new project called Les Routes touristiques du Québec"). Web files from
+  # Drawings/Sections_v6g/Web_2026-11-17/export_web.py (Map_VIAMandatedRoutes), cropped to
+  # the QGIS map frame, copied unchanged. Caption: what the map shows (his ask, 20 Nov,
+  # "please add the right caption", after a plain "Map"), from DeepL asked as "Federally
+  # mandated VIA Rail routes and stops, 1:1,500,000" (with a placeholder for VIA Rail it
+  # came back as "la ligne" / "der Linie"). Scale from DeepL too, the number written
+  # each language's way (French with no-break spaces).
+  - src: ./images/map-via-routes.jpg
+    src2x: ./images/map-via-routes@2x.jpg
+    size: full
+    caption: { fr: 'Itinéraires et arrêts de VIA Rail imposés par le gouvernement fédéral', en: 'Federally mandated VIA Rail routes and stops', de: 'Von der Bundesregierung vorgeschriebene VIA Rail-Strecken und -Haltestellen' }
+    scale: { fr: '1:1 500 000', en: '1:1,500,000', de: '1:1.500.000' }
+---

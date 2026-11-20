@@ -6,7 +6,7 @@
 # an entry under "images:".
 
 title: L’Auberge de la Matapédia
-order: 2
+order: 3
 year: '2026'
 location: Routhierville, Québec
 

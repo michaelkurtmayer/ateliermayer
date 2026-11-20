@@ -19,14 +19,17 @@ export function slidesOf(p: CollectionEntry<'projects'>, lang: Lang) {
   const alt = (caption?: string, scale?: string) => (caption ? (scale ? `${caption}, ${scale}` : caption) : d.title);
   return [
     ...(d.cover ? [{ src: d.cover, caption: d.coverCaption?.[lang], alt: alt(d.coverCaption?.[lang]) }] : []),
-    ...d.images.map((img) => ({
-      src: img.src,
-      src2x: img.src2x,
-      text: img.textSlide,
-      caption: img.caption?.[lang],
-      scale: img.scale,
-      credit: img.credit?.[lang],
-      alt: alt(img.caption?.[lang], img.scale),
-    })),
+    ...d.images.map((img) => {
+      const scale = typeof img.scale === 'string' ? img.scale : img.scale?.[lang];
+      return {
+        src: img.src,
+        src2x: img.src2x,
+        text: img.textSlide,
+        caption: img.caption?.[lang],
+        scale,
+        credit: img.credit?.[lang],
+        alt: alt(img.caption?.[lang], scale),
+      };
+    }),
   ];
 }

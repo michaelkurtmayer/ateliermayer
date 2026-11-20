@@ -6,7 +6,7 @@
 # an entry under "images:".
 
 title: Le Musée de la Foresterie
-order: 3
+order: 4
 year: '2026'
 location: Routhierville, Québec
 
