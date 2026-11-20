@@ -16,10 +16,11 @@ location: Québec
 # Type, one of: Cultural, Hospitality, Infrastructure, Residential, Transportation
 #   FR: Culturel, Hôtellerie, Infrastructure, Résidentiel, Transport
 #   DE: Kultur, Hotellerie, Infrastruktur, Wohnen, Verkehr
+# Infrastructure since 20 Nov (his ask; it was Transportation)
 type:
-  fr: Transport
-  en: Transportation
-  de: Verkehr
+  fr: Infrastructure
+  en: Infrastructure
+  de: Infrastruktur
 
 status:
   fr: En cours
