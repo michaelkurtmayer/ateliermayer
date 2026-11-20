@@ -89,10 +89,13 @@ images:
   # VIA's Ocean, Montréal–Halifax, 20–26 July 2025, as a timetable graph: the trains
   # (thin lines), the night (stipple) and each train passing Routhierville (black
   # circles). Exported whole, as an A5 spread (Drawings/Diagrams_Gap_2026-11-18), 18 Nov.
-  # Caption from DeepL; French asked as "Railway timetable diagram" (the shorter
-  # phrase came back ambiguous), German as "Timetable diagram".
+  # Caption his (20 Nov): "timetable diagram of VIA Rail's Ocean line (use the right
+  # terms)": the Ocean is VIA's train (its French name is l'Océan, as on viarail.ca/fr),
+  # the line is CN's, so "train". FR/DE from DeepL, asked as "Timetable diagram of VIA
+  # Rail's Ocean train"; in French the name went in through a placeholder (DeepL kept
+  # the English « Ocean »), German keeps the English name as DeepL gave it.
   - src: ./images/diagram-ocean-week.jpg
     src2x: ./images/diagram-ocean-week@2x.jpg
     size: full
-    caption: { fr: 'Schéma des horaires ferroviaires', en: 'Timetable diagram', de: 'Fahrplandiagramm' }
+    caption: { fr: 'Schéma des horaires du train l’Océan de VIA Rail', en: 'Timetable diagram of VIA Rail’s Ocean train', de: 'Fahrplandiagramm des „Ocean“-Zugs von VIA Rail' }
 ---
