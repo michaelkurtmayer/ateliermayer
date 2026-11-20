@@ -83,4 +83,31 @@ images:
     size: full
     caption: { fr: 'Circuits et itinéraires touristiques', en: 'Tourist routes and itineraries', de: 'Touristische Routen und Reiserouten' }
     scale: { fr: '1:1 500 000', en: '1:1,500,000', de: '1:1.500.000' }
+  # Two VIA Rail gap diagrams, A5 spreads like the Ocean week diagram (Drawings/
+  # Diagrams_Gap_2026-11-18/Diagram_PassengersWhoPays and Diagram_RailRoad_A5spread.pdf,
+  # Rhino, 20 Nov), sent from the subsidy session (his words there: "publish these two
+  # graphs to the tourist infrastructure project"), in that order. No title, axis, key or
+  # source on the drawings, on purpose; the routes and years are written on them. Web files
+  # from export_web.py (whole page), copied unchanged.
+  # Captions: a simple name (the site's rule), with the sources on a data line, as the
+  # spruce diagram had (the session's longer captions are in its message, 20 Nov). FR/DE
+  # from DeepL; the first German caption asked as "Passengers per year and who pays for
+  # each train" (the first phrasing came back with the wrong word order); MTMD and
+  # "Débit de circulation" (its dataset) kept out with placeholders.
+  - src: ./images/diagram-passengers-who-pays.jpg
+    src2x: ./images/diagram-passengers-who-pays@2x.jpg
+    size: full
+    caption: { fr: 'Nombre de passagers par année et qui assume les coûts de chaque train', en: 'Passengers a year and who pays for each train', de: 'Fahrgastzahlen pro Jahr und wer für den jeweiligen Zug bezahlt' }
+    credit:
+      fr: 'Données : VIA Rail, rapports annuels de 2025 et 2013'
+      en: 'Data: VIA Rail, Annual Reports 2025 and 2013'
+      de: 'Daten: VIA Rail, Jahresberichte 2025 und 2013'
+  - src: ./images/diagram-rail-road.jpg
+    src2x: ./images/diagram-rail-road@2x.jpg
+    size: full
+    caption: { fr: 'Nombre annuel de passagers de train et de véhicules routiers', en: 'Train passengers and road vehicles a year', de: 'Zugfahrgäste und Straßenfahrzeuge pro Jahr' }
+    credit:
+      fr: 'Données : VIA Rail, rapports annuels de 2025 et 2013; MTMD, Débit de circulation'
+      en: 'Data: VIA Rail, Annual Reports 2025 and 2013; MTMD, Débit de circulation'
+      de: 'Daten: VIA Rail, Jahresberichte 2025 und 2013; MTMD, Débit de circulation'
 ---
