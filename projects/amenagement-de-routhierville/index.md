@@ -53,32 +53,9 @@ text:
 #   the project page and used as alt text; scale: shown under it (drawings only).
 #   FR/DE from DeepL, asked as "<name>, <scale>" so it reads them as drawings.
 images:
-  # His site-visit photographs (13 June 2026, Sony A7III), first: before the abstract
-  # (his ask, 19 Nov: "put all the photos before the abstract"), so the covered bridge
-  # photo is also the project's Work page thumbnail. The files are his Lightroom
-  # exports, copied unchanged (3000 × 2000) from Mayer_Thesis_Fall2026/Content/
-  # Site_Visit/mayer_michaelkurt-2 … -7.jpg; only the web copies are made from them.
-  # Order, his (19 Nov): "bridge, station, railway, house, and then both logging photos"
-  # (station = the red house with the Routhierville sign, mayer_michaelkurt-5).
-  # Caption "Photograph", FR/DE from DeepL.
-  - src: ./images/photo-covered-bridge.jpg
-    size: full
-    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
-  - src: ./images/photo-station.jpg
-    size: full
-    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
-  - src: ./images/photo-railway.jpg
-    size: full
-    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
-  - src: ./images/photo-white-house.jpg
-    size: full
-    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
-  - src: ./images/photo-log-pile.jpg
-    size: full
-    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
-  - src: ./images/photo-clear-cut.jpg
-    size: full
-    caption: { fr: 'Photographie', en: 'Photograph', de: 'Foto' }
+  # His six site-visit photographs, the covered bridge's two 1:50 elevations and the
+  # spruce availability diagram were taken off on 20 Nov, his call; the photos are in
+  # Mayer_Thesis_Fall2026/Content/Site_Visit, the drawings in the thesis folder.
   # The thesis abstract, as live text in the bio's type. Text: Mayer_Thesis_Fall2026/
   # Writing/Abstract/abstract_round29.html (14 Nov), word for word, in English,
   # without the name and advisor lines (his call, 17 Nov).
@@ -118,39 +95,4 @@ images:
     src2x: ./images/diagram-ocean-week@2x.jpg
     size: full
     caption: { fr: 'Schéma des horaires ferroviaires', en: 'Timetable diagram', de: 'Fahrplandiagramm' }
-  # Spruce near Routhierville against every timber piece of the tower, station and inn:
-  # across, the piece's length (0–5.5 m; dashed, the 4.88 m / 16 ft limit); up, how
-  # many spruce within 20 km have a butt log that can give it (1 in 1 to 1 in 200, log
-  # scale); stipple = supply (MRNF sample plots, Données Québec, CC-BY 4.0: 1,832 spruce
-  # in 248 plots), black = the pieces' true cross-sections at 1:40 (4,075 pieces, 355 m³).
-  # Exported whole, as an A5 spread, no title (his choice), 19 Nov. Caption is Michael's
-  # ("spruce availability within a 20-kilometer radius"), FR/DE from DeepL.
-  # Credit (19 Nov, his yes): the sample plots are CC BY 4.0, which asks for the source
-  # and a link to the licence. "Data:" from DeepL (FR "Données :", DE "Daten:"), the
-  # names kept out with a placeholder; the link goes to the licence in each language.
-  - src: ./images/diagram-wood-availability.jpg
-    src2x: ./images/diagram-wood-availability@2x.jpg
-    size: full
-    caption: { fr: 'Disponibilité de l’épinette dans un rayon de 20 km', en: 'Spruce availability within a 20 km radius', de: 'Verfügbarkeit von Fichtenholz im Umkreis von 20 km' }
-    credit:
-      fr: 'Données : MRNF, Données Québec, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.fr)'
-      en: 'Data: MRNF, Données Québec, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)'
-      de: 'Daten: MRNF, Données Québec, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.de)'
-  # The covered bridge (1931), its two A1 elevations at 1:50, west span and east span
-  # (Drawings/Elevation_CoveredBridge_A1_1-50.pdf and …East…, printed 27 Oct), his pick
-  # of the bridge drawings, 19 Nov. Web files from Drawings/Sections_v6g/Web_2026-11-17/
-  # export_web.py (Bridge_Elevation_West / _East), cropped to the drawing frame.
-  # Captions: FR from DeepL ("Elevation of the covered bridge, west span, 1:50"); DE from
-  # DeepL with the English rephrased as "Side view of the west span of the covered
-  # bridge, 1:50" (the first phrasing came back as "Höhenprofil", a height profile).
-  - src: ./images/bridge-elevation-west.jpg
-    src2x: ./images/bridge-elevation-west@2x.jpg
-    size: full
-    caption: { fr: 'Vue en élévation du pont couvert, travée ouest', en: 'Elevation of the covered bridge, west span', de: 'Seitenansicht des westlichen Brückenfeldes der überdachten Brücke' }
-    scale: '1:50'
-  - src: ./images/bridge-elevation-east.jpg
-    src2x: ./images/bridge-elevation-east@2x.jpg
-    size: full
-    caption: { fr: 'Vue en élévation du pont couvert, travée est', en: 'Elevation of the covered bridge, east span', de: 'Seitenansicht des östlichen Brückenfeldes der überdachten Brücke' }
-    scale: '1:50'
 ---
