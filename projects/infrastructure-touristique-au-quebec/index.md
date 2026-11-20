@@ -1,12 +1,13 @@
 ---
-# Les Routes touristiques du Québec: the regional scale of the thesis (the name is
-# Michael's own, 20 Nov, in French in every language like the other project names).
+# Infrastructure touristique au Québec: the regional scale of the thesis (the name is
+# Michael's own, in French in every language like the other project names; first
+# "Les Routes touristiques du Québec", renamed 20 Nov at his ask).
 # FR/DE text translated from the English with DeepL.
 # Web images live in ./images/ next to this file (full-resolution
-# originals are in /originals/routes-touristiques-du-quebec). To add one, drop it in
+# originals are in /originals/infrastructure-touristique-au-quebec). To add one, drop it in
 # ./images/ and add an entry under "images:".
 
-title: Les Routes touristiques du Québec
+title: Infrastructure touristique au Québec
 # First on the Work page: the largest scale, before the site and the three buildings
 order: 0
 year: '2026'
