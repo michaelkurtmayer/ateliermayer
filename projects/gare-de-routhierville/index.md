@@ -59,9 +59,8 @@ images:
   - src: ./images/render-main-track.jpg
     size: full
     caption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
-  - src: ./images/render-front.jpg
-    size: full
-    caption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
+  # Front 3 (the head-on view of the track facade, from between the tracks) was taken
+  # off on 20 Nov, his call; it is still in the thesis folder.
   - src: ./images/plan-ground.jpg
     src2x: ./images/plan-ground@2x.jpg
     size: full
