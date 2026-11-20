@@ -70,4 +70,16 @@ images:
     size: full
     caption: { fr: 'Itinéraires et arrêts de VIA Rail imposés par le gouvernement fédéral', en: 'Federally mandated VIA Rail routes and stops', de: 'Von der Bundesregierung vorgeschriebene VIA Rail-Strecken und -Haltestellen' }
     scale: { fr: '1:1 500 000', en: '1:1,500,000', de: '1:1.500.000' }
+  # Map 14d, the companion to 14c on the same base: Tourisme Québec's 19 signed tourist
+  # routes (named on leaders) and Bonjour Québec's 34 itineraries, one bold dashed line,
+  # over population density in stipple; no trains. Drawings/Map_TouristRoutesPopulation_
+  # A1_1-1500000.pdf (QGIS, A1, 20 Nov), sent from the Minard session (his words there:
+  # "send this to website session"). Web files from export_web.py
+  # (Map_TouristRoutesPopulation), cropped to the QGIS map frame, copied unchanged.
+  # Caption from DeepL, asked as "Tourist routes and itineraries, 1:1,500,000".
+  - src: ./images/map-tourist-routes.jpg
+    src2x: ./images/map-tourist-routes@2x.jpg
+    size: full
+    caption: { fr: 'Circuits et itinéraires touristiques', en: 'Tourist routes and itineraries', de: 'Touristische Routen und Reiserouten' }
+    scale: { fr: '1:1 500 000', en: '1:1,500,000', de: '1:1.500.000' }
 ---
