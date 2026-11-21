@@ -90,6 +90,13 @@ images:
   # graphs to the tourist infrastructure project"), in that order. No title, axis, key or
   # source on the drawings, on purpose; the routes and years are written on them. Web files
   # from export_web.py (whole page), copied unchanged.
+  # 21 Nov: their stipple versions replace them under the same file names (same data, layout
+  # and order; the Government of Canada share and the roads in the timetable diagram's
+  # stipple, the trains as outlined white boxes): Diagram_PassengersWhoPays_Stipple and
+  # Diagram_RailRoad_Stipple_A5spread.pdf, from the subsidy session (his words there: "put
+  # the line back and publish", and "Yes, replace"). The 20 Nov web files are kept in
+  # Web_2026-11-17 (Diagram_PassengersWhoPays.jpg, Diagram_RailRoad.jpg and their @2x) to
+  # swap back. Captions unchanged.
   # Captions: a simple name (the site's rule), with the sources on a data line, as the
   # spruce diagram had (the session's longer captions are in its message, 20 Nov). FR/DE
   # from DeepL; the first German caption asked as "Passengers per year and who pays for
