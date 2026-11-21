@@ -1,16 +1,17 @@
 ---
-# Industrie forestière de la Matapédia: the forest industry of the Matapédia valley,
-# between the province (Infrastructure touristique au Québec) and the site (Aménagement
-# de Routhierville). Set up 21 Nov at his ask: "make a new project between quebec and
-# amenagement called something like Industrie forestière de la Matapédia. put in the
-# map i am about to send you, as well as the timetable diagram". The name is his own,
-# in French in every language like the other project names.
+# Vallée de la Matapédia: the valley, between the province (Infrastructure touristique
+# au Québec) and the site (Aménagement de Routhierville). Set up 21 Nov at his ask: "make
+# a new project between quebec and amenagement called something like Industrie forestière
+# de la Matapédia. put in the map i am about to send you, as well as the timetable
+# diagram"; renamed the same day ("change the project title to Vallée de la Matapédia",
+# folder and address too, as for the Québec project). The name is his own, in French in
+# every language like the other project names.
 # FR/DE text translated from the English with DeepL.
 # Web images live in ./images/ next to this file (full-resolution
-# originals are in /originals/industrie-forestiere-de-la-matapedia). To add one, drop it
+# originals are in /originals/vallee-de-la-matapedia). To add one, drop it
 # in ./images/ and add an entry under "images:".
 
-title: Industrie forestière de la Matapédia
+title: Vallée de la Matapédia
 # Second on the Work page: the valley, between the province and the site
 order: 1
 year: '2026'
@@ -64,13 +65,17 @@ images:
   # VIA's four stops and Routhierville's disc. Drawings/Map_MatapediaValley_A1_1-100000.pdf
   # (QGIS, A1 portrait, 21 Nov, no legend), sent from the valley session (GIS/README_Map16_
   # MatapediaValley.md). Web files from export_web.py (Map_MatapediaValley), cropped to the
-  # QGIS map frame (title lines dropped), copied unchanged. Caption: what the map shows, as
-  # for maps 14c and 14d (the session's longer one is in its message), FR/DE from DeepL,
-  # asked as "Railway and river through logged forest, 1:100,000".
+  # QGIS map frame (title lines dropped), copied unchanged. Reprinted 21 Nov (his words:
+  # "dont make the routhierville point bigger than the rest": the stops' 2.8 mm dot) and
+  # again ("make sure the railway passes over the river": a white band under the rail at
+  # its four crossings of the river), exported again each time. Caption his, in French (21 Nov, via the valley session: "change the
+  # caption to Exploitation forestière autour de la Matapédia"; it replaced "Railway and
+  # river through logged forest"); English from DeepL (FR to EN), German from DeepL from
+  # that English, asked as "Logging around the Matapédia River, 1:100,000".
   - src: ./images/map-matapedia-valley.jpg
     src2x: ./images/map-matapedia-valley@2x.jpg
     size: full
-    caption: { fr: 'Voie ferrée et cours d’eau traversant une forêt exploitée', en: 'Railway and river through logged forest', de: 'Eisenbahnstrecke und Fluss durch abgeholzten Wald' }
+    caption: { fr: 'Exploitation forestière autour de la Matapédia', en: 'Logging around the Matapédia River', de: 'Holzeinschlag im Gebiet um den Matapédia-Fluss' }
     scale: { fr: '1:100 000', en: '1:100,000', de: '1:100.000' }
   # VIA's Ocean, Montréal–Halifax, 20–26 July 2025, as a timetable graph: the trains
   # (thin lines), the night (stipple) and each train passing Routhierville (black
@@ -85,4 +90,25 @@ images:
     src2x: ./images/diagram-ocean-week@2x.jpg
     size: full
     caption: { fr: 'Schéma des horaires du train l’Océan de VIA Rail', en: 'Timetable diagram of VIA Rail’s Ocean train', de: 'Fahrplandiagramm des „Ocean“-Zugs von VIA Rail' }
+  # Spruce near Routhierville against every timber piece of the tower, station and inn:
+  # across, the piece's length (0–5.5 m; dashed, the 4.88 m / 16 ft limit); up, how
+  # many spruce within 20 km have a butt log that can give it (1 in 1 to 1 in 200, log
+  # scale); stipple = supply (MRNF sample plots, Données Québec, CC-BY 4.0: 1,832 spruce
+  # in 248 plots), one even tone between each pair of dashed lines (dashed lines at the
+  # half steps too); black = the pieces' true cross-sections at 1:40. Drawings/
+  # Wood_Supply_Demand/Diagram_WoodAvailability_A5spread.pdf (Rhino, A5 spread), reprinted
+  # 21 Nov in the subsidy session (his words there: "publish", "send to website session");
+  # exported whole by export_web.py (Diagram_WoodAvailability). On the Aménagement page
+  # 19–20 Nov, then taken off at his ask; here since 21 Nov ("put the diagram in the
+  # matapedia valley project"). Caption and credit as on 19 Nov: the caption is Michael's
+  # ("spruce availability within a 20-kilometer radius"), FR/DE from DeepL; the credit is
+  # what CC BY 4.0 asks (source and a link to the licence), "Data:" from DeepL.
+  - src: ./images/diagram-wood-availability.jpg
+    src2x: ./images/diagram-wood-availability@2x.jpg
+    size: full
+    caption: { fr: 'Disponibilité de l’épinette dans un rayon de 20 km', en: 'Spruce availability within a 20 km radius', de: 'Verfügbarkeit von Fichtenholz im Umkreis von 20 km' }
+    credit:
+      fr: 'Données : MRNF, Données Québec, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.fr)'
+      en: 'Data: MRNF, Données Québec, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)'
+      de: 'Daten: MRNF, Données Québec, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.de)'
 ---

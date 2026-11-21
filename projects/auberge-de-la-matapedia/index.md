@@ -1,11 +1,12 @@
 ---
-# L'Auberge de la Matapédia
+# Auberge de la Matapédia
 # FR/DE text translated from the English with DeepL.
 # Web images live in ./images/ next to this file (full-resolution
 # originals are in /originals). To add one, drop it in ./images/ and add
 # an entry under "images:".
 
-title: L’Auberge de la Matapédia
+# No article before the name since 21 Nov (his ask: "remove the le, la and l' from the project names"); it was "L’Auberge de la Matapédia".
+title: Auberge de la Matapédia
 order: 4
 year: '2026'
 location: Routhierville, Québec

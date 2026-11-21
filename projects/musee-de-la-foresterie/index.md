@@ -1,11 +1,12 @@
 ---
-# Le Musée de la Foresterie
+# Musée de la Foresterie
 # FR/DE text translated from the English with DeepL.
 # Web images live in ./images/ next to this file (full-resolution
 # originals are in /originals). To add one, drop it in ./images/ and add
 # an entry under "images:".
 
-title: Le Musée de la Foresterie
+# No article before the name since 21 Nov (his ask: "remove the le, la and l' from the project names"); it was "Le Musée de la Foresterie".
+title: Musée de la Foresterie
 order: 5
 year: '2026'
 location: Routhierville, Québec

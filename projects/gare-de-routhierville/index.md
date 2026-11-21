@@ -1,11 +1,12 @@
 ---
-# La Gare de Routhierville
+# Gare de Routhierville
 # FR/DE text translated from the English with DeepL.
 # Web images live in ./images/ next to this file (full-resolution
 # originals are in /originals). To add one, drop it in ./images/ and add
 # an entry under "images:".
 
-title: La Gare de Routhierville
+# No article before the name since 21 Nov (his ask: "remove the le, la and l' from the project names"); it was "La Gare de Routhierville".
+title: Gare de Routhierville
 order: 3
 year: '2026'
 location: Routhierville, Québec
