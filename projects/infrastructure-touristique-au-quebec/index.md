@@ -13,14 +13,14 @@ order: 0
 year: '2026'
 location: Québec
 
-# Type, one of: Cultural, Hospitality, Infrastructure, Residential, Transportation
-#   FR: Culturel, Hôtellerie, Infrastructure, Résidentiel, Transport
-#   DE: Kultur, Hotellerie, Infrastruktur, Wohnen, Verkehr
-# Infrastructure since 20 Nov (his ask; it was Transportation)
+# Type, one of: Cultural, Hospitality, Infrastructure, Research, Residential, Transportation
+#   FR: Culturel, Hôtellerie, Infrastructure, Recherche, Résidentiel, Transport
+#   DE: Kultur, Hotellerie, Infrastruktur, Forschung, Wohnen, Verkehr
+# Research since 21 Nov (his ask: "change the type of the first two projects to research"; FR/DE from DeepL)
 type:
-  fr: Infrastructure
-  en: Infrastructure
-  de: Infrastruktur
+  fr: Recherche
+  en: Research
+  de: Forschung
 
 status:
   fr: En cours
