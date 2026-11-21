@@ -175,6 +175,38 @@ const bleedSizes = (img: ImageMetadata) =>
       if (e.key === 'ArrowLeft') go(index() - 1);
       if (e.key === 'ArrowRight') go(index() + 1);
     });
+
+    // The language links (FR EN DE) carry the image being looked at (#slide-N),
+    // so another language opens on the same image (Michael, 21 Nov). Desktop: the
+    // slide in the frame; phones: the first image at least half on the screen
+    // (the one a #slide-N link scrolls to the top).
+    if (count < 2) return;
+    const langLinks = [...document.querySelectorAll<HTMLAnchorElement>('.header-langs a[hreflang]')];
+    const current = () => {
+      if (getComputedStyle(track).display === 'flex') return index();
+      const slides = [...track.children];
+      const i = slides.findIndex((slide) => {
+        const r = slide.getBoundingClientRect();
+        const seen = Math.min(r.bottom, innerHeight) - Math.max(r.top, 0);
+        return seen >= Math.min(r.height, innerHeight) / 2;
+      });
+      return Math.max(i, 0);
+    };
+    let queued = false;
+    const mark = () => {
+      queued = false;
+      const i = current();
+      langLinks.forEach((a) => {
+        a.hash = i > 0 ? `slide-${i}` : '';
+      });
+    };
+    const queue = () => {
+      if (!queued) (queued = true), requestAnimationFrame(mark);
+    };
+    track.addEventListener('scroll', queue, { passive: true });
+    addEventListener('scroll', queue, { passive: true });
+    addEventListener('resize', queue);
+    mark();
   });
 
   // The X: tells the Work page which project we came from, so it opens the
