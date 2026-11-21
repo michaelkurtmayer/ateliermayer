@@ -52,10 +52,11 @@ coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 #   the project page and used as alt text; scale: shown under it (drawings only).
 #   FR/DE from DeepL, asked as "<name>, <scale>" so it reads them as drawings.
 images:
-  # The view along the track facade: "back 3 m" (a8_back3m_20mm, 20 mm, from the track bed
-  # past the left end bay), the Blender original without FLUX, lamps off; it replaced S25
-  # on 20 Nov (his ask, sent from the renderings session: "replace the existing perspective
-  # from the tracks"). Cropped centred to 5000 x 3374 like the other station renders.
+  # The view along the tracks, upright: n48 (n48_other_end_20mm_up, 20 mm, on the near track
+  # looking down the tracks, the station on the right), the Blender original without FLUX.
+  # It replaced "back 3 m" (which had replaced S25) on 20 Nov, his ask from the renderings
+  # session: "have it replace the perspective on the website". Cropped centred to
+  # 3374 x 5000, the station renders' 1.48 : 1 upright.
   - src: ./images/render-main-track.jpg
     size: full
     caption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }

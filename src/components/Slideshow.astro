@@ -57,6 +57,11 @@ const renderWidths = (img: ImageMetadata) => [
   img.width,
 ];
 
+// Upright renders show narrower than landscape ones in the same 3:2 frame: the
+// browser is told their real width, as for the drawings (20 Nov, the upright n48).
+const renderSizes = (img: ImageMetadata) =>
+  img.height > img.width ? drawingSizes(img) : '(max-width: 720px) 100vw, 68vw';
+
 // The home photo. On phones it fills the screen below the 50 px header and is
 // cropped at the sides, so it is shown much wider than the screen: tell the
 // browser that width, or it picks a copy a third of the size it needs.
@@ -89,7 +94,7 @@ const bleedSizes = (img: ImageMetadata) =>
               src={item.src}
               alt={item.alt}
               widths={renderWidths(item.src)}
-              sizes={fullBleed ? bleedSizes(item.src) : '(max-width: 720px) 100vw, 68vw'}
+              sizes={fullBleed ? bleedSizes(item.src) : renderSizes(item.src)}
               quality={90}
               loading={i === 0 ? 'eager' : 'lazy'}
               fetchpriority={i === 0 ? 'high' : undefined}
