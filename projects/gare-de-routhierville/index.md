@@ -68,6 +68,8 @@ images:
   # Rhino session, at Michael's ask there to update the site: steel-hatched core walls,
   # the railings from the renders, downspouts at the end posts; on the first floor the
   # closet lined up with the bathroom door, the desk chair under the desk, a round rug.
+  # Reprinted again 23 Nov 01:07 (same session, his ask): every door frame merged into its
+  # wall, one outline with the steel hatch running through.
   - src: ./images/plan-ground.jpg
     src2x: ./images/plan-ground@2x.jpg
     size: full
