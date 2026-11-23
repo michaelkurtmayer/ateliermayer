@@ -80,6 +80,12 @@ images:
     size: full
     caption: { fr: 'Plan de l’étage supérieur', en: 'Upper floor plan', de: 'Grundriss des Obergeschosses' }
     scale: '1:50'
+  # The long section: Sections_v6g/Section_StationV1LongLabelled (A1, 1:50), exported by
+  # export_web.py (Station_Section_Long). Reprinted 23 Nov 12:52 in the tower Rhino session
+  # (his words there: "Send to website"): each cut core wall one outline with the steel hatch,
+  # as on the plans, the door heads merged into their walls; the pipes under the first floor
+  # removed; the railings from the renders. It also carries the 20 Nov changes (stools,
+  # vestibule doors, track glass into the cores). The cross section is still the 18 Nov export.
   - src: ./images/section-long.jpg
     src2x: ./images/section-long@2x.jpg
     size: full
