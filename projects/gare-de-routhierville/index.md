@@ -63,6 +63,11 @@ images:
     caption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
   # Front 3 (the head-on view of the track facade, from between the tracks) was taken
   # off on 20 Nov, his call; it is still in the thesis folder.
+  # The two plans: Sections_v6g/Plan_StationV1Ground / First (A1, 1:50), exported by
+  # export_web.py (Station_Plan_Ground / First). Reprinted 23 Nov 00:56 in the tower
+  # Rhino session, at Michael's ask there to update the site: steel-hatched core walls,
+  # the railings from the renders, downspouts at the end posts; on the first floor the
+  # closet lined up with the bathroom door, the desk chair under the desk, a round rug.
   - src: ./images/plan-ground.jpg
     src2x: ./images/plan-ground@2x.jpg
     size: full
