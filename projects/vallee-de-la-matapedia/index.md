@@ -92,21 +92,27 @@ images:
     caption: { fr: 'Schéma des horaires du train l’Océan de VIA Rail', en: 'Timetable diagram of VIA Rail’s Ocean train', de: 'Fahrplandiagramm des „Ocean“-Zugs von VIA Rail' }
   # Spruce near Routhierville against every timber piece of the tower, station and inn:
   # across, the piece's length (0–5.5 m; dashed, the 4.88 m / 16 ft limit); up, how
-  # many spruce within 20 km have a butt log that can give it (1 in 1 to 1 in 200, log
-  # scale); stipple = supply (MRNF sample plots, Données Québec, CC-BY 4.0: 1,832 spruce
-  # in 248 plots), one even tone between each pair of dashed lines (dashed lines at the
-  # half steps too); black = the pieces' true cross-sections at 1:40. Drawings/
-  # Wood_Supply_Demand/Diagram_WoodAvailability_A5spread.pdf (Rhino, A5 spread), reprinted
-  # 21 Nov in the subsidy session (his words there: "publish", "send to website session");
+  # many spruce within 20 km it takes to find one whose butt log can give it (1 in 1 to
+  # 1 in 70, linear, dashed every 10; MRNF sample plots, Données Québec, CC-BY 4.0);
+  # black = the pieces' true cross-sections at 1:40 (circles logs, rectangles sawn
+  # timber), with the number of each piece the three buildings need over it (4,075 in
+  # all; the inn's from its first working 3D model, 16 Nov). No stipple since the 22 Nov
+  # reprint (subsidy session, his words there: "Can you send it to the website session to
+  # update the one that's currently up there?"); the 21 Nov stipple version is archived in
+  # Drawings/Archive/ ("B3 stipple, live on the website, before the counts version").
+  # Drawings/Wood_Supply_Demand/Diagram_WoodAvailability_A5spread.pdf (Rhino, A5 spread),
   # exported whole by export_web.py (Diagram_WoodAvailability). On the Aménagement page
   # 19–20 Nov, then taken off at his ask; here since 21 Nov ("put the diagram in the
-  # matapedia valley project"). Caption and credit as on 19 Nov: the caption is Michael's
-  # ("spruce availability within a 20-kilometer radius"), FR/DE from DeepL; the credit is
+  # matapedia valley project"). The caption is Michael's ("spruce availability within a
+  # 20-kilometer radius", 19 Nov; "of Routhierville" added 22 Nov at his ask: "add to
+  # caption that it is within 20km of Routhierville"), FR/DE from DeepL, except his
+  # "épinette" for DeepL's "épinettes" (the wood, not the trees: "I think épinette should
+  # probably be without an s because we are talking about the Wood"); the credit is
   # what CC BY 4.0 asks (source and a link to the licence), "Data:" from DeepL.
   - src: ./images/diagram-wood-availability.jpg
     src2x: ./images/diagram-wood-availability@2x.jpg
     size: full
-    caption: { fr: 'Disponibilité de l’épinette dans un rayon de 20 km', en: 'Spruce availability within a 20 km radius', de: 'Verfügbarkeit von Fichtenholz im Umkreis von 20 km' }
+    caption: { fr: 'Disponibilité d’épinette dans un rayon de 20 km de Routhierville', en: 'Spruce availability within 20 km of Routhierville', de: 'Verfügbarkeit von Fichtenholz im Umkreis von 20 km um Routhierville' }
     credit:
       fr: 'Données : MRNF, Données Québec, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.fr)'
       en: 'Data: MRNF, Données Québec, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)'
