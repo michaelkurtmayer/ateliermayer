@@ -95,11 +95,17 @@ images:
   # many spruce within 20 km it takes to find one whose butt log can give it (1 in 1 to
   # 1 in 70, linear, dashed every 10; MRNF sample plots, Données Québec, CC-BY 4.0);
   # black = the pieces' true cross-sections at 1:40 (circles logs, rectangles sawn
-  # timber), with the number of each piece the three buildings need over it (4,075 in
-  # all; the inn's from its first working 3D model, 16 Nov). No stipple since the 22 Nov
-  # reprint (subsidy session, his words there: "Can you send it to the website session to
-  # update the one that's currently up there?"); the 21 Nov stipple version is archived in
-  # Drawings/Archive/ ("B3 stipple, live on the website, before the counts version").
+  # timber), with the number of each piece the three buildings need over it (4,427 in
+  # all: inn 2,281, tower 1,628, station 518). No stipple since the 22 Nov reprint (subsidy
+  # session, his words there: "Can you send it to the website session to update the one
+  # that's currently up there?"); the 21 Nov stipple version is archived in Drawings/Archive/
+  # ("B3 stipple, live on the website, before the counts version"). Reprinted 23 Nov 16:38
+  # (round 27, same session) at his ask here ("i think theres a new diagram for spruce?",
+  # then "Yes, ask it"): the inn's beams cut where its 3D now splices them (cross pairs
+  # mid-bay, long beams mid-bay but for the end bays), so 282 → 74 at the 4.88 m line,
+  # 376 → 136, 92 → 508, new groups of 360 and 192; one-off log discs folded into their
+  # neighbours. The 22 Nov counts version (4,075) is archived in Drawings/Archive/ ("live on
+  # the website, before the inn's cross-pair splices").
   # Drawings/Wood_Supply_Demand/Diagram_WoodAvailability_A5spread.pdf (Rhino, A5 spread),
   # exported whole by export_web.py (Diagram_WoodAvailability). On the Aménagement page
   # 19–20 Nov, then taken off at his ask; here since 21 Nov ("put the diagram in the
