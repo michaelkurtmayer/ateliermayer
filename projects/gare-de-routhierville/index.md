@@ -85,7 +85,14 @@ images:
   # (his words there: "Send to website"): each cut core wall one outline with the steel hatch,
   # as on the plans, the door heads merged into their walls; the pipes under the first floor
   # removed; the railings from the renders. It also carries the 20 Nov changes (stools,
-  # vestibule doors, track glass into the cores). The cross section is still the 18 Nov export.
+  # vestibule doors, track glass into the cores).
+  # The cross section: Section_StationV1CrossLabelled (A1, 1:50), export_web.py
+  # Station_Section_Cross. Reprinted 23 Nov 13:23 in the same session (his words there:
+  # "Please update the short section as well. There are lines there from the old frame that
+  # should not be there anymore in the core, basically."): no seams between flush steel faces
+  # in the core, the door frames part of the wall; the render's railings (the ramp's rail one
+  # straight sloped bar, the platform guard straight). Replaces the 18 Nov export, so it also
+  # carries the 20 Nov changes.
   - src: ./images/section-long.jpg
     src2x: ./images/section-long@2x.jpg
     size: full
