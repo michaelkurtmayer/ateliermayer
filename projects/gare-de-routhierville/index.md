@@ -77,6 +77,9 @@ images:
   # corner); Ø6 horizontal cables every 10 cm in both sections; in both plans the props
   # drawn down to their feet and the foundation fins shown. The previous exports are in
   # Drawings/Archive/Web exports (before station rails on the beams, cables, props and fins, Nov 23)/.
+  # The long section reprinted again 19:56 (same session, his words there: "i dont want to
+  # see the railing behind the glazing on the long section", then "Yes, send it"): the
+  # platform guard seen through the glazing between the cores is gone, nothing else changed.
   - src: ./images/plan-ground.jpg
     src2x: ./images/plan-ground@2x.jpg
     size: full
