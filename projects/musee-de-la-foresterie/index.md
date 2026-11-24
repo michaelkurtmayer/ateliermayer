@@ -55,6 +55,16 @@ coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 #
 # The path view (the forest path to the tower's foot) was taken off the site on
 # 19 Nov (his call): the head-on view above is the tower's only render.
+#
+# The three drawings: Sections_v6g/Plan_TowerV6cLookout, Section_TowerV6cLongLabelled and
+# Section_TowerV6cCrossLabelled (A1, 1:50), exported by export_web.py (Tower_Plan_Lookout,
+# Tower_Section_Long, Tower_Section_Cross). Reprinted 23 Nov (plan 17:55, sections 18:46-18:47)
+# in the tower session (his words there: "send the most up to date tower drawings to the
+# website session"): no steel face sheets, so the Ø26 cable cross-bracing with turnbuckles
+# shows; the fabric (168 flat mesh sheets on rods and hooks); the tower lowered 0.51 m; the
+# lookout guardrail (rail, posts, cables every 10 cm); the long section's ground and trees
+# reworked. They replace the 17-18 Nov exports. The tower's ground floor plan is retired, so
+# the lookout plan stays its only plan.
 images:
   - src: ./images/plan-lookout.jpg
     src2x: ./images/plan-lookout@2x.jpg
