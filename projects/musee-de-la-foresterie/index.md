@@ -64,7 +64,9 @@ coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 # shows; the fabric (168 flat mesh sheets on rods and hooks); the tower lowered 0.51 m; the
 # lookout guardrail (rail, posts, cables every 10 cm); the long section's ground and trees
 # reworked. They replace the 17-18 Nov exports. The tower's ground floor plan is retired, so
-# the lookout plan stays its only plan.
+# the lookout plan stays its only plan. The plan reprinted again 19:46 (his words there:
+# "Yes, send it"): only the lookout floor's own beams, no longer doubled by the planks of
+# the floor below a few millimetres beside them.
 images:
   - src: ./images/plan-lookout.jpg
     src2x: ./images/plan-lookout@2x.jpg
