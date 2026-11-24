@@ -19,13 +19,16 @@
   /* From the top of a 15/18 px line to the top of its capitals: text beside an
      image is raised by this much so its letters start level with the image */
   --cap: 3px;
-  /* The tallest an image may be: a share of the screen height */
+  /* The tallest the About photo may be: a share of the screen height */
   --img-h: 60svh;
+  /* The tallest a project image may be (75 % since 24 Nov, his ask; it was
+     --img-h, 60 %) */
+  --slide-h: 75svh;
   /* Width of the image frame (3:2): 68 % of the window width at most, never
-     taller than --img-h, always fitting below the header, and never wider
+     taller than --slide-h, always fitting below the header, and never wider
      than the two right-hand columns it starts in (under "Work"), less room
      for the right arrow */
-  --slide-w: min(68vw, var(--img-h) * 1.5, (100svh - var(--header) - 25px) * 1.5,
+  --slide-w: min(68vw, var(--slide-h) * 1.5, (100svh - var(--header) - 25px) * 1.5,
     (100vw - 2 * var(--margin)) * 2 / 3 - 40px);
 }
 
