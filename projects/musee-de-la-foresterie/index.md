@@ -43,7 +43,16 @@ text:
   de: |
     [Projektbeschreibung folgt: Standort, Programm, Konzept und Bauausführung. Zwei bis vier kurze Absätze.]
 
-cover: ./images/render-tower-head.jpg
+# The cover, the tower's only render: H1 (h1_square_40mm_eye2p4_full, Blender Cycles, 1024
+# samples, finished 23 Nov), at the foot of the tower, upright, eye level 2.4 m, 40 mm lens,
+# overcast: the log columns with their bolts, the stainless mesh fabric, the straightened
+# ground-floor cables, the flagstone paving inside the dry-stone wall, a stainless bench.
+# Sent 23 Nov by the tower render session (Michael asked it to send the render here); not yet
+# marked final in the thesis. It replaces the clear-cut photomontage (render-tower-head.jpg,
+# Blender + FLUX, 18 Nov), removed from the site at his ask ("remove the previous rendering").
+# Cropped centred from the 3532 x 5000 PNG to 3374 x 5000, the
+# renders' 1.48 : 1 upright.
+cover: ./images/render-tower-foot.jpg
 coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 
 # size: full (whole width), half (two side by side) or half-right (one image on the right half)
@@ -54,7 +63,7 @@ coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 #   FR/DE from DeepL, asked as "<name>, <scale>" so it reads them as drawings.
 #
 # The path view (the forest path to the tower's foot) was taken off the site on
-# 19 Nov (his call): the head-on view above is the tower's only render.
+# 19 Nov (his call); the cover above is the tower's only render.
 #
 # The three drawings: Sections_v6g/Plan_TowerV6cLookout, Section_TowerV6cLongLabelled and
 # Section_TowerV6cCrossLabelled (A1, 1:50), exported by export_web.py (Tower_Plan_Lookout,
