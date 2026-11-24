@@ -43,7 +43,7 @@ text:
   de: |
     [Projektbeschreibung folgt: Standort, Programm, Konzept und Bauausführung. Zwei bis vier kurze Absätze.]
 
-# The cover, the tower's only render: H1 (h1_square_40mm_eye2p4_full, Blender Cycles, 1024
+# The cover, the view from the tower's foot: H1 (h1_square_40mm_eye2p4_full, Blender Cycles, 1024
 # samples, finished 23 Nov), at the foot of the tower, upright, eye level 2.4 m, 40 mm lens,
 # overcast: the log columns with their bolts, the stainless mesh fabric, the straightened
 # ground-floor cables, the flagstone paving inside the dry-stone wall, a stainless bench.
@@ -63,7 +63,7 @@ coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 #   FR/DE from DeepL, asked as "<name>, <scale>" so it reads them as drawings.
 #
 # The path view (the forest path to the tower's foot) was taken off the site on
-# 19 Nov (his call); the cover above is the tower's only render.
+# 19 Nov (his call). The tower's renders are the cover (H1) and F1b below.
 #
 # The three drawings: Sections_v6g/Plan_TowerV6cLookout, Section_TowerV6cLongLabelled and
 # Section_TowerV6cCrossLabelled (A1, 1:50), exported by export_web.py (Tower_Plan_Lookout,
@@ -81,6 +81,17 @@ coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 # cables in front of the stair entrance gone; nothing else changed. The 19:06 exports are in
 # Drawings/Archive/Web exports (before straight ground-storey cables and no cables at the stair entrance, Nov 23)/.
 images:
+  # F1b (f1b_fly_south_40mm_full, Blender Cycles, 1024 samples, finished 24 Nov 03:40): from
+  # the air, head-on from the south, level with the lookout storey, 40 mm lens, overcast with
+  # fog: the top storeys above the treetops against a misted hillside, the corrugated roof,
+  # the log columns with their bolts and splice plates, the lookout deck's cable rail, the
+  # stainless mesh below. Sent 24 Nov by the tower render session (his words there: "Send to
+  # website session and publish it."); not in Final_Renders or the book. Added after the
+  # cover, H1 staying the cover. Cropped centred from the 5000 x 3532 PNG to 5000 x 3374
+  # (79 px off the top and bottom), the renders' 1.48 : 1.
+  - src: ./images/render-tower-aerial.jpg
+    size: full
+    caption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
   - src: ./images/plan-lookout.jpg
     src2x: ./images/plan-lookout@2x.jpg
     size: full
