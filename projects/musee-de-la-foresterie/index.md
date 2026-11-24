@@ -67,6 +67,10 @@ coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 # the lookout plan stays its only plan. The plan reprinted again 19:46 (his words there:
 # "Yes, send it"): only the lookout floor's own beams, no longer doubled by the planks of
 # the floor below a few millimetres beside them.
+# Both sections reprinted again 22:11-22:12 (tower session, his words there: "nice, update the
+# ones on the website"): the ground-storey cables straight on their line of action, the two
+# cables in front of the stair entrance gone; nothing else changed. The 19:06 exports are in
+# Drawings/Archive/Web exports (before straight ground-storey cables and no cables at the stair entrance, Nov 23)/.
 images:
   - src: ./images/plan-lookout.jpg
     src2x: ./images/plan-lookout@2x.jpg
