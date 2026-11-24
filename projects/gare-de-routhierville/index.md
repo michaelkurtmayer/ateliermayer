@@ -70,6 +70,13 @@ images:
   # closet lined up with the bathroom door, the desk chair under the desk, a round rug.
   # Reprinted again 23 Nov 01:07 (same session, his ask): every door frame merged into its
   # wall, one outline with the steel hatch running through.
+  # All four sheets (the two plans, the two sections) reprinted 23 Nov 18:36-18:41 in the
+  # station railings session and exported there 19:02 (his words there: "send these new
+  # station drawings to the website session"): the end and balcony railings inside the
+  # columns, on the inner beams (a post in each balcony corner, the rail turning the
+  # corner); Ø6 horizontal cables every 10 cm in both sections; in both plans the props
+  # drawn down to their feet and the foundation fins shown. The previous exports are in
+  # Drawings/Archive/Web exports (before station rails on the beams, cables, props and fins, Nov 23)/.
   - src: ./images/plan-ground.jpg
     src2x: ./images/plan-ground@2x.jpg
     size: full
