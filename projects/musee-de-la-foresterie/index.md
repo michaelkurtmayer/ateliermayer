@@ -80,6 +80,13 @@ coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 # ones on the website"): the ground-storey cables straight on their line of action, the two
 # cables in front of the stair entrance gone; nothing else changed. The 19:06 exports are in
 # Drawings/Archive/Web exports (before straight ground-storey cables and no cables at the stair entrance, Nov 23)/.
+# All three reprinted 24 Nov (plan 17:08, labelled sections 17:43-17:44) in the tower drawings
+# session (his words there: "lets stop having the text for structural members on these drawings,
+# we will make structural drawings later. send these drawings without the structural text to the
+# website session"): no member tags (grid, levels and dimensions stay), a post at every kink of
+# the stair rails, the stair rail wrapping round the opening, a 1.20 m guard at the lookout,
+# cables every 10 cm. The 23 Nov exports are in Drawings/Archive/Web exports (before no member
+# tags, stair rail posts and the 1.20 m guard, Nov 24)/.
 images:
   # F1b (f1b_fly_south_40mm_full, Blender Cycles, 1024 samples, finished 24 Nov 03:40): from
   # the air, head-on from the south, level with the lookout storey, 40 mm lens, overcast with
