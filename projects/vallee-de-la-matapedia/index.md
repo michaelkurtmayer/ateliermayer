@@ -106,6 +106,11 @@ images:
   # 376 → 136, 92 → 508, new groups of 360 and 192; one-off log discs folded into their
   # neighbours. The 22 Nov counts version (4,075) is archived in Drawings/Archive/ ("live on
   # the website, before the inn's cross-pair splices").
+  # Reprinted 23 Nov 20:18 (same session, his words there: "instead of the black fill, can we
+  # try a stipple fill", then "Print it", "Reprint", "Send it"): each section filled with even
+  # 0.18 mm stipple instead of black, no outline; the dashed lines stop at the sections. Same
+  # data, counts and frame. The black version is archived in Drawings/Archive/ ("black
+  # sections, live on the website, before the stipple fill").
   # Drawings/Wood_Supply_Demand/Diagram_WoodAvailability_A5spread.pdf (Rhino, A5 spread),
   # exported whole by export_web.py (Diagram_WoodAvailability). On the Aménagement page
   # 19–20 Nov, then taken off at his ask; here since 21 Nov ("put the diagram in the
