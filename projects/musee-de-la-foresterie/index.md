@@ -43,16 +43,20 @@ text:
   de: |
     [Projektbeschreibung folgt: Standort, Programm, Konzept und Bauausführung. Zwei bis vier kurze Absätze.]
 
-# The cover, the view from the tower's foot: H1 (h1_square_40mm_eye2p4_full, Blender Cycles, 1024
-# samples, finished 23 Nov), at the foot of the tower, upright, eye level 2.4 m, 40 mm lens,
-# overcast: the log columns with their bolts, the stainless mesh fabric, the straightened
-# ground-floor cables, the flagstone paving inside the dry-stone wall, a stainless bench.
-# Sent 23 Nov by the tower render session (Michael asked it to send the render here); not yet
-# marked final in the thesis. It replaces the clear-cut photomontage (render-tower-head.jpg,
-# Blender + FLUX, 18 Nov), removed from the site at his ask ("remove the previous rendering").
-# Cropped centred from the 3532 x 5000 PNG to 3374 x 5000, the
-# renders' 1.48 : 1 upright.
-cover: ./images/render-tower-foot.jpg
+# The cover since 25 Nov, the tower from the air: D3 (f1b_fly_south_40mm_meadow_p16_d3_full,
+# Blender Cycles, 1024 samples, finished overnight 24-25 Nov, the speck-fixed copy): F1b's
+# view from the air, head-on from the south, 40 mm lens, overcast with fog, with the eye
+# lowered so the underside of the roof shows, and the newer model (the roof sheet on the
+# timber, the mesh 50 % open). Sent by the tower render session (his words there: "Send all 4
+# to website session"); in place of F1b since 25 Nov (f1b_fly_south_40mm_full, 24 Nov; still
+# in /originals), and the cover since the same day (his ask: "Put tower aerial render first").
+# Not in Final_Renders or the book. Cropped centred from the 5000 x 3532 PNG to 5000 x 3374
+# (79 px off the top and bottom), the renders' 1.48 : 1.
+# The cover before it, H1 (h1_square_40mm_eye2p4_full, at the foot of the tower, upright, 23
+# Nov), was taken off on 25 Nov at his ask ("Same for the old tower base render", after the
+# station's old track view); H2 below is the view at the tower's foot now. H1 stays in
+# /originals and the thesis folder. (H1 had replaced the 18 Nov clear-cut photomontage.)
+cover: ./images/render-tower-aerial.jpg
 coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 
 # size: full (whole width), half (two side by side) or half-right (one image on the right half)
@@ -63,7 +67,7 @@ coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 #   FR/DE from DeepL, asked as "<name>, <scale>" so it reads them as drawings.
 #
 # The path view (the forest path to the tower's foot) was taken off the site on
-# 19 Nov (his call). The tower's renders are the cover (H1), H2 and D3 below.
+# 19 Nov (his call). The tower's renders are the cover (D3) and H2 below.
 #
 # The three drawings: Sections_v6g/Plan_TowerV6cLookout, Section_TowerV6cLongLabelled and
 # Section_TowerV6cCrossLabelled (A1, 1:50), exported by export_web.py (Tower_Plan_Lookout,
@@ -89,23 +93,12 @@ coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 # tags, stair rail posts and the 1.20 m guard, Nov 24)/.
 images:
   # H2 (h2_turned_clearing_40mm_p16_full, Blender Cycles, 1024 samples, finished overnight
-  # 24-25 Nov): H1's companion, the same distance, eye level 2.4 m and 40 mm lens, turned 90
-  # degrees, square onto the tower's long face, the clearing past the corner; the mesh 50 %
-  # open. Sent 25 Nov by the tower render session (his words there: "Send all 4 to website
+  # 24-25 Nov): made as H1's companion (the same distance, eye level 2.4 m and 40 mm lens),
+  # turned 90 degrees, square onto the tower's long face, the clearing past the corner; the
+  # mesh 50 % open. Since 25 Nov the tower's only view at its foot (H1 taken off). Sent 25 Nov by the tower render session (his words there: "Send all 4 to website
   # session"); not in Final_Renders or the book. Cropped centred from the 3532 x 5000 PNG to
   # 3374 x 5000.
   - src: ./images/render-tower-clearing.jpg
-    size: full
-    caption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
-  # D3 (f1b_fly_south_40mm_meadow_p16_d3_full, Blender Cycles, 1024 samples, finished
-  # overnight 24-25 Nov, the speck-fixed copy): F1b's view from the air, head-on from the
-  # south, 40 mm lens, overcast with fog, with the eye lowered so the underside of the roof
-  # shows, and the newer model (the roof sheet on the timber, the mesh 50 % open). Sent with
-  # H2. Since 25 Nov in place of F1b (f1b_fly_south_40mm_full, 24 Nov, sent with "Send to
-  # website session and publish it."; still in /originals). Not in Final_Renders or the book.
-  # Cropped centred from the 5000 x 3532 PNG to 5000 x 3374 (79 px off the top and bottom),
-  # the renders' 1.48 : 1.
-  - src: ./images/render-tower-aerial.jpg
     size: full
     caption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
   - src: ./images/plan-lookout.jpg
