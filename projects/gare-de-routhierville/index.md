@@ -43,6 +43,13 @@ text:
   de: |
     [Projektbeschreibung folgt: Standort, Programm, Konzept und Bauausführung. Zwei bis vier kurze Absätze.]
 
+# The cover (and the home photo): r0189, the close view along the road face from Chemin du
+# Rang-A. Since 25 Nov the newer render of the same view (station_road_r0189_full, Blender
+# Cycles, 1024 samples, finished overnight 24-25 Nov, the speck-fixed copy): the window frames
+# a duller grey steel, the shades down. Sent by the tower render session (his words there:
+# "Send all 4 to website session"); not in Final_Renders or the book. It replaces the 19 Nov
+# r0189 (r0189_24mm.png, still in /originals). Cropped centred from the 5000 x 3532 PNG to
+# 5000 x 3374 (79 px off the top and bottom), the renders' 1.48 : 1.
 cover: ./images/render-road.jpg
 coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 
@@ -59,6 +66,14 @@ images:
   # session: "have it replace the perspective on the website". Cropped centred to
   # 3374 x 5000, the station renders' 1.48 : 1 upright.
   - src: ./images/render-main-track.jpg
+    size: full
+    caption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
+  # The west end, upright: P8 (station_west_end_p8_full, Blender Cycles, 1024 samples, finished
+  # overnight 24-25 Nov, the speck-fixed copy), along the tracks to the station's west end, every
+  # shade down, the valley sides and layered trees behind in fog. Sent with the new r0189 (his
+  # words: "Send all 4 to website session"); not in Final_Renders or the book. Cropped centred
+  # from the 3532 x 5000 PNG to 3374 x 5000.
+  - src: ./images/render-west-end.jpg
     size: full
     caption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
   # Front 3 (the head-on view of the track facade, from between the tracks) was taken
