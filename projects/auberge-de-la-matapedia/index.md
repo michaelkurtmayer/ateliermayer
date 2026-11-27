@@ -43,8 +43,19 @@ text:
   de: |
     [Projektbeschreibung folgt: Standort, Programm, Konzept und Bauausführung. Zwei bis vier kurze Absätze.]
 
-# No cover: the project page and the Work page thumbnails start with the first
-# image below. (Older images, not shown: ./images/axo.jpg, plan-ground.jpg, section.jpg.)
+# The cover since 27 Nov, the inn's first render: view 34 (inn_shore_34_full, Blender Cycles,
+# 1024 samples, no denoiser, the speck fill on, finished 26 Nov), from the shore of the
+# Matapédia, along the glazed river side of a bedroom volume standing on its legs over the
+# bank: open top-hung windows, the bed behind the glass, a second volume further along the
+# bank, the river on the right, the far bank fading into fog. Sent by the inn render session
+# (his words there, 27 Nov: "Send to website session"); not in Final_Renders or the book. The
+# window pistons and the door up to the window head are that session's reading, not yet
+# confirmed by him. Cropped centred from the 5000 x 3532 PNG to 5000 x 3374 (79 px off the
+# top and bottom), the renders' 1.48 : 1. Until then the page had no cover and started with
+# the cross section. (Older images, not shown: ./images/axo.jpg, plan-ground.jpg, section.jpg.)
+cover: ./images/render-shore.jpg
+coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
+
 #
 # size: full (whole width), half (two side by side) or half-right (one image on the right half)
 # src2x: drawings only, the same drawing at twice the size; both files are then
