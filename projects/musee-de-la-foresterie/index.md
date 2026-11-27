@@ -97,6 +97,12 @@ coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 # the stair rails, the stair rail wrapping round the opening, a 1.20 m guard at the lookout,
 # cables every 10 cm. The 23 Nov exports are in Drawings/Archive/Web exports (before no member
 # tags, stair rail posts and the 1.20 m guard, Nov 24)/.
+# The lookout plan reprinted 27 Nov 14:09 in the tower plan session (his words there: "send to
+# website session for upload") and exported by export_web.py (Tower_Plan_Lookout, same frame and
+# size): the paving's retaining wall and coping stones drawn in stipple, no lines; the lookout
+# guardrail drawn as its top rail only, round the lookout and along the stair opening, no posts
+# or cables under it. The 24 Nov export is in Drawings/Archive/Web exports (before wall stipple
+# and the lookout top rail only, Nov 27)/.
 images:
   # H2 (h2_turned_clearing_40mm_p16_full, Blender Cycles, 1024 samples, finished overnight
   # 24-25 Nov): made as H1's companion (the same distance, eye level 2.4 m and 40 mm lens),
