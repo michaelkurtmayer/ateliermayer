@@ -52,6 +52,12 @@ text:
 # in /originals), and the cover since the same day (his ask: "Put tower aerial render first").
 # Not in Final_Renders or the book. Cropped centred from the 5000 x 3532 PNG to 5000 x 3374
 # (79 px off the top and bottom), the renders' 1.48 : 1.
+# Since 27 Nov the re-render of D3 (previews/2026-11-27_d3_inset_charcoal, same file name,
+# 1024 samples): the same camera, sky, light and timber, but the tower's metal mesh 0.19 m
+# inside the column grid instead of outside it, and charcoal metallic instead of stainless.
+# Sent by the tower render session (his words there: "Send h2 and d3 to website"). The 25 Nov
+# copy stays in /originals (f1b_fly_south_40mm_meadow_p16_d3_full.png); the new one is
+# f1b_fly_south_40mm_meadow_p16_d3_full_27nov_inset_charcoal.png. Same crop.
 # The cover before it, H1 (h1_square_40mm_eye2p4_full, at the foot of the tower, upright, 23
 # Nov), was taken off on 25 Nov at his ask ("Same for the old tower base render", after the
 # station's old track view); H2 below is the view at the tower's foot now. H1 stays in
@@ -98,6 +104,11 @@ images:
   # mesh 50 % open. Since 25 Nov the tower's only view at its foot (H1 taken off). Sent 25 Nov by the tower render session (his words there: "Send all 4 to website
   # session"); not in Final_Renders or the book. Cropped centred from the 3532 x 5000 PNG to
   # 3374 x 5000.
+  # Since 27 Nov the re-render of H2 (previews/2026-11-27_h2_inset_charcoal, same view), with
+  # D3's new one ("Send h2 and d3 to website"): the mesh 0.19 m inside the column grid and
+  # charcoal metallic, nothing else changed. The 25 Nov copy stays in /originals
+  # (h2_turned_clearing_40mm_p16_full.png); the new one is
+  # h2_turned_clearing_40mm_p16_full_27nov_inset_charcoal.png. Same crop.
   - src: ./images/render-tower-clearing.jpg
     size: full
     caption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
