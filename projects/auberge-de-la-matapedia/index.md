@@ -43,17 +43,18 @@ text:
   de: |
     [Projektbeschreibung folgt: Standort, Programm, Konzept und Bauausführung. Zwei bis vier kurze Absätze.]
 
-# The cover since 27 Nov, the inn's first render: view 34 (inn_shore_34_full, Blender Cycles,
-# 1024 samples, no denoiser, the speck fill on, finished 26 Nov), from the shore of the
-# Matapédia, along the glazed river side of a bedroom volume standing on its legs over the
-# bank: open top-hung windows, the bed behind the glass, a second volume further along the
-# bank, the river on the right, the far bank fading into fog. Sent by the inn render session
-# (his words there, 27 Nov: "Send to website session"); not in Final_Renders or the book. The
-# window pistons and the door up to the window head are that session's reading, not yet
-# confirmed by him. Cropped centred from the 5000 x 3532 PNG to 5000 x 3374 (79 px off the
-# top and bottom), the renders' 1.48 : 1. Until then the page had no cover and started with
-# the cross section. (Older images, not shown: ./images/axo.jpg, plan-ground.jpg, section.jpg.)
-cover: ./images/render-shore.jpg
+# The cover since 28 Nov, the view from the water (inn_water_n1_full, Blender Cycles, 1024
+# samples, no denoiser, the glass depth fix on, finished 27 Nov 23:25): from the Matapédia,
+# the bedroom volumes on their posts with cable cross-bracing over the bank's shrubs, the
+# lounge and kitchen / dining volumes behind, the forest in haze above, the river in front.
+# Sent by the inn perspective session (his words there: "Send to website session as primary
+# photo of auberge"); not in Final_Renders or the book. That session may later replace the
+# file with a finish fixing two faint spots in the glass (lounge's left pane, kitchen's second
+# pane), the same at web size. In /originals as inn_water_n1_full.png; cropped centred from
+# the 5000 x 3532 PNG to 5000 x 3374 (79 px off the top and bottom), the renders' 1.48 : 1.
+# View 34, the cover before it, follows it (first under "images:").
+# (Older images, not shown: ./images/axo.jpg, plan-ground.jpg, section.jpg.)
+cover: ./images/render-water.jpg
 coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 
 #
@@ -64,6 +65,20 @@ coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 #   the project page and used as alt text; scale: shown under it (drawings only).
 #   FR/DE from DeepL, asked as "<name>, <scale>" so it reads them as drawings.
 images:
+  # View 34, the inn's first render and its cover 27-28 Nov (inn_shore_34_full, Blender Cycles,
+  # 1024 samples, no denoiser, the speck fill on, finished 26 Nov): from the shore of the
+  # Matapédia, along the glazed river side of a bedroom volume standing on its legs over the
+  # bank: open top-hung windows, the bed behind the glass, a second volume further along the
+  # bank, the river on the right, the far bank fading into fog. Sent by the inn render session
+  # (his words there, 27 Nov: "Send to website session"); not in Final_Renders or the book. The
+  # window pistons and the door up to the window head are that session's reading, not yet
+  # confirmed by him. Cropped centred from the 5000 x 3532 PNG to 5000 x 3374 (79 px off the
+  # top and bottom). Second since 28 Nov, when the water view became the cover; kept on the
+  # page as nothing said to take it off. Until 27 Nov the page had no cover and started with
+  # the cross section.
+  - src: ./images/render-shore.jpg
+    size: full
+    caption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
   - src: ./images/section-d.jpg
     src2x: ./images/section-d@2x.jpg
     size: full
