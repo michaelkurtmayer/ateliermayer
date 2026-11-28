@@ -62,6 +62,7 @@ text:
 # Nov), was taken off on 25 Nov at his ask ("Same for the old tower base render", after the
 # station's old track view); H2 below is the view at the tower's foot now. H1 stays in
 # /originals and the thesis folder. (H1 had replaced the 18 Nov clear-cut photomontage.)
+# H2 was in turn replaced by view 5 on 28 Nov (below).
 cover: ./images/render-tower-aerial.jpg
 coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 
@@ -73,7 +74,7 @@ coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 #   FR/DE from DeepL, asked as "<name>, <scale>" so it reads them as drawings.
 #
 # The path view (the forest path to the tower's foot) was taken off the site on
-# 19 Nov (his call). The tower's renders are the cover (D3) and H2 below.
+# 19 Nov (his call). The tower's renders are the cover (D3) and view 5 below (H2 until 28 Nov).
 #
 # The three drawings: Sections_v6g/Plan_TowerV6cLookout, Section_TowerV6cLongLabelled and
 # Section_TowerV6cCrossLabelled (A1, 1:50), exported by export_web.py (Tower_Plan_Lookout,
@@ -104,18 +105,20 @@ coverCaption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
 # or cables under it. The 24 Nov export is in Drawings/Archive/Web exports (before wall stipple
 # and the lookout top rail only, Nov 27)/.
 images:
-  # H2 (h2_turned_clearing_40mm_p16_full, Blender Cycles, 1024 samples, finished overnight
-  # 24-25 Nov): made as H1's companion (the same distance, eye level 2.4 m and 40 mm lens),
-  # turned 90 degrees, square onto the tower's long face, the clearing past the corner; the
-  # mesh 50 % open. Since 25 Nov the tower's only view at its foot (H1 taken off). Sent 25 Nov by the tower render session (his words there: "Send all 4 to website
-  # session"); not in Final_Renders or the book. Cropped centred from the 3532 x 5000 PNG to
-  # 3374 x 5000.
-  # Since 27 Nov the re-render of H2 (previews/2026-11-27_h2_inset_charcoal, same view), with
-  # D3's new one ("Send h2 and d3 to website"): the mesh 0.19 m inside the column grid and
-  # charcoal metallic, nothing else changed. The 25 Nov copy stays in /originals
-  # (h2_turned_clearing_40mm_p16_full.png); the new one is
-  # h2_turned_clearing_40mm_p16_full_27nov_inset_charcoal.png. Same crop.
-  - src: ./images/render-tower-clearing.jpg
+  # The tower's base since 28 Nov: view 5 at eye height 3 m (v5_eye3_current, Blender Cycles,
+  # 1024 samples, no denoiser, finished 28 Nov 01:07), from the south-west below the
+  # platform's stone wall, looking up along the south face from the stair's side, 50 mm,
+  # upright; the paving and the wall's coping in front, the forest path behind with grass
+  # along it, the haze from 12 m on this view only. Same model and charcoal mesh inside the
+  # column grid as H2. Sent by the tower views session (his words there, 28 Nov: "Send to
+  # website session to replace other tower base rendering"); not in Final_Renders or the
+  # book. In /originals as tower_v5_eye3_current_28nov.png; cropped centred from the 3532 x
+  # 5000 PNG to 3374 x 5000 (79 px off each side), the renders' 1.48 : 1.
+  # It replaces H2 (h2_turned_clearing_40mm_p16_full, 25 Nov; re-rendered 27 Nov with the
+  # mesh inside and charcoal, h2_turned_clearing_40mm_p16_full_27nov_inset_charcoal.png; both
+  # still in /originals): H1's companion, eye 2.4 m, 40 mm, square onto the tower's long face,
+  # the clearing past the corner; web file render-tower-clearing.jpg, on the site 25-28 Nov.
+  - src: ./images/render-tower-base.jpg
     size: full
     caption: { fr: 'Perspective', en: 'Perspective', de: 'Perspektive' }
   - src: ./images/plan-lookout.jpg
